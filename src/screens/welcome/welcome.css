@@ -1,0 +1,53 @@
+.welcome-container{
+    height: 100vh;
+
+    background: linear-gradient(180deg, #005CA9 0%, rgba(20, 136, 202, 0) 50%);
+
+    justify-content: center;
+}
+
+.welcome-container img{
+    margin: 0rem 0 2rem auto;
+}
+
+.welcome-info-container{
+    height: fit-content;
+
+    width: 90vw;
+
+
+    margin: 0 auto;
+
+    justify-content: center;
+}
+.welcome-info-container h1, h3, input, p{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.welcome-info-container p{
+    text-align: center;
+}
+
+.welcome-label{
+    display: block;
+    font-size: 20px;
+}
+
+.submit-btn{
+    background: linear-gradient(180deg, rgba(0, 92, 169, 0.94) 0%, #1488CA 100%);
+
+    border-radius: 30px;
+    border: none;
+    padding: 1rem;
+
+    width: 90vw;
+    height: 60px;
+
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.welcome-button-container{
+    margin: 0 auto;
+}

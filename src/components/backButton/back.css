@@ -1,0 +1,12 @@
+.back-btn{
+  padding: 0;
+}
+
+.back-btn button, .back-btn img {
+  height: 12.5vh;
+}
+
+.back-btn button {
+  background: none;
+  border: none;
+}

@@ -1,0 +1,32 @@
+.game-menu-container {
+    width: 100vw; height: 100vh;
+}
+
+.gm-link-container {
+    margin: auto;
+    height: 65%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.quiz-btn, .game-btn, .fact-btn{
+    padding: 2rem 10rem;
+    display: flex;
+
+    margin: 2rem;
+}
+
+.game-btn {
+    background: linear-gradient(180deg, rgba(92, 169, 0, 0.94) 0%, rgba(106, 194, 0, 0.94) 100%);
+}
+
+.fact-btn{
+    background: linear-gradient(180deg, rgba(169, 0, 92, 0.94) 0%, rgba(215, 0, 104, 0.94) 100%);
+
+}
+

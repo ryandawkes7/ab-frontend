@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a5b5d83.chunk.css",
+    "main.js": "/static/js/main.8878427a.chunk.js",
+    "main.js.map": "/static/js/main.8878427a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b1a3b30e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b1a3b30e.js.map",
+    "static/js/2.1e3d280f.chunk.js": "/static/js/2.1e3d280f.chunk.js",
+    "static/js/2.1e3d280f.chunk.js.map": "/static/js/2.1e3d280f.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.98365a20614c754ce82db4aff9dedbfb.js": "/precache-manifest.98365a20614c754ce82db4aff9dedbfb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.3a5b5d83.chunk.css.map": "/static/css/main.3a5b5d83.chunk.css.map",
+    "static/js/2.1e3d280f.chunk.js.LICENSE.txt": "/static/js/2.1e3d280f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Verlag-XLightItalic.f2eaccae.svg",
+    "static/media/alfie.svg": "/static/media/alfie.0d7d59bf.svg",
+    "static/media/amelia.svg": "/static/media/amelia.435a543f.svg",
+    "static/media/hint-button.svg": "/static/media/hint-button.721a156d.svg",
+    "static/media/large-text.svg": "/static/media/large-text.35a6c2f9.svg",
+    "static/media/lavel-inactive-easy.svg": "/static/media/lavel-inactive-easy.beb37350.svg",
+    "static/media/lavel-inactive-medium.svg": "/static/media/lavel-inactive-medium.7aef2188.svg",
+    "static/media/left-close.svg": "/static/media/left-close.02de334e.svg",
+    "static/media/level-inactive-hard.svg": "/static/media/level-inactive-hard.9d1dcc85.svg",
+    "static/media/medium-text.svg": "/static/media/medium-text.f017f8b1.svg",
+    "static/media/plane-vector.svg": "/static/media/plane-vector.fd7373d4.svg",
+    "static/media/settings-icon.svg": "/static/media/settings-icon.2309f4ed.svg",
+    "static/media/small-text.svg": "/static/media/small-text.4d90c787.svg",
+    "static/media/user-icon.svg": "/static/media/user-icon.ffe009b7.svg",
+    "static/media/voiceover-icon.svg": "/static/media/voiceover-icon.177f90b9.svg",
+    "static/media/voulme-icon.svg": "/static/media/voulme-icon.ae9e6d3a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b1a3b30e.js",
+    "static/js/2.1e3d280f.chunk.js",
+    "static/css/main.3a5b5d83.chunk.css",
+    "static/js/main.8878427a.chunk.js"
+  ]
+}

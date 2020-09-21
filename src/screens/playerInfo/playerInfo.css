@@ -1,0 +1,61 @@
+.p-info-container {
+}
+
+.player-inner-container h2{
+    margin: 1rem;
+}
+
+.name-input-container {margin: 1rem;}
+
+.name-label { display: block; font-size: 20px; }
+
+.difficulty-container { margin: 1rem 0 2rem 0; }
+
+.diff-btn-container{
+    width: 90vw;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 2rem auto;
+}
+
+.diff-btn{
+    height: 100px;
+    width: 100px;
+
+    background: none;
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+
+    float: left;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.accessibility-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1rem;
+}
+
+.accessibility-btn {
+    background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
+    border: none; border-radius: 30px; color: white; text-decoration: none;
+
+    display: flex;
+    width: fit-content;
+
+    padding: 1rem 2rem;
+}
+
+.accessibility-btn h3{
+    margin: 1rem;
+}
+

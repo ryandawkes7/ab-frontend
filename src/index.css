@@ -1,0 +1,265 @@
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-Light.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-Light.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-Light.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-Light.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-Light.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-Light.svg#Verlag-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-BlackItalic.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-BlackItalic.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-BlackItalic.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-BlackItalic.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-BlackItalic.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-BlackItalic.svg#Verlag-BlackItalic') format('svg');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-Black.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-Black.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-Black.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-Black.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-Black.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-Black.svg#Verlag-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-BookItalic.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-BookItalic.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-BookItalic.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-BookItalic.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-BookItalic.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-BookItalic.svg#Verlag-BookItalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-BoldItalic.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-BoldItalic.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-BoldItalic.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-BoldItalic.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-BoldItalic.svg#Verlag-BoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-Bold.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-Bold.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-Bold.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-Bold.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-Bold.svg#Verlag-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-Book.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-Book.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-Book.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-Book.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-Book.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-Book.svg#Verlag-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-XLightItalic.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-XLightItalic.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-XLightItalic.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-XLightItalic.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-XLightItalic.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-XLightItalic.svg#Verlag-XLightItalic') format('svg');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-XLight.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-XLight.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-XLight.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-XLight.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-XLight.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-XLight.svg#Verlag-XLight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('../src/fonts/Verlag-EOT/Verlag-LightItalic.eot');
+  src: url('../src/fonts/Verlag-EOT/Verlag-LightItalic.eot?#iefix') format('embedded-opentype'),
+  url('../src/fonts/Verlag-WOFF2/Verlag-LightItalic.woff2') format('woff2'),
+  url('../src/fonts/Verlag-WOFF/Verlag-LightItalic.woff') format('woff'),
+  url('../src/fonts/Verlag-TTF/Verlag-LightItalic.ttf') format('truetype'),
+  url('../src/fonts/Verlag-SVG/Verlag-LightItalic.svg#Verlag-LightItalic') format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Verlag", sans-serif;
+}
+
+html{
+  font-size: 62.5%;	/* Default font size in browser is 16px.*/
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  margin: 0; padding: 0;
+}
+
+h1, h2 {
+ text-align: center;
+}
+
+h1{
+  font-size: 48px;
+  font-weight: 900;
+
+  line-height: 140%;
+
+  text-transform: uppercase;
+}
+
+h2{
+  font-size: 24px;
+  font-weight: bold;
+
+  line-height: 100%;
+
+  text-transform: uppercase;
+}
+
+h3{
+  font-size: 22px;
+  font-weight: 400;
+
+  line-height: 24px;
+}
+
+h4{
+  font-size: 20px;
+  font-weight: 300;
+
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+input{
+  width: 80vw;
+  height: fit-content;
+
+  padding: 2rem 5vw;
+  margin: 0.5rem auto;
+
+  font-size: 16px;
+
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.grid-container {
+  width: 100vw; height: 100vh;
+  position: fixed; display: flex; flex-direction: column;
+}
+
+.container {
+  width: 100vw; height: 100vh;
+  position: fixed;
+  display: flex; flex-direction: column;
+}
+
+/* Basic Button Design */
+.basic-btn{
+  display: flex;
+
+  width: fit-content;
+  height: fit-content;
+
+  padding: 2rem 3rem; margin: 0 auto;
+
+  background: linear-gradient(180deg, rgba(0, 92, 169, 0.94) 0%, #1488CA 100%);
+  border-radius: 50px;border: none;
+
+  text-decoration: none;
+}
+
+.basic-btn h3{
+  text-transform: capitalize; font-weight: bold; margin: auto;
+  color: white;
+}
+/* End of Basic Button Design*/
+
+
+.text-btn{
+  display: flex;
+
+  width: fit-content;
+  height: fit-content;
+
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+
+  text-decoration: none;
+
+  margin: 0 auto;
+}
+
+.text-btn h4{
+  color: black;
+}
+
+.next-button-container {
+  margin-left: auto;
+}
+
+.next-button {
+  padding: 0;
+
+  border: none; border-radius: 100px 0 0 0;
+  background: linear-gradient(180deg, #1488CA 0%, #005CA9 100%);
+  width: 130px; height: 75px;
+
+  display: flex;
+  align-items: center; justify-content: center;
+  text-decoration: none; color: white;
+}
+
+.inner-container {
+  height: 100%;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+
+  margin: 2rem 0;
+}

@@ -1,0 +1,28 @@
+.ready-container {
+    display: flex;
+}
+.ready-inner-container h2{
+    margin-bottom: 2rem;
+}
+.ready-inner-container h3 {
+    margin: 2rem;
+}
+.ready-inner-container img {
+    margin: 4rem auto 4rem 0;
+}
+
+.start-adventure {
+    margin: 2rem; padding: 0 2rem;
+}
+
+.terms-btn {
+    margin-top: 2rem;
+}
+
+.locked {
+    display: flex; flex-direction: column;
+    width: 100%; height: 100vh;
+    border: 1px solid red;
+    justify-content: center;align-items: center;
+    margin: auto;
+}
