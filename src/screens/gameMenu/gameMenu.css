@@ -1,17 +1,37 @@
-.game-menu-container {
-    width: 100vw; height: 100vh;
+/* User Statistics Header Styling */
+
+.stat-header-container {
+    border: 1px solid red;
+
+    height: 164px;
+}
+.stat-header-background {
+    position: fixed; z-index: -1;
 }
 
-.gm-link-container {
-    margin: auto;
-    height: 65%;
-
+.stat-header-inner-container {
     display: flex;
-    flex-direction: column;
-
+    justify-content: space-between;
+}
+.stat-header-inner-container img {
+    border: 1px solid purple;
+}
+.user-stats-container {
+    display: flex; flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid orange;
+}
 
+.xp-bar {
+    width: 100px; height: 10px;
+    background-color: white; border-radius: 10px;
+}
+
+/* End of User Statistics Header Styling */
+
+/* Body Container Section */
+.game-menu-container {
 }
 
 .quiz-btn, .game-btn, .fact-btn{
@@ -30,3 +50,7 @@
 
 }
 
+.map-section {
+    width: 100vw; height: 100%;
+    border: 5px solid green;
+}

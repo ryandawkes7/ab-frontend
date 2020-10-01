@@ -249,11 +249,14 @@ input{
 
   border: none; border-radius: 100px 0 0 0;
   background: linear-gradient(180deg, #1488CA 0%, #005CA9 100%);
-  width: 130px; height: 75px;
+  width: 130px; height: 10vh;
 
   display: flex;
   align-items: center; justify-content: center;
   text-decoration: none; color: white;
+}
+.next-button h3 {
+  margin: auto;
 }
 
 .inner-container {

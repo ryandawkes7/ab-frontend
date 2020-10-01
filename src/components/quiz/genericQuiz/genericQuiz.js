@@ -100,12 +100,10 @@ class Results extends Component {
 class QuizFormat extends Component {
     constructor (props) {
         super(props);
-
         this.state = {
             score: 0,
             current: 1
         };
-
         this.handleChange = this.handleChange.bind(this);
     }
 

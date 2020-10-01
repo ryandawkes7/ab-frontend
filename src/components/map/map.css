@@ -1,0 +1,62 @@
+.google-map {
+    width: 100vw;
+    height: 100vh;
+    position: fixed; left: 0; top: 0;
+}
+
+.pin {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    color: blue;
+}
+
+.pin-icon {
+    font-size: 4rem;
+}
+
+.pin-text {
+    font-size: 1.3em;
+}
+
+@media screen and (min-width: 799px) {
+    .google-map {
+        height: 80vh;
+    }
+
+    .map-h2 {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    .pin {
+        width: 15vw;
+    }
+
+    .pin-icon {
+        font-size: 10vw;
+    }
+}
+
+.map-info-window {
+    display: flex;
+}
+.map-button {
+}
+.map-basic-btn {
+
+    width: fit-content; height: fit-content;
+    padding: 2rem 3rem; margin: 0 auto;
+
+    background: linear-gradient(180deg, rgba(0, 92, 169, 0.94) 0%, #1488CA 100%);
+    border-radius: 50px;border: none;
+    text-decoration: none; color: white;
+}
+.map-quiz-btn {
+    padding: 2rem 3rem;
+    display: flex;
+
+    margin: 2rem;
+}
+
+

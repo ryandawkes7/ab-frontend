@@ -1,0 +1,19 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "type": "Quiz",
+      "coordinates": [51.523122, -2.557680]
+    },
+    {
+      "id": 2,
+      "type": "Quiz",
+      "coordinates": [51.523115, -2.578440]
+    },
+    {
+      "id": 3,
+      "type": "Quiz",
+      "coordinates": [51.523531, -2.578289]
+    }
+]
+}
