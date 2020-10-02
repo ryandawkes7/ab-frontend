@@ -15,6 +15,7 @@ import GenericQuiz from "./components/quiz/genericQuiz/genericQuiz";
 import Fact from "./components/fact/fact";
 import Map from "./components/map/map";
 import MapTest from "./components/mapTest/mapTest";
+import MapTestTwo from "./components/mapTestTwo/mapTest";
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
                               </div>
                               <div>
                                   <Route exact path="/test-map" component={MapTest} />
+                              </div>
+                              <div>
+                                  <Route exact path="/test-map2" component={MapTestTwo} />
                               </div>
                           </div>
                       </Switch>

@@ -27,6 +27,23 @@ import FactIcon from './assets/fact-icon.svg';
 //     </div>
 // )
 
+const getLocation = () => {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getCoordinates);
+        alert("Geolocation: " + this.state.latitude + this.state.longitude );
+    } else {
+        alert("Geolocation not supported by this browser")
+    }
+}
+
+
+const getCoordinates = (position) => {
+    this.setState({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+    })
+}
+
 // Impromptu JSON data for locations
 const Interaction = {
     locations: [

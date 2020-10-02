@@ -12,9 +12,6 @@ class MapTest extends Component {
         this.getCoordinates = this.getCoordinates.bind(this);
     }
 
-    getPermissions = () => {
-    }
-
     getLocation() {
         if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.getCoordinates, this.handleLocationError);
@@ -30,6 +27,7 @@ class MapTest extends Component {
         })
     }
 
+    //Error Handling
     handleLocationError(error) {
         switch(error.code){
             case error.PERMISSION_DENIED:
