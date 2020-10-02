@@ -1,106 +1,67 @@
-import React, {Component} from 'react';
-import { Map, GoogleApiWrapper } from "google-maps-react";
-
-const mapStyles = {
-    width: '100%',
-    height: '100%',
-};
-
-// Impromptu JSON data for locations
-const Interaction = {
-    locations: [
-        {
-            "id": 1,
-            "type": "Quiz",
-            "coordinates": [51.523147, -2.577680],
-            "description": "Test Me!"
-        },
-        {
-            "id": 2,
-            "type": "Fact",
-            "coordinates": [51.523160, -2.578440],
-            "description": "Learn!"
-        },
-        {
-            "id": 3,
-            "type": "Game",
-            "coordinates": [51.523531, -2.578289],
-            "description": "Let's Play!"
-        }
-    ]
-}
+import React, { Component } from 'react'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+import MapComponent from './mapComponent'
 
 class MapTest extends Component {
-
-    constructor (props) {
-        super(props);
+    constructor(props){
+        super(props)
         this.state = {
-            latitude: null,
-            longitude: null,
-            userAddress: null
-        };
-        this.getLocation = this.getLocation.bind(this);
-        this.getCoordinates = this.getCoordinates.bind(this);
+            currentLatLng: {
+                lat: 0,
+                lng: 0
+            },
+            isMarkerShown: false
+        }
     }
 
-    getLocation() {
-        if(navigator.geolocation) {
-            navigator.geolocation.watchPosition(this.getCoordinates, this.handleLocationError);
-            navigator.geolocation.getCurrentPosition(function (position) {
-                console.log(position)
-            })
+    componentWillUpdate(){
+        this.getGeoLocation()
+    }
+
+    componentDidMount() {
+        this.delayedShowMarker()
+    }
+
+    delayedShowMarker = () => {
+        setTimeout(() => {
+            this.getGeoLocation()
+            this.setState({ isMarkerShown: true })
+        }, 5000)
+    }
+
+    handleMarkerClick = () => {
+        this.setState({ isMarkerShown: false })
+        this.delayedShowMarker()
+    }
+
+    getGeoLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    console.log(position.coords);
+                    this.setState(prevState => ({
+                        currentLatLng: {
+                            ...prevState.currentLatLng,
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        }
+                    }))
+                }
+            )
         } else {
-            alert("Geolocation not supported by this browser");
+            console.log("error")
         }
     }
 
-    getCoordinates(position) {
-        const latlon = position.coords.latitude + ", " + position.coords.longitude
-        this.setState({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-        })
-    }
-
-    //Error Handling
-    handleLocationError(error) {
-        switch(error.code){
-            case error.PERMISSION_DENIED:
-                alert("Denied request for Geolocation")
-                break;
-            case error.POSITION_UNAVAILABLE:
-                alert("Location info is unavailable")
-                break;
-            case error.TIMEOUT:
-                alert("Location request has timed out")
-                break;
-            case error.UNKNOWN_ERR:
-                alert("An unknown error occurred")
-                break;
-            default:
-                alert("An unknown error occurred")
-        }
-    }
-
-    render () {
+    render() {
         return (
-            <div>
-                <button onClick={this.getLocation}>Location</button>
-                <h2>Lon: { this.state.longitude }, Lat: {this.state.latitude}</h2>
-                <Map
-                    google={this.props.google}
-                    zoom={14}
-                    style={mapStyles}
-                    initialCenter={{
-                        lat: this.state.latitude,
-                        lng: this.state.longitude
-                    }}
-                />
-            </div>
-        );
+            <MapComponent
+                isMarkerShown={this.state.isMarkerShown}
+                onMarkerClick={this.handleMarkerClick}
+                currentLocation={this.state.currentLatLng}
+            />
+        )
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: 'AIzaSyC-AmFN95fVGvNGJrQULEoHAX-1BYkk7xg'
-})(MapTest);
+export default MapTest;
