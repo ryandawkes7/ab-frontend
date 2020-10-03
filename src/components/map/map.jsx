@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import './map.css';
 import { Link } from 'react-router-dom';
 
-import GoogleMapReact from 'google-map-react';
+import { usePosition } from 'use-position';
+
 import {
     GoogleMap,
     withScriptjs,
@@ -14,35 +15,6 @@ import {
 import GameIcon from './assets/game-icon.svg';
 import QuizIcon from './assets/quiz-icon.svg';
 import FactIcon from './assets/fact-icon.svg';
-
-// const LocationPin = ({ text }) => (
-//     <div className="pin">
-//         <Icon icon={locationIcon} className="pin-icon"/>
-//         <p className="pin-text">{text}</p>
-//     </div>
-// )
-//
-// const Map = ({ location, zoomLevel }) => (
-//     <div className="map">
-//     </div>
-// )
-
-const getLocation = () => {
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getCoordinates);
-        alert("Geolocation: " + this.state.latitude + this.state.longitude );
-    } else {
-        alert("Geolocation not supported by this browser")
-    }
-}
-
-
-const getCoordinates = (position) => {
-    this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-    })
-}
 
 // Impromptu JSON data for locations
 const Interaction = {
@@ -72,12 +44,21 @@ function UnwrappedMap() {
 
     const [selectedInteraction, setSelectedInteraction] = useState(null);
 
+    const watch = true;
+    const { latitude, longitude } =
+        usePosition(watch, {enableHighAccuracy: true});
+
     return (
         // Creates map
         <GoogleMap
             defaultZoom={20}
-            defaultCenter={{lat: 51.523214, lng: -2.578499}}
+            defaultCenter={{lat: latitude, lng: longitude}}
+            center={{ lat: latitude, lng: longitude }}
         >
+            {/* User Location Marker*/}
+            <Marker
+                position={{ lat: latitude, lng: longitude }}
+            />
             {/* Maps JSON date to Function */}
             {Interaction.locations.map((interactions) => (
                 <Marker
@@ -128,44 +109,48 @@ function UnwrappedMap() {
 
                 // Function for if the button pressed is a FACT button
                 selectedInteraction === Interaction.locations[1] && (
-                    <InfoWindow
-                        position={{
-                            lat: selectedInteraction.coordinates[0] + 0.000065,
-                            lng: selectedInteraction.coordinates[1]
-                        }}
-                        onCloseClick={() => {
-                            setSelectedInteraction(null);
-                        }}
-                        className="map-info-window"
-                    >
-                        <div className="map-button">
-                            <h2>{ selectedInteraction.type }</h2>
-                            <Link to="/fact" className="basic-btn fact-btn">
-                                <h3>{ selectedInteraction.description }</h3>
-                            </Link>
-                        </div>
-                    </InfoWindow>
+                    <div>
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                            className="map-info-window"
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
                 ) ||
 
                 // Function for if the button pressed is a GAME button
                 selectedInteraction === Interaction.locations[2] && (
-                    <InfoWindow
-                        position={{
-                            lat: selectedInteraction.coordinates[0] + 0.000065,
-                            lng: selectedInteraction.coordinates[1]
-                        }}
-                        onCloseClick={() => {
-                            setSelectedInteraction(null);
-                        }}
-                        className="map-info-window"
-                    >
-                        <div className="map-button">
-                            <h2>{ selectedInteraction.type }</h2>
-                            <Link to="/game" className="basic-btn game-btn">
-                                <h3>{ selectedInteraction.description }</h3>
-                            </Link>
-                        </div>
-                    </InfoWindow>
+                    <div>
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                            className="map-info-window"
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/game" className="basic-btn game-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
                 )
 
             }
