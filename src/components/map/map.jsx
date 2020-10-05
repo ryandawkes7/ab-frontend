@@ -227,13 +227,55 @@ const Interaction = {
         Quiz: [
             {
                 id: 1,
-                coordinates: [51.523406, -2.578008],
+                coordinates: [51.523176, -2.578209],
                 description: "Test Me!",
                 complete: false
             },
             {
                 id: 2,
-                coordinates: [51.523620, -2.578354],
+                coordinates: [51.523265, -2.577975],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 3,
+                coordinates: [51.523365, -2.578005],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 4,
+                coordinates: [51.523565, -2.578309],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 5,
+                coordinates: [51.523395, -2.578309],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 6,
+                coordinates: [51.523265, -2.578649],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 7,
+                coordinates: [51.523176, -2.578409],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 8,
+                coordinates: [51.523076, -2.578259],
+                description: "Test Me!",
+                complete: false
+            },
+            {
+                id: 9,
+                coordinates: [51.522776, -2.579259],
                 description: "Test Me!",
                 complete: false
             },
@@ -241,19 +283,67 @@ const Interaction = {
 
         Fact: [
             {
-                "id": 2,
-                "coordinates": [51.523323, -2.577915],
-                "description": "Learn!",
-                "complete": false
-            }
+                id: 1,
+                coordinates: [51.523226, -2.578289],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 2,
+                coordinates: [51.523265, -2.577975],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 3,
+                coordinates: [51.523405, -2.578095],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 4,
+                coordinates: [51.523485, -2.578159],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 5,
+                coordinates: [51.523425, -2.578509],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 6,
+                coordinates: [51.523315, -2.578549],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 7,
+                coordinates: [51.523116, -2.578329],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 8,
+                coordinates: [51.523066, -2.578419],
+                description: "Learn!",
+                complete: false
+            },
+            {
+                id: 9,
+                coordinates: [51.522756, -2.579059],
+                description: "Learn!",
+                complete: false
+            },
         ],
 
         Game: [
             {
-                "id": 1,
-                "coordinates": [51.523213, -2.578062],
-                "description": "Let's Play!",
-                "complete": false
+                id: 1,
+                coordinates: [51.523213, -2.578062],
+                description: "Let's Play!",
+                complete: false
             }
         ]
     },
@@ -271,8 +361,8 @@ function UnwrappedMap() {
     return (
         // Creates map
         <GoogleMap
-            defaultZoom={20}
-            defaultCenter={{lat: 51.523160, lng: -2.578440}}
+            defaultZoom={21}
+            defaultCenter={{lat: 51.523176, lng: -2.578209}}
             // center={{ lat: latitude, lng: longitude }}
             options={{
                 fullscreenControl: false,
@@ -372,7 +462,7 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-one" className="basic-btn quiz-btn">
+                                <Link to="/section-one-quiz" className="basic-btn quiz-btn">
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -392,17 +482,14 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-two" className="basic-btn quiz-btn">
+                                <Link to="/section-two-quiz" className="basic-btn quiz-btn">
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
                         </InfoWindow>
                     </div>
-                )
-            }
-
-            {
-                selectedInteraction === Interaction.locations.Fact[0] && (
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[2] && (
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
@@ -415,7 +502,310 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-three-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[3] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={ {
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            } }
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-four-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[4] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={ {
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            } }
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-five-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[5] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={ {
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            } }
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-six-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[6] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={ {
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            } }
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-seven-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[7] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={ {
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            } }
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-eight-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Quiz[8] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={ {
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            } }
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-nine-quiz" className="basic-btn quiz-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                )
+            }
+
+            {
+                selectedInteraction == Interaction.locations.Fact[0] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
                                 <Link to="/section-one-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[1] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={ () => {
+                                setSelectedInteraction(null);
+                            } }
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-two-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[2] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-three-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[3] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-four-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[4] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-five-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[5] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-six-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[6] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-seven-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[7] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-eight-fact" className="basic-btn fact-btn">
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                ) ||
+                selectedInteraction == Interaction.locations.Fact[8] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link to="/section-nine-fact" className="basic-btn fact-btn">
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>

@@ -4,49 +4,95 @@ import QuizFormat from "../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'What is my name?',
+        text: 'How fast could the Boxkite go?',
         choices:[
             {
                 id: 'a',
-                text: 'Ryan'
+                text: 'Up to 30 miles per hour'
             },
             {
                 id: 'b',
-                text: 'Michael'
+                text: 'Up to 40 miles per hour'
             },
             {
                 id: 'c',
-                text: 'James'
+                text: 'Up to 50 miles per hour'
             },
             {
                 id: 'd',
-                text: 'Reece'
+                text: 'Up to 60 miles per hour'
+            }
+        ],
+        correct: 'c'
+    },
+    {
+        id: 2,
+        text: 'What were early planes made from?',
+        choices:[
+            {
+                id: 'a',
+                text: 'A wooden frame with a fabric covering'
+            },
+            {
+                id: 'b',
+                text: 'A metal frame with a fabric covering'
+            },
+            {
+                id: 'c',
+                text: 'A plastic frame with a fabric covering'
+            },
+            {
+                id: 'd',
+                text: 'A wooden frame with a plastic covering'
             }
         ],
         correct: 'a'
     },
     {
-        id: 2,
-        text: 'What is this museum called?',
+        id: 3,
+        text: 'What made the Boxkite more successful than the Zodiac?',
         choices:[
             {
                 id: 'a',
-                text: 'Bristol Museum'
+                text: 'Larger size so it could carry more people'
             },
             {
                 id: 'b',
-                text: 'Bristol Aerospace Museum'
+                text: 'More comfortable seating'
             },
             {
                 id: 'c',
-                text: 'Aviation Museum'
+                text: 'Kites were attached to the top of the plane'
             },
             {
                 id: 'd',
-                text: 'Bristol'
+                text: '20% lighter structure'
             }
         ],
-        correct: 'b'
+        correct: 'd'
+    },
+    {
+        id: 4,
+        text: 'What was the fabric covering known as?',
+        choices:[
+            {
+                id: 'a',
+                text: 'French Blanket'
+            },
+            {
+                id: 'b',
+                text: 'Australian Throw'
+            },
+            {
+                id: 'c',
+                text: 'Egyptian Cloth'
+            },
+            {
+                id: 'd',
+                text: 'British Quilt'
+            }
+        ],
+        correct: 'd'
     },
 ]
 
