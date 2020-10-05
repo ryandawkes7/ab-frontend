@@ -1,0 +1,20 @@
+.fact-container {
+    width: 100vw; display: flex; flex-direction: column;
+    align-content: space-between;
+}
+
+.fact-container h2{
+    margin-bottom: 4rem;
+}
+
+.fact-inner-container {
+
+}
+
+.fact-image {
+    margin: 1rem;
+}
+
+.fact-description {
+    margin: 1rem 2rem;
+}

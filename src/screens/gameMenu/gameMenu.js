@@ -8,8 +8,6 @@ import ProfilePic from './assets/user-icon.svg';
 import SettingsIcon from './assets/settings-icon.svg';
 import MapOverlay from './assets/MainBuidling.png';
 import QuestionIcon from './assets/questionIcon.png';
-import MapTestTwo from "../../components/mapTestTwo/mapTest";
-import FinalMap from "../../components/mapTestTwo/mapTest";
 
 class GameMenu extends Component {
 

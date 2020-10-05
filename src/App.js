@@ -11,11 +11,10 @@ import Character from "./screens/character/character";
 import Ready from "./screens/ready/ready";
 import TermsConditions from "./screens/termsConditions/termsConditions";
 import GameMenu from "./screens/gameMenu/gameMenu";
-import GenericQuiz from "./components/quiz/genericQuiz/genericQuiz";
-import Fact from "./components/fact/fact";
-import Map from "./components/map/map";
-import MapTest from "./components/mapTest/mapTest";
-import MapTestTwo from "./components/mapTestTwo/mapTest";
+import FactFormat from "./components/fact/factFormat";
+import SectionOneQuiz from "./components/quiz/quizzes/sectionOneQuiz";
+import SectionTwoQuiz from "./components/quiz/quizzes/sectionTwoQuiz";
+import SectionOneFact from "./components/fact/facts/sectionOneFact";
 
 function App() {
   return (
@@ -46,17 +45,22 @@ function App() {
                               <div>
                                   <Route path="/game-menu" component={GameMenu}/>
                               </div>
+                              {/* Quiz Pages */}
                               <div>
-                                  <Route path="/quiz" component={GenericQuiz} />
+                                  <Route path="/section-one" component={SectionOneQuiz} />
                               </div>
                               <div>
-                                  <Route path="/fact" component={Fact} />
+                                  <Route path="/section-two" component={SectionTwoQuiz} />
                               </div>
+                              {/* End of Quiz Pages */}
+                              {/* Fact Pages */}
                               <div>
-                                  <Route exact path="/test-map" component={MapTest} />
+                                  <Route path="/section-one-fact" component={SectionOneFact} />
                               </div>
+                              {/* End of Fact Pages */}
+
                               <div>
-                                  <Route exact path="/test-map2" component={MapTestTwo} />
+                                  <Route path="/fact" component={FactFormat} />
                               </div>
                           </div>
                       </Switch>

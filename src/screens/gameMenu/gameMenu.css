@@ -41,13 +41,15 @@
     margin: 2rem;
 }
 
+.quiz-btn {
+    background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
+}
 .game-btn {
     background: linear-gradient(180deg, rgba(92, 169, 0, 0.94) 0%, rgba(106, 194, 0, 0.94) 100%);
 }
 
 .fact-btn{
     background: linear-gradient(180deg, rgba(169, 0, 92, 0.94) 0%, rgba(215, 0, 104, 0.94) 100%);
-
 }
 
 .map-section {
