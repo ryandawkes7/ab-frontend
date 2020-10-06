@@ -217,67 +217,69 @@ import {
 } from 'react-google-maps';
 
 import GameIcon from './assets/game-icon.svg';
-import QuizIcon from './assets/quiz-icon.svg';
-import FactIcon from './assets/fact-icon.svg';
+import QuizIncomplete from './assets/quiz-icon.svg';
+import QuizComplete from './assets/quiz-complete.svg';
+import FactIncomplete from './assets/fact-icon.svg';
+import FactComplete from './assets/fact-complete.svg';
 import MapOverlay from './assets/main-building.svg';
 
 // Impromptu JSON data for locations
-const Interaction = {
+export const Interaction = {
     locations: {
         Quiz: [
             {
                 id: 1,
                 coordinates: [51.523176, -2.578209],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 2,
-                coordinates: [51.523265, -2.577975],
+                coordinates: [51.523315, -2.578260],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 3,
                 coordinates: [51.523365, -2.578005],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 4,
                 coordinates: [51.523565, -2.578309],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 5,
                 coordinates: [51.523395, -2.578309],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 6,
                 coordinates: [51.523265, -2.578649],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 7,
                 coordinates: [51.523176, -2.578409],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 8,
                 coordinates: [51.523076, -2.578259],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
             {
                 id: 9,
                 coordinates: [51.522776, -2.579259],
                 description: "Test Me!",
-                complete: false
+                complete: false,
             },
         ],
 
@@ -398,10 +400,18 @@ function UnwrappedMap() {
                                 lng: interaction.coordinates[1]
                             }}
                             onClick={() => {
-                                setSelectedInteraction(interaction)
-                                console.log(selectedInteraction)
+                                interaction.complete === false ?
+                                    setSelectedInteraction(interaction) :
+                                    console.log("N/A")
                             }}
-                            icon={QuizIcon}
+                            icon={
+                                !interaction.complete && (
+                                    QuizIncomplete
+                                ) ||
+                                interaction.complete && (
+                                    QuizComplete
+                                )
+                            }
                         />
                     </div>
                 ))
@@ -420,7 +430,14 @@ function UnwrappedMap() {
                                 setSelectedInteraction(interaction)
                                 console.log(selectedInteraction)
                             }}
-                            icon={FactIcon}
+                            icon={
+                                !interaction.complete && (
+                                    FactIncomplete
+                                ) ||
+                                interaction.complete && (
+                                    FactComplete
+                                )
+                            }
                         />
                     </div>
                 ))
@@ -453,7 +470,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -462,18 +479,22 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-one-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-one-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
                         </InfoWindow>
                     </div>
                 ) ||
-                selectedInteraction == Interaction.locations.Quiz[1] && (
+                selectedInteraction === Interaction.locations.Quiz[1] && (
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -482,7 +503,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-two-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-two-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -493,7 +518,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -502,7 +527,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-three-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-three-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -513,7 +542,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -522,7 +551,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-four-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-four-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -533,7 +566,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -542,7 +575,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-five-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-five-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -553,7 +590,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -562,7 +599,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-six-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-six-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -573,7 +614,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -582,7 +623,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-seven-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-seven-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -593,7 +638,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -602,7 +647,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-eight-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-eight-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -613,7 +662,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             } }
                             onCloseClick={ () => {
@@ -622,7 +671,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-nine-quiz" className="basic-btn quiz-btn">
+                                <Link
+                                    to="/section-nine-quiz"
+                                    className="basic-btn quiz-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -636,7 +689,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -645,7 +698,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-one-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-one-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -656,7 +713,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={ () => {
@@ -665,7 +722,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-two-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-two-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -676,7 +737,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -685,7 +746,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-three-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-three-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -696,7 +761,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -705,7 +770,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-four-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-four-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -716,7 +785,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -725,7 +794,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-five-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-five-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -736,7 +809,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -745,7 +818,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-six-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-six-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -756,7 +833,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -765,7 +842,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-seven-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-seven-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -776,7 +857,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -785,7 +866,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-eight-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-eight-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>
@@ -796,7 +881,7 @@ function UnwrappedMap() {
                     <div className="map-info-window">
                         <InfoWindow
                             position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000065,
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
                                 lng: selectedInteraction.coordinates[1]
                             }}
                             onCloseClick={() => {
@@ -805,7 +890,11 @@ function UnwrappedMap() {
                         >
                             <div className="map-button">
                                 <h2>{ selectedInteraction.type }</h2>
-                                <Link to="/section-nine-fact" className="basic-btn fact-btn">
+                                <Link
+                                    to="/section-nine-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
                                     <h3>{ selectedInteraction.description }</h3>
                                 </Link>
                             </div>

@@ -73,6 +73,7 @@ class Results extends Component {
         var message = 'You passed the quiz!';
         var link = <Link to="/game-menu">Back to Menu</Link>
 
+
         return(
             <div className="results-absolute">
                 <div className="results-container">
@@ -86,7 +87,10 @@ class Results extends Component {
                     </div>
 
                     <div className="results-cont results-link">
-                        <Link to="/game-menu" className="quiz-return-btn">
+                        <Link
+                            to="/game-menu"
+                            className="quiz-return-btn"
+                        >
                             <h4>OK</h4>
                         </Link>
                     </div>
