@@ -1,0 +1,41 @@
+.guide-container {
+
+}
+.inner-guide-container {
+    max-width: 75vw;height: fit-content;
+    border-radius: 50px; margin: 3rem 0; padding: 3rem;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 0 rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 0 rgba(0, 0, 0, 0.29);
+}
+.inner-guide-container h4{
+    text-transform: initial;
+}
+
+.guide-subtitle {
+    margin: 1rem 0 2rem;
+}
+
+.guide-interaction-container {
+    display: flex;
+    margin: 2rem 1rem 1rem;
+}
+.guide-interaction-container div{
+    width: 20rem; height: 7rem;
+    margin-left: 3rem;
+    text-align: center;
+}
+
+.guide-image-container{
+    display: flex; justify-content: center; align-items: center;
+}
+.guide-image-container img {
+}
+
+.guide-calibrate-img {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 0 rgba(0, 0, 0, 0.29);
+    background: none; border-radius: 100px;
+}

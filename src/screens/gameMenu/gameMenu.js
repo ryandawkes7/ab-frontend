@@ -1,36 +1,59 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import './gameMenu.css';
 import MapSection from '../../components/map/map.jsx'
+import { Link } from 'react-router-dom'
 
 import HeaderImg from './assets/char-stats-bg.svg';
 import ProfilePic from './assets/user-icon.svg';
 import SettingsIcon from './assets/settings-icon.svg';
-import MapOverlay from './assets/MainBuidling.png';
-import QuestionIcon from './assets/questionIcon.png';
+import GuideBtn from './assets/guide-button.svg';
+import CalibrateBtn from './assets/cabibrate-icon.svg'
+import CloseIcon from './assets/16/close-icon.svg';
+
+class Popup extends Component {
+    handleClick = () => {
+        this.props.toggle();
+    }
+
+    render () {
+        return(
+            <div className="guide-popup-container">
+                <div className="guide-inner-container">
+                    <button onClick={this.handleClick}>
+                        <img src={CloseIcon} alt=""/>
+                    </button>
+                    <h2>How To Play Guide?</h2>
+                    <div className="guide-popup-btn-container">
+                        <Link
+                            className="guide-popup-btn guide-no-btn"
+                            onClick={this.handleClick}
+                        >
+                            <h3>No</h3>
+                        </Link>
+                        <Link
+                            className="guide-popup-btn"
+                            to="/user-guide"
+                        >
+                            <h3>Yes</h3>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        )
+
+    }
+}
 
 class GameMenu extends Component {
 
-    componentDidMount () {
-        // Gets user's current position upon loading
-        // navigator.geolocation.getCurrentPosition(
-        //     function(position) {
-        //         console.log(position)
-        //     },
-        //     function (error) {
-        //         console.error("Error Code: " + error.code + " - " + error.message);
-        //     }
-        // );
-        //
-        // // Gets user's position when they are moving
-        // if(navigator.geolocation) {
-        //     navigator.geolocation.watchPosition(
-        //         function(position) {
-        //             console.log("Lat is: ", position.coords.latitude);
-        //             console.log("Lon is: ", position.coords.longitude);
-        //         }
-        //     )
-        // }
+    state = {
+        popupOpen: false
+    }
+
+    togglePopup = () => {
+        this.setState({
+            popupOpen: !this.state.popupOpen
+        })
     }
 
     render () {
@@ -48,7 +71,7 @@ class GameMenu extends Component {
 
                         {/* XP & Score Section */}
                         <div className="user-stats-container">
-                            <h3>5 Points</h3>
+                            <h3>0</h3>
                             <div className="xp-bar" />
                         </div>
                         {/* End of XP & Score Section */}
@@ -63,16 +86,24 @@ class GameMenu extends Component {
                 <MapSection
                     className="map-section"
                 />
+
+                <div className="map-btn-container">
+                    <div className="map-btn-inner-container">
+                        <button onClick={this.togglePopup}>
+                            <img src={GuideBtn} alt=""/>
+                        </button>
+                        <Link className="basic-btn">
+                            <h3>Finished?</h3>
+                        </Link>
+                        <button>
+                            <img src={CalibrateBtn} alt=""/>
+                        </button>
+                    </div>
+                </div>
+                {this.state.popupOpen ? <Popup toggle={this.togglePopup} /> : null}
             </div>
         );
     }
-}
-
-
-const location = {
-    lat: 51.523,
-    lng: -2.578499,
-    text: "Aerospace Museum"
 }
 
 export default GameMenu;

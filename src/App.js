@@ -30,6 +30,7 @@ import SectionSixFact from "./components/fact/facts/sectionSixFact";
 import SectionSevenFact from "./components/fact/facts/sectionSevenFact";
 import SectionNineFact from "./components/fact/facts/sectionNineFact";
 import SectionEightFact from "./components/fact/facts/sectionEightFact";
+import GameGuide from "./screens/gameGuide/gameGuide";
 
 function App() {
   return (
@@ -121,6 +122,9 @@ function App() {
 
                               <div>
                                   <Route path="/fact" component={FactFormat} />
+                              </div>
+                              <div>
+                                  <Route path="/user-guide" component={GameGuide} />
                               </div>
                           </div>
                       </Switch>

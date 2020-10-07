@@ -92,7 +92,7 @@ const Questions = [
                 text: 'British Quilt'
             }
         ],
-        correct: 'd'
+        correct: 'c'
     },
 ]
 
@@ -100,7 +100,9 @@ class SectionOneQuiz extends Component {
     render () {
         return (
             <div>
-                <QuizFormat questions={Questions} />
+                <QuizFormat
+                    questions={Questions}
+                />
             </div>
         );
     }

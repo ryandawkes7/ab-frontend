@@ -54,5 +54,63 @@
 
 .map-section {
     width: 100vw; height: 100%;
-    border: 5px solid green;
+}
+
+
+
+/* Map Footer Buttons */
+.map-btn-container {
+    position: fixed;
+    right: 0; left: 0; bottom: 2rem;
+}
+.map-btn-inner-container {
+    position: relative; display: flex;
+    justify-content: center; align-items: center;
+    margin: 0 5vw;
+}
+.map-btn-inner-container button {
+    display: flex;
+    background: none; border: none; border-radius: 200px;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 0 rgba(0, 0, 0, 0.29);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 0 rgba(0, 0, 0, 0.29);
+    outline: none;
+}
+/* End of Map Footer Buttons */
+
+
+
+/* Guide Popup */
+.guide-popup-container {
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.79);
+    position: absolute;
+    display: flex; justify-content: center; align-items: center;
+}
+.guide-inner-container {
+    position: relative; display: flex; flex-direction: column;
+    background: white; border-radius: 20px;
+}
+.guide-inner-container h2{
+    margin: 2rem;
+}
+.guide-inner-container button{
+    background: none; border: none;
+    display: flex; margin: 2rem;
+    width: fit-content; height: fit-content;
+    outline: none;
+}
+.guide-popup-btn-container {
+    display: flex; margin: 2rem 4rem 4rem;
+}
+.guide-popup-btn{
+    display: flex; margin: 2rem; width: fit-content;
+
+    background: #005CA9; border-radius: 100px;
+    color: white; text-decoration: none;
+}
+.guide-popup-btn h3{
+    margin: auto; padding: 1.5rem 4rem;
+}
+.guide-no-btn {
+    background: #B71918;
 }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import './quizStructure.css';
 import { Link } from 'react-router-dom';
 
@@ -10,12 +10,24 @@ import UserIcon from '../assets/user-icon.svg';
 class Question extends Component {
     constructor(props){
         super(props);
+        this.state = {
+
+        }
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(e) {
         e.preventDefault(); //Prevents full refresh
         this.props.onChoiceChange(e.target.value);
+    }
+
+    guidePopup() {
+        return(
+            <div className="guide-popup-container">
+
+
+            </div>
+        )
     }
 
     render(){
@@ -59,17 +71,30 @@ class Scorebox extends Component {
         return(
             <div className="well">
                 Question {this.props.current} out of {this.props.total}
-                <span className="pull-right"><strong>Score: {this.props.score}</strong></span>
+                <span className="pull-right">
+                    <strong>Score: {this.props.score}</strong>
+                </span>
             </div>
         )
     }
 }
 
 class Results extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            overallScore: 0
+        }
+    }
+
+    overallScore = () => {
+        this.setState((prevState, props) => ({
+            overallScore: prevState.overallScore + props.score
+        }))
+    }
+
+
     render(){
-        const score = this.props.score;
-        const total = this.props.total;
-        const percent = score/total*100;
         var message = 'You passed the quiz!';
         var link = <Link to="/game-menu">Back to Menu</Link>
 
@@ -82,7 +107,8 @@ class Results extends Component {
                     </div>
 
                     <div className="results-cont results-text">
-                        <h3>+{score} points!</h3>
+                        <h3>+{this.props.score} points!</h3>
+                        <button onClick={this.overallScore}>Update Score</button>
                         <h4>Congratulations!</h4>
                     </div>
 
@@ -90,6 +116,7 @@ class Results extends Component {
                         <Link
                             to="/game-menu"
                             className="quiz-return-btn"
+                            onClick={this.overallScore}
                         >
                             <h4>OK</h4>
                         </Link>
@@ -107,7 +134,8 @@ export default class QuizFormat extends Component {
         super(props);
         this.state = {
             score: 0,
-            current: 1
+            current: 1,
+            overallScore: 0
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -115,7 +143,7 @@ export default class QuizFormat extends Component {
     handleChange(choice){
         this.setState((prevState, props) => ({
             current: prevState.current + 1,
-            score: choice === props.questions[prevState.current - 1].correct ? prevState.score + 1 : prevState.score
+            score: choice === props.questions[prevState.current - 1].correct ? prevState.score + 1 : prevState.score,
         }));
     }
 
@@ -126,11 +154,18 @@ export default class QuizFormat extends Component {
             <div className="quiz-container">
                 <Back id="backButton"/>
                 {this.state.current > questions.length &&
-                    <Results total={questions.length} score={this.state.score}/>
+                    <Results
+                        total={questions.length}
+                        score={this.state.overallScore + this.state.score}
+                    />
                 }
 
                 {this.state.current <= questions.length &&
-                    <Scorebox total={questions.length} current={this.state.current} score={this.state.score}/>
+                    <Scorebox
+                        total={questions.length}
+                        current={this.state.current}
+                        score={this.state.score}
+                    />
                 }
 
                 {this.state.current <= questions.length &&
