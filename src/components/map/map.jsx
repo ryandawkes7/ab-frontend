@@ -217,10 +217,10 @@ import {
 } from 'react-google-maps';
 
 import GameIcon from './assets/game-icon.svg';
-import QuizIncomplete from './assets/quiz-icon.svg';
-import QuizComplete from './assets/quiz-complete.svg';
-import FactIncomplete from './assets/fact-icon.svg';
-import FactComplete from './assets/fact-complete.svg';
+import QuizIncomplete from './assets/quiz-icon.svg'; import QuizComplete from './assets/quiz-complete.svg';
+import FactIncomplete from './assets/fact-icon.svg'; import FactComplete from './assets/fact-complete.svg';
+import PicIncomplete from './assets/picture-incomplete.svg'; import PicComplete from './assets/picture-complete.svg';
+
 import MapOverlay from './assets/main-building.svg';
 
 // Impromptu JSON data for locations
@@ -347,6 +347,15 @@ export const Interaction = {
                 description: "Let's Play!",
                 complete: false
             }
+        ],
+
+        Picture: [
+            {
+                id: 1,
+                coordinates: [51.523213, -2.578062],
+                description: "Snap a Photo!",
+                complete: false
+            }
         ]
     },
 }
@@ -457,6 +466,27 @@ function UnwrappedMap() {
                                 console.log(selectedInteraction)
                             }}
                             icon={GameIcon}
+                        />
+                    </div>
+                ))
+            }
+            {
+                Interaction.locations.Picture.map((interaction) => (
+                    <div>
+                        <Marker
+                            key={interaction.id}
+                            position={{
+                                lat: interaction.coordinates[0],
+                                lng: interaction.coordinates[1]
+                            }}
+                            onClick={() => {
+                                setSelectedInteraction(interaction)
+                                console.log(selectedInteraction)
+                            }}
+                            icon={
+                                !interaction.complete && (PicIncomplete) ||
+                                interaction.complete && (PicComplete)
+                            }
                         />
                     </div>
                 ))
@@ -892,6 +922,33 @@ function UnwrappedMap() {
                                 <h2>{ selectedInteraction.type }</h2>
                                 <Link
                                     to="/section-nine-fact"
+                                    className="basic-btn fact-btn"
+                                    onClick={() => {selectedInteraction.complete = true }}
+                                >
+                                    <h3>{ selectedInteraction.description }</h3>
+                                </Link>
+                            </div>
+                        </InfoWindow>
+                    </div>
+                )
+            }
+
+            {
+                selectedInteraction === Interaction.locations.Picture[0] && (
+                    <div className="map-info-window">
+                        <InfoWindow
+                            position={{
+                                lat: selectedInteraction.coordinates[0] + 0.000033,
+                                lng: selectedInteraction.coordinates[1]
+                            }}
+                            onCloseClick={() => {
+                                setSelectedInteraction(null);
+                            }}
+                        >
+                            <div className="map-button">
+                                <h2>{ selectedInteraction.type }</h2>
+                                <Link
+                                    to="/section-one-pic"
                                     className="basic-btn fact-btn"
                                     onClick={() => {selectedInteraction.complete = true }}
                                 >
