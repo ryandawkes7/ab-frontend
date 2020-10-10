@@ -83,7 +83,7 @@ const SectionOnePic = () => {
             <Webcam
                 audio={false}
                 ref={webcamRef}
-                height={720} width={450}
+                height={100} width={100}
                 screenshotFormat="image/jpeg"
                 videoConstraints={videoConstraints}
             />
