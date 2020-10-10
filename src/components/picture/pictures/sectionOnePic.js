@@ -131,12 +131,6 @@ function SectionOnePic(props) {
                             dataUri={dataUri}
                         />
                         <button onClick={handleResetImage}>Reset</button>
-                        <Link
-                            to='/game-menu'
-                            className="basic-btn fact-button"
-                        >
-                            <h3>Next</h3>
-                        </Link>
                     </div> :
                     //If photo hasn't been taken
                     <div className="inner-container camera-container">
@@ -147,16 +141,16 @@ function SectionOnePic(props) {
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
                         >
                         </Camera>
-                        <div className="next-button-container">
-                            <Link
-                                to="/game-menu"
-                                className="next-button"
-                            >
-                                <h3>Next</h3>
-                            </Link>
-                        </div>
                     </div>
             }
+            <div className="next-button-container">
+                <Link
+                    to="/game-menu"
+                    className="next-button"
+                >
+                    <h3>Next</h3>
+                </Link>
+            </div>
         </div>
     )
 }
