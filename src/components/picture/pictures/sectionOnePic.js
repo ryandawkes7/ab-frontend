@@ -102,6 +102,8 @@ import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import ImagePreview from "../microservices/imagePreview";
 
+import './sectionPic.css'
+
 import PilotHelmet from '../assets/helmet.png';
 
 function SectionOnePic(props) {
@@ -123,13 +125,13 @@ function SectionOnePic(props) {
                             isFullscreen={true}
                         />
                     </div> :
-                    <div>
+                    <div className="camera-container">
                         <div className="image-overlay">
                             <img src={PilotHelmet} alt="" style={{width: '25vw'}} />
                         </div>
                         <Camera
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
-                            idealResolution={{width: 1, height: 2}}
+                            style={{border: '2px solid red', width: '100vw'}}
                         >
 
                         </Camera>
