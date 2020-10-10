@@ -129,7 +129,7 @@ function SectionOnePic(props) {
                         </div>
                         <Camera
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
-                            idealResolution={{width: 750, height: 1334}}
+                            idealResolution={{width: 1, height: 2}}
                         >
 
                         </Camera>
