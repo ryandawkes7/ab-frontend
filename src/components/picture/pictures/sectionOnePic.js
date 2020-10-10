@@ -127,7 +127,7 @@ function SectionOnePic(props) {
                     </div> :
                     <div className="camera-container">
                         <div className="image-overlay">
-                            <img src={PilotHelmet} alt="" style={{width: '500px'}} />
+                            <img src={PilotHelmet} alt="" style={{width: '350px'}} />
                         </div>
                         <Camera
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
