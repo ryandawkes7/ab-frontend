@@ -61,36 +61,69 @@
 //         width: '50%', position: 'absolute', top: 0
 //     }
 // }
+//
+// import React from "react";
+// import Webcam from "react-webcam";
+//
+// const videoConstraints = {
+//     width: '100vw',
+//     height: '100vh',
+//     facingMode: 'user'
+// }
+//
+// const SectionOnePic = () => {
+//     const webcamRef = React.useRef(null);
+//
+//     const capture = React.useCallback(() => {
+//         const imageSrc = webcamRef.current.getScreenshot();
+//     }, [webcamRef] );
+//
+//     return(
+//         <>
+//             <Webcam
+//                 audio={false}
+//                 ref={webcamRef}
+//                 height={100} width={100}
+//                 screenshotFormat="image/jpeg"
+//                 videoConstraints={videoConstraints}
+//             />
+//             <button onClick={capture} style={{position: 'absolute', top: 0, left: 0}}>
+//                 <h3>Capture</h3>
+//             </button>
+//         </>
+//     )
+// }
+//
+// export default SectionOnePic;
 
-import React from "react";
-import Webcam from "react-webcam";
 
-const videoConstraints = {
-    width: '100vw',
-    height: '100vh',
-    facingMode: 'user'
-}
+import React, {Component, useState} from 'react';
+import Camera from 'react-html5-camera-photo';
+import 'react-html5-camera-photo/build/css/index.css';
+import ImagePreview from "../microservices/imagePreview";
 
-const SectionOnePic = () => {
-    const webcamRef = React.useRef(null);
+function SectionOnePic(props) {
+    const [dataUri, setDataUri] = useState(null);
 
-    const capture = React.useCallback(() => {
-        const imageSrc = webcamRef.current.getScreenshot();
-    }, [webcamRef] );
+    function handleTakePhotoAnimationDone(dataUri){
+        console.log("Take Photo")
+        setDataUri(dataUri);
+    }
 
+    const isFullscreen = false;
     return(
-        <>
-            <Webcam
-                audio={false}
-                ref={webcamRef}
-                height={100} width={100}
-                screenshotFormat="image/jpeg"
-                videoConstraints={videoConstraints}
-            />
-            <button onClick={capture} style={{position: 'absolute', top: 0, left: 0}}>
-                <h3>Capture</h3>
-            </button>
-        </>
+        <div>
+            {
+                (dataUri) ? <ImagePreview
+                            dataUri={dataUri}
+                            isFullscreen={isFullscreen}
+                        /> :
+                        <Camera
+                            onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
+                            isFullscreen={isFullscreen}
+                        />
+            }
+        </div>
     )
 }
 

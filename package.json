@@ -12,6 +12,7 @@
     "react-camera": "^0.1.3",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
+    "react-html5-camera-photo": "^1.5.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-screen-orientation": "0.0.4",
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@iconify/icons-mdi": "^1.0.137",
     "@iconify/react": "^1.1.3",
+    "prop-types": "^15.7.2",
     "react-router-dom": "^5.2.0"
   }
 }
