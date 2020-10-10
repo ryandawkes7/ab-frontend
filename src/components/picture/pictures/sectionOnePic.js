@@ -123,7 +123,6 @@ function SectionOnePic(props) {
                     <div className="inner-container camera-container">
                         <ImagePreview
                             dataUri={dataUri}
-                            isFullscreen={true}
                         />
                     </div> :
                     <div className="inner-container camera-container">
