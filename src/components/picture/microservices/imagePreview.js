@@ -9,7 +9,7 @@ export const ImagePreview = ({ dataUri, isFullscreen }) => {
     return (
         <div className={'demo-image-preview' + classNameFullscreen}>
             <div className="image-overlay">
-                <img src={PilotHelmet} alt="" style={{width: '25vw'}} />
+                <img src={PilotHelmet} alt="" style={{width: '300px'}} />
             </div>
             <img src={dataUri} />
         </div>
