@@ -20,7 +20,7 @@
     z-index: 999;
     width: fit-content;
     position: absolute;
-    top: 50%; left: 50%; transform: translate(-50%, -75%);
+    top: 50%; left: 50%; transform: translate(-50%, -90%);
 }
 .image-overlay img{
 }
