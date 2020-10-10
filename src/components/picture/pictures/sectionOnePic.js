@@ -105,6 +105,7 @@ import ImagePreview from "../microservices/imagePreview";
 import './sectionPic.css'
 
 import PilotHelmet from '../assets/helmet.png';
+import {Link} from "react-router-dom";
 
 function SectionOnePic(props) {
     const [dataUri, setDataUri] = useState(null);
@@ -114,17 +115,30 @@ function SectionOnePic(props) {
         setDataUri(dataUri);
     }
 
+    function handleResetImage() {
+        setDataUri(null);
+    }
+
     const isFullscreen = true;
     return(
         <div className="container photo-container">
             <h2>Snap A Picture</h2>
             {
                 (dataUri) ?
+                    // If photo has been taken
                     <div className="inner-container camera-container">
                         <ImagePreview
                             dataUri={dataUri}
                         />
+                        <button onClick={handleResetImage}>Reset</button>
+                        <Link
+                            to='/game-menu'
+                            className="basic-btn fact-button"
+                        >
+                            <h3>Next</h3>
+                        </Link>
                     </div> :
+                    //If photo hasn't been taken
                     <div className="inner-container camera-container">
                         <div className="image-overlay">
                             <img src={PilotHelmet} alt="" style={{width: '300px'}} />
@@ -133,6 +147,14 @@ function SectionOnePic(props) {
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
                         >
                         </Camera>
+                        <div className="next-button-container">
+                            <Link
+                                to="/ready"
+                                className="next-button"
+                            >
+                                <h3>Next</h3>
+                            </Link>
+                        </div>
                     </div>
             }
         </div>

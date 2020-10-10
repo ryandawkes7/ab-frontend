@@ -3,17 +3,17 @@
     text-align: center;
 }
 
-.demo-image-preview > img {
+.demo-image-preview > .demo-image-preview img {
 }
 
 @media(max-width:768px){
-    .demo-image-preview > img {
+    .demo-image-preview > .demo-image-preview img {
         width: 100%;
     }
 }
 
 /* fullscreen enable by props */
-.demo-image-preview-fullscreen > img {
+.demo-image-preview-fullscreen > .demo-image-preview img {
 }
 
 .image-overlay {

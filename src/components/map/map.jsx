@@ -352,7 +352,7 @@ export const Interaction = {
         Picture: [
             {
                 id: 1,
-                coordinates: [51.523213, -2.578062],
+                coordinates: [51.523273, -2.578122],
                 description: "Snap a Photo!",
                 complete: false
             }

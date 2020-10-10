@@ -3,7 +3,7 @@
     align-content: center; justify-content: center;
 }
 .photo-container h2{
-    border: 1px solid red; margin: 0;
+    margin: 0;
 }
 .camera-container {
     display: flex; justify-content: center; align-items: center;
