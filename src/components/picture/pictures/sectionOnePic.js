@@ -129,7 +129,7 @@ function SectionOnePic(props) {
                         </div>
                         <Camera
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
-                            isFullscreen={true}
+                            idealResolution={{width: 750, height: 1334}}
                         >
 
                         </Camera>
