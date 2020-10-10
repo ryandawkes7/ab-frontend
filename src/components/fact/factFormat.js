@@ -46,27 +46,6 @@ class FactComponent extends Component{
                     )
                 })}
             </div>
-
-                // {/*<h1>{fact.number}</h1>*/}
-                // {/*<h2>Did you know?</h2> /!* Title Section *!/*/}
-                //
-                // {/*/!* FactFormat Image Section *!/*/}
-                // {/*<div className="fact-image">*/}
-                // {/*    <img src={KiteImg} alt="" />*/}
-                // {/*</div>*/}
-                // {/*/!* End of FactFormat Image Section *!/*/}
-                //
-                // {/*/!* FactFormat Description Section *!/*/}
-                // {/*<div*/}
-                // {/*    className="fact-description"*/}
-                // {/*>*/}
-                // {/*    <p>{fact.text}</p>*/}
-                // {/*</div>*/}
-                // {/* End of FactFormat Description Section */}
-                //
-                // {/* Confirmation Button */}
-                //
-                // {/* End of Confirmation Button */}
         )
     }
 }

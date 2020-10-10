@@ -116,24 +116,23 @@ function SectionOnePic(props) {
 
     const isFullscreen = true;
     return(
-        <div>
+        <div className="container photo-container">
+            <h2>Snap A Picture</h2>
             {
                 (dataUri) ?
-                    <div className="camera-container">
+                    <div className="inner-container camera-container">
                         <ImagePreview
                             dataUri={dataUri}
                             isFullscreen={true}
                         />
                     </div> :
-                    <div className="camera-container">
+                    <div className="inner-container camera-container">
                         <div className="image-overlay">
                             <img src={PilotHelmet} alt="" style={{width: '300px'}} />
                         </div>
                         <Camera
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
-                            style={{border: '2px solid red', width: '100vw'}}
                         >
-
                         </Camera>
                     </div>
             }
