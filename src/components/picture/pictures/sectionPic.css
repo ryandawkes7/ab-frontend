@@ -1,7 +1,6 @@
 .photo-container {
     width: 100vw; display: flex; flex-direction: column;
     align-content: center; justify-content: space-between;
-    margin: 5rem 0;
 }
 .photo-container h2{
     margin: 0;
