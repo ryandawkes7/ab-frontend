@@ -149,7 +149,7 @@ function SectionOnePic(props) {
                         </Camera>
                         <div className="next-button-container">
                             <Link
-                                to="/ready"
+                                to="/game-menu"
                                 className="next-button"
                             >
                                 <h3>Next</h3>
