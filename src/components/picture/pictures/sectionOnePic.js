@@ -102,6 +102,8 @@ import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import ImagePreview from "../microservices/imagePreview";
 
+import PilotHelmet from '../assets/helmet.png';
+
 function SectionOnePic(props) {
     const [dataUri, setDataUri] = useState(null);
 
@@ -110,18 +112,28 @@ function SectionOnePic(props) {
         setDataUri(dataUri);
     }
 
-    const isFullscreen = false;
+    const isFullscreen = true;
     return(
         <div>
             {
-                (dataUri) ? <ImagePreview
+                (dataUri) ?
+                    <div>
+                        <ImagePreview
                             dataUri={dataUri}
-                            isFullscreen={isFullscreen}
-                        /> :
+                            isFullscreen={true}
+                        />
+                    </div> :
+                    <div>
+                        <div className="image-overlay">
+                            <img src={PilotHelmet} alt="" style={{width: '25vw'}} />
+                        </div>
                         <Camera
                             onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
-                            isFullscreen={isFullscreen}
-                        />
+                            isFullscreen={true}
+                        >
+
+                        </Camera>
+                    </div>
             }
         </div>
     )

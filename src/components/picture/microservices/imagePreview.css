@@ -4,7 +4,6 @@
 }
 
 .demo-image-preview > img {
-    width: 768px;
 }
 
 @media(max-width:768px){
@@ -15,6 +14,13 @@
 
 /* fullscreen enable by props */
 .demo-image-preview-fullscreen > img {
-    width: 100vw;
-    height: 100vh;
+}
+
+.image-overlay {
+    z-index: 999;
+    width: fit-content;
+    position: absolute;
+    left: 50%; transform: translate(-50%, 0);
+}
+.image-overlay img{
 }
