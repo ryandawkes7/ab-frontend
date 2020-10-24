@@ -1,26 +1,11 @@
-.terms-container {
-}
 
 .terms-conditions-container{
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
+    margin: 0 auto; padding: 1rem;
+    width: 80vw; height: 70%;
 
-    margin: 0 auto;
-    padding: 1rem;
-
-    width: 80vw;
-    height: 50vh;
-    border: 1px solid black;
-
-    overflow-y: scroll;
+    border: 1px solid black; overflow-y: scroll;
 }
 .terms-conditions-container h4{
     text-align: center;
-}
-
-.skip-btn{
-    position: absolute;
-
-    bottom: 2.5rem;
-    left: 2.5rem;
 }

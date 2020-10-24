@@ -13,19 +13,19 @@ class Ready extends Component {
 
                 <div className="inner-container ready-inner-container">
 
-                    <h2>All Set!</h2>
-                    <h3>Get ready to start the adventure and collect as many points as you can</h3>
+                    <h2>Clear For Take-Off!</h2>
+                    <h3>Get ready to start your adventure and collect as many points as you can</h3>
 
 
                     <img src={PlaneVector} alt=""/>
 
                     <Link to="game-menu" className="basic-btn start-adventure">
-                        <h3>Start the Adventure</h3>
+                        <h3>Start your Adventure</h3>
                     </Link>
 
-                    <Link to="/ts-and-cs" className="text-btn terms-btn">
-                        <h4>Terms & Conditions</h4>
-                    </Link>
+                    {/*<Link to="/ts-and-cs" className="text-btn terms-btn">*/}
+                    {/*    <h4>Terms & Conditions</h4>*/}
+                    {/*</Link>*/}
                 </div>
             </div>
         );

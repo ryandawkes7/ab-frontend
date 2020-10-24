@@ -1,37 +1,46 @@
 .welcome-container{
-    height: 100vh;
-
+    height: 100%;
     background: linear-gradient(180deg, #005CA9 0%, rgba(20, 136, 202, 0) 50%);
 
     justify-content: center;
 }
 
-.welcome-container img{
-    margin: 0rem 0 2rem auto;
-}
+.welcome-container img{ margin: 0rem 0 2rem auto; }
 
 .welcome-info-container{
-    height: fit-content;
-
-    width: 90vw;
-
-
-    margin: 0 auto;
-
-    justify-content: center;
+    height: fit-content; width: 90vw;
+    margin: 0 auto; justify-content: center;
 }
 .welcome-info-container h1, h3, input, p{
-    margin-bottom: 2rem;
-    text-align: center;
+    margin-bottom: 2rem; text-align: center;
 }
-.welcome-info-container p{
-    text-align: center;
-}
+.welcome-info-container p{ text-align: center; }
+.welcome-info-container input {
+    border: none; border-radius: 10px;
+    box-shadow: 0 0 2px 0 rgba(30,30,30,0.3), 0 0 4px 0 rgba(30,30,30,0.29); -webkit-box-shadow: 0 0 2px 0 rgba(30,30,30,0.3), 0 0 4px 0 rgba(30,30,30,0.29);
+    -webkit-appearance: none;
 
+}
+.welcome-label-container {
+    display: flex; gap: 1rem;
+    justify-content: center; align-items: center;
+    width: fit-content; height: fit-content;
+    margin-bottom: 1rem;
+}
 .welcome-label{
-    display: block;
+    display: inline-block; width: fit-content;
     font-size: 20px;
 }
+.welcome-label-container button {
+    width: 3.5rem; height: 3.5rem; margin-left: 1rem;
+
+    background: linear-gradient(180deg, #005CA9 0%, #1C96DB 100%);
+    border-radius: 100px; color: white;
+}
+.welcome-label-container h3{
+    margin: auto;
+}
+
 
 .submit-btn{
     background: linear-gradient(180deg, rgba(0, 92, 169, 0.94) 0%, #1488CA 100%);
@@ -50,4 +59,21 @@
 
 .welcome-button-container{
     margin: 0 auto;
+}
+
+.welcome-popup-container {
+    position: absolute; left: 0; top: 0; bottom: 0; right: 0;
+    background: rgba(0,0,0,0.9);
+
+    display: flex; justify-content: center; align-items: center;
+}
+.welcome-popup-inner-container {
+    background: white; padding: 2rem; margin: 2rem; border-radius: 10px;
+    display: flex; flex-direction: column; gap: 2rem;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3), 0 6px 12px 0 rgba(0,0,0,0.29);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3), 0 6px 12px 0 rgba(0,0,0,0.29);
+}
+.welcome-popup-close-button {
+    width: fit-content; height: fit-content;
+    border: none; background: none;
 }

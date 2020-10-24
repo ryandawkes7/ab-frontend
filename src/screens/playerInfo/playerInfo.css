@@ -1,16 +1,15 @@
-.p-info-container {
-}
-
 .player-inner-container h2{
     margin: 1rem;
 }
+
+.player-inner-container span { color: red; }
 
 .name-input-container {margin: 1rem;}
 
 .name-label { display: block; font-size: 20px; }
 
-.difficulty-container { margin: 1rem 0 2rem 0; }
-
+.difficulty-container { margin: 1rem 0 1rem 0; }
+.difficulty-container label { font-size: 20px }
 .diff-btn-container{
     width: 90vw;
     height: 100px;
@@ -22,37 +21,16 @@
 }
 
 .diff-btn{
-    height: 100px;
-    width: 100px;
-
-    background: none;
-    border: none;
-
-    display: flex;
-    flex-direction: row;
-
-    float: left;
-
-    justify-content: center;
-    align-items: center;
-}
-
-.accessibility-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 1rem;
+    display: flex; flex-direction: row; float: left;
+    justify-content: center; align-items: center;
+    height: 100px; width: 100px;
+    background: none; border: none;
 }
 
 .accessibility-btn {
+    display: flex; width: fit-content; padding: 0.5rem 2rem;
     background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
     border: none; border-radius: 30px; color: white; text-decoration: none;
-
-    display: flex;
-    width: fit-content;
-
-    padding: 1rem 2rem;
 }
 
 .accessibility-btn h3{

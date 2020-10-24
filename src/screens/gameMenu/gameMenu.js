@@ -63,20 +63,24 @@ class GameMenu extends Component {
                 {/* Player Statistics Header Section */}
                 <div className="stat-header-container">
                     {/* Background */}
-                    <img src={HeaderImg} alt="" className="stat-header-background"/>
-
+                    <div className="stat-header-background-container"/>
                     {/* Header Inner Container */}
                     <div className="stat-header-inner-container">
-                        <img src={ProfilePic} alt="" /> {/* Profile Picture */}
+                        <div className="s-h-i-component s-h-i-image">
+                            <img src={ProfilePic} alt="" /> {/* Profile Picture */}
+                        </div>
 
                         {/* XP & Score Section */}
-                        <div className="user-stats-container">
-                            <h3>0</h3>
+                        <div className="s-h-i-component-xp user-stats-container">
+                            <h2>0</h2>
                             <div className="xp-bar" />
                         </div>
                         {/* End of XP & Score Section */}
 
-                        <img src={SettingsIcon} alt="" /> {/* Settings Icon */}
+                        <div className="s-h-i-component s-h-i-settings">
+                            <img src={SettingsIcon} alt="" /> {/* Settings Icon */}
+                        </div>
+
                     </div>
                     {/* End of Header Inner Container */}
 

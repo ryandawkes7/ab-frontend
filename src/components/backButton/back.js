@@ -1,4 +1,4 @@
-import BackImg from "../../images/left-close.svg";
+import BackImg from "./assets/back-button.svg";
 import React from "react";
 import './back.css';
 import { useHistory } from 'react-router-dom';

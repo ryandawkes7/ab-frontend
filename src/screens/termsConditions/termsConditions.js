@@ -10,7 +10,7 @@ class TermsConditions extends Component {
             <div className="container terms-container">
                 <Back />
 
-                <h2>TERMS & CONDITIONS</h2>
+                <h2 style={{marginBottom: '2rem', marginTop: '2rem'}}>TERMS & CONDITIONS</h2>
 
                 <div className="terms-conditions-container"> {/* Ts&Cs Info Section */}
                     <h4 style={{paddingBottom: '1rem'}}>Bristol Aerospace Museum</h4>
@@ -38,21 +38,6 @@ class TermsConditions extends Component {
                     </p>
                 </div> {/* End of Ts&Cs Info Section */}
 
-                <div> {/* Footer Buttons Section */}
-                    <Link
-                        to=""
-                        className="text-btn skip-btn"
-                    >
-                        <h4>Skip</h4>
-                    </Link>
-
-                    <Link
-                        to="/game-menu"
-                        className="p-info-next"
-                    >
-                        Next
-                    </Link>
-                </div>
             </div>
         );
     }

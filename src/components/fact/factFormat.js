@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import './factFormat.css';
 import { Link } from 'react-router-dom';
 
-import KiteImg from './assets/fact-image.svg';
-
 class FactComponent extends Component{
     constructor (props) {
         super(props);
@@ -19,16 +17,19 @@ class FactComponent extends Component{
         const fact = this.props.fact;
 
         return(
-            <div>
+            <div className="container fact-screen-container">
                 { fact.options.map(next => {
                     return(
                         <div className="inner-container fact-inner-container">
                             <h1>{next.number}</h1>
                             <h2>Did You Know?</h2>
 
-                            <div className="fact-image">
-                                <img src={KiteImg} alt="" />
-                            </div>
+                            { next.image !== '' &&
+                                <div className="fact-image">
+                                    <img src={ next.image } alt=""/>
+                                </div>
+                                || null
+                            }
 
                             <div className="fact-description" value={next.text}>
                                 <p>{next.text}</p>

@@ -3,8 +3,6 @@
     margin: 1rem;
 }
 
-
-
 .character-container {
 
 }
@@ -16,3 +14,13 @@
     display: flex;
     margin: 2rem auto;
 }
+
+.character-btn img {
+    max-height: 50vw;
+}
+
+/*@media (max-height: 750px) {*/
+/*    .character-btn img {*/
+/*        width: 200px;*/
+/*    }*/
+/*}*/

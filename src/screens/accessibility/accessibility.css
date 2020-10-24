@@ -1,29 +1,38 @@
-.accessibility-container{
+.accessibility-inner-container {
+    width: 90%; margin: auto;
+
+    border: 2px solid pink;
 }
 
-.font-size-container{
-    width: 75vw;
-    height: 100px;
-
-    display: flex;
-    justify-content: space-between;
-
-    margin: 1rem auto;
+/* Title Section */
+.accessibility-title-container {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; margin-bottom: 2rem;
+    border: 2px solid red;
 }
 
-.font-btn{
-    background: none;
-    border: none;
+/* Font Size Section */
+.a-font-size-container {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    width: 100%; margin: 2rem 0;
+    border: 2px solid blue;
 }
 
-.volume-section {
-    display: flex;
-    justify-content: space-between;
-
-    text-align: center;
-
-    width: 75vw;
-
-    margin: 0 auto;
+.font-size-inner-container {
+    display: flex; justify-content: space-between;
+    width: 70%;
 }
 
+.font-btn {
+    background: none; border: none;
+}
+/* End of Font Size Section */
+
+/* Audio Guidance Container Section */
+.audio-container {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%;
+
+    border: 2px solid green;
+}

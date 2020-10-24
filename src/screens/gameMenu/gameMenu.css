@@ -1,38 +1,47 @@
 /* User Statistics Header Styling */
 
 .stat-header-container {
-    border: 1px solid red;
-
-    height: 164px;
+    position: absolute; top: 0; left: 0; right: 0;
+    display: flex; justify-content: center; align-items: center;
+    height: 15%;
 }
-.stat-header-background {
+
+.stat-header-background-container {
     position: fixed; z-index: -1;
+    width: 125%; height: 15%;
+    background: #005CA9; border-radius: 0 0 1000px 1000px;
+    border: 3px solid rgba(214, 236, 255, 0.75);
 }
 
 .stat-header-inner-container {
-    display: flex;
-    justify-content: space-between;
-}
-.stat-header-inner-container img {
-    border: 1px solid purple;
-}
-.user-stats-container {
-    display: flex; flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid orange;
+    display: flex; width: 100%; height: 100%;
 }
 
+.s-h-i-component {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%;
+}
+.s-h-i-component-xp {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; margin: 0 15%;
+}
+
+.s-h-i-image { margin: auto; height: 70%; }
+.s-h-i-image img { height: 90%; }
+.s-h-i-settings { margin: auto; height: 70%; }
+.s-h-i-settings img { height: 50%; }
+
+.user-stats-container { display: flex; flex-direction: column; }
+.user-stats-container h2 { color: white; font-size: 32px; }
 .xp-bar {
     width: 100px; height: 10px;
-    background-color: white; border-radius: 10px;
+    margin-top: 15%;
+    background-color: white; border-radius: 10px; border: 2px solid #1488CA;
 }
 
 /* End of User Statistics Header Styling */
 
 /* Body Container Section */
-.game-menu-container {
-}
 
 .quiz-btn, .game-btn, .fact-btn{
     padding: 2rem 10rem;

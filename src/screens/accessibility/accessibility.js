@@ -18,40 +18,46 @@ class Accessibility extends Component {
             <div className="container accessibility-container"> {/* Page Container */}
                 <Back />
 
-                <h2>Accessibility Settings</h2>
-                <div> {/* Text Size Section */ }
-                    <h3>Font Size</h3>
-                    <div className="font-size-container">
-                        <button className="font-btn small">
-                            <img src={SmallText} alt="" />
-                        </button>
-                        <button className="font-btn medium">
-                            <img src={MediumText} alt="" />
-                        </button>
-                        <button className="font-btn large">
-                            <img src={LargeText} alt="" />
-                        </button>
+                <div className="inner-container accessibility-inner-container">
+                    <div className="accessibility-title-container">
+                        <h2>Accessibility Settings</h2>
                     </div>
+
+                    <div className="a-font-size-container"> {/* Text Size Section */ }
+                        <h3>Font Size</h3>
+                        <div className="font-size-inner-container">
+                            <button className="font-btn small">
+                                <img src={SmallText} alt="" />
+                            </button>
+                            <button className="font-btn medium">
+                                <img src={MediumText} alt="" />
+                            </button>
+                            <button className="font-btn large">
+                                <img src={LargeText} alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    {/* End of Text Size Section */ }
+
+                    <div className="audio-container"> {/* Sound & Voiceover Section */ }
+                        <div className="sound-container">
+                            <h3>Sound</h3>
+                            <img src={SoundIcon} alt="" />
+                        </div>
+                        <div className="voiceover-container">
+                            <h3>Voiceover</h3>
+                            <img src={VoiceOver} alt="" />
+                        </div>
+                    </div> {/* End of Sound & Voiceover Section */ }
+
+                    {/* Save Settings Button */}
+                    <Link
+                        to="/info"
+                        className="basic-btn a-save-btn"
+                    >
+                        <h3>Save</h3>
+                    </Link>
                 </div>
-                {/* End of Text Size Section */ }
-
-                <div className="volume-section"> {/* Sound & Voiceover Section */ }
-                    <div className="sound-container">
-                        <h3>Sound</h3>
-                        <img src={SoundIcon} alt="" />
-                    </div>
-                    <div className="voiceover-container">
-                        <h3>Voiceover</h3>
-                        <img src={VoiceOver} alt="" />
-                    </div>
-                </div> {/* End of Sound & Voiceover Section */ }
-
-                <Link
-                    to="/info"
-                    className="basic-btn accessibility"
-                >
-                    <h3>Save</h3>
-                </Link>
             </div>
         );
     }
