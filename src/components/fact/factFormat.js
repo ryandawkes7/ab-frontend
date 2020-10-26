@@ -81,9 +81,11 @@ export default class FactFormat extends Component {
                 }
 
                 {this.state.current > facts.length &&
-                    <Link to="/game-menu" className="basic-btn">
+                    <div className="inner-container">
+                    <Link to="/game-menu" className="basic-btn return-menu">
                         <h3>Return to Menu</h3>
                     </Link>
+                    </div>
                 }
             </div>
         );

@@ -1,56 +1,56 @@
 import React, {Component} from 'react';
-import QuizFormat from "../quizStructure/quizStructure";
+import QuizFormat from "../../quizStructure/quizStructure";
 
 const Questions = [
     {
         id: 1,
-        text: 'Question for the user?',
+        text: 'What is stored below the floor in commercial airplanes?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: 'Engine Parts'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: 'Passenger\'s Luggage'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: 'Cabin Crew'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: 'Passengers'
             }
         ],
-        correct: 'a'
+        correct: 'b'
     },
     {
         id: 2,
-        text: 'Question for the user?',
+        text: 'Which single-aisle aircraft family is the world’s best-selling one?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: 'The C320 Family'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: 'The B320 Group'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: 'The D320 Family'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: 'The A320 Family'
             }
         ],
-        correct: 'a'
+        correct: 'd'
     },
 ]
 
-class SectionEightQuiz extends Component {
+class SectionSevenQuiz extends Component {
     render () {
         return (
             <div>
@@ -60,4 +60,4 @@ class SectionEightQuiz extends Component {
     }
 }
 
-export default SectionEightQuiz;
+export default SectionSevenQuiz;

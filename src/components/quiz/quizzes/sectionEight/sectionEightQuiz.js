@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import QuizFormat from "../quizStructure/quizStructure";
+import QuizFormat from "../../quizStructure/quizStructure";
 
 const Questions = [
     {
@@ -50,7 +50,7 @@ const Questions = [
     },
 ]
 
-class SectionSixQuiz extends Component {
+class SectionEightQuiz extends Component {
     render () {
         return (
             <div>
@@ -60,4 +60,4 @@ class SectionSixQuiz extends Component {
     }
 }
 
-export default SectionSixQuiz;
+export default SectionEightQuiz;

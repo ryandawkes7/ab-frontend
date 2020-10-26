@@ -104,7 +104,10 @@ class GameMenu extends Component {
                         </button>
                     </div>
                 </div>
-                {this.state.popupOpen ? <Popup toggle={this.togglePopup} /> : null}
+                {this.state.popupOpen ?
+                    <Popup toggle={this.togglePopup} />
+                    : null
+                }
             </div>
         );
     }

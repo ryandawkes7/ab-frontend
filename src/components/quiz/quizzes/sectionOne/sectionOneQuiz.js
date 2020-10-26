@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import QuizFormat from "../quizStructure/quizStructure";
+import QuizFormat from "../../quizStructure/quizStructure";
 
 const Questions = [
     {
