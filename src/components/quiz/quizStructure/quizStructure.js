@@ -10,9 +10,6 @@ import UserIcon from '../assets/user-icon.svg';
 class Question extends Component {
     constructor(props){
         super(props);
-        this.state = {
-
-        }
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -36,7 +33,7 @@ class Question extends Component {
         return(
             <div>
                 <div className="question-component">
-                    <h3>{question.text}</h3>
+                    {question.text}
                 </div>
                 <div className="answer-container">
                     { question.choices.map(choice => {
@@ -69,11 +66,8 @@ class Question extends Component {
 class Scorebox extends Component {
     render(){
         return(
-            <div className="well">
+            <div className="question-count-container">
                 Question {this.props.current} out of {this.props.total}
-                <span className="pull-right">
-                    <strong>Score: {this.props.score}</strong>
-                </span>
             </div>
         )
     }
@@ -89,10 +83,9 @@ class Results extends Component {
 
     overallScore = () => {
         this.setState((prevState, props) => ({
-            overallScore: prevState.overallScore + props.score
+            overallScore: (prevState.overallScore + props.score) * 50
         }))
     }
-
 
     render(){
         var message = 'You passed the quiz!';
@@ -108,7 +101,6 @@ class Results extends Component {
 
                     <div className="results-cont results-text">
                         <h3>+{this.props.score} points!</h3>
-                        <button onClick={this.overallScore}>Update Score</button>
                         <h4>Congratulations!</h4>
                     </div>
 
@@ -143,8 +135,9 @@ export default class QuizFormat extends Component {
     handleChange(choice){
         this.setState((prevState, props) => ({
             current: prevState.current + 1,
-            score: choice === props.questions[prevState.current - 1].correct ? prevState.score + 1 : prevState.score,
+            score: choice === props.questions[prevState.current - 1].correct ? prevState.score + 50 : prevState.score,
         }));
+        console.log(this.state.overallScore)
     }
 
     render () {

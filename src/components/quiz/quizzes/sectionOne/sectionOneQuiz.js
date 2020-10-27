@@ -4,75 +4,98 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'How fast could the Boxkite go?',
+        text: 'Who made the first flight in an aeroplane?',
         choices:[
             {
                 id: 'a',
-                text: 'Up to 30 miles per hour'
+                text: 'The Cohen Bros.'
             },
             {
                 id: 'b',
-                text: 'Up to 40 miles per hour'
+                text: 'Amelia Earhart'
             },
             {
                 id: 'c',
-                text: 'Up to 50 miles per hour'
+                text: 'The Wright Bros.'
             },
             {
                 id: 'd',
-                text: 'Up to 60 miles per hour'
+                text: 'The Montgolfier Bros.'
             }
         ],
         correct: 'c'
     },
     {
         id: 2,
-        text: 'What were early planes made from?',
+        text: 'What was the name of the man who started the Bristol Aeroplane Company?',
         choices:[
             {
                 id: 'a',
-                text: 'A wooden frame with a fabric covering'
+                text: 'Orville Wright'
             },
             {
                 id: 'b',
-                text: 'A metal frame with a fabric covering'
+                text: 'Neil Armstrong'
             },
             {
                 id: 'c',
-                text: 'A plastic frame with a fabric covering'
+                text: 'Isambard Kingdom Brunel'
             },
             {
                 id: 'd',
-                text: 'A wooden frame with a plastic covering'
-            }
-        ],
-        correct: 'a'
-    },
-    {
-        id: 3,
-        text: 'What made the Boxkite more successful than the Zodiac?',
-        choices:[
-            {
-                id: 'a',
-                text: 'Larger size so it could carry more people'
-            },
-            {
-                id: 'b',
-                text: 'More comfortable seating'
-            },
-            {
-                id: 'c',
-                text: 'Kites were attached to the top of the plane'
-            },
-            {
-                id: 'd',
-                text: '20% lighter structure'
+                text: 'Sir George White'
             }
         ],
         correct: 'd'
     },
     {
+        id: 3,
+        text: 'What was the first plane designed and built in Bristol?',
+        choices:[
+            {
+                id: 'a',
+                text: 'The Zodiac'
+            },
+            {
+                id: 'b',
+                text: 'The Boxkite'
+            },
+            {
+                id: 'c',
+                text: 'The Scout'
+            },
+            {
+                id: 'd',
+                text: 'The Wright Flyer'
+            }
+        ],
+        correct: 'b'
+    },
+    {
         id: 4,
+        text: 'What were the first planes made out of?',
+        choices:[
+            {
+                id: 'a',
+                text: 'Wooden frame and fabric cover'
+            },
+            {
+                id: 'b',
+                text: 'Aluminium frame and fabric cover'
+            },
+            {
+                id: 'c',
+                text: 'Plastic sheets'
+            },
+            {
+                id: 'd',
+                text: 'Iron frame and fabric cover'
+            }
+        ],
+        correct: 'a'
+    },
+    {
+        id: 5,
         text: 'What was the fabric covering known as?',
         choices:[
             {
@@ -93,6 +116,29 @@ const Questions = [
             }
         ],
         correct: 'c'
+    },
+    {
+        id: 6,
+        text: 'How fast could the Boxkite aeroplane go?',
+        choices:[
+            {
+                id: 'a',
+                text: 'up to 150 mph'
+            },
+            {
+                id: 'b',
+                text: 'up to 50 mph'
+            },
+            {
+                id: 'c',
+                text: 'up to 20 mph'
+            },
+            {
+                id: 'd',
+                text: 'up to 85 mph'
+            }
+        ],
+        correct: 'b'
     },
 ]
 

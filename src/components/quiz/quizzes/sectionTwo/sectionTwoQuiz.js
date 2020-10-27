@@ -4,72 +4,95 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'In what order was the propeller designed?',
+        text: 'What were planes first used for in World War 1?',
         choices:[
             {
                 id: 'a',
-                text: '5, 2, 4, 3, 6, 1'
+                text: 'Spying on enemy troops'
             },
             {
                 id: 'b',
-                text: '5, 1, 3, 6, 2, 4'
+                text: 'Battling each other'
             },
             {
                 id: 'c',
-                text: '4, 5, 2, 6, 3, 1'
+                text: 'Transporting equipment'
             },
             {
                 id: 'd',
-                text: '5, 2, 3, 4, 6, 1'
+                text: 'Dropping bombs'
+            }
+        ],
+        correct: 'a'
+    },
+    {
+        id: 2,
+        text: 'Who designed the Bristol Fighter?',
+        choices:[
+            {
+                id: 'a',
+                text: 'The Red Baron'
+            },
+            {
+                id: 'b',
+                text: 'Captain Frank Barnwell'
+            },
+            {
+                id: 'c',
+                text: 'Field Marshall Haig'
+            },
+            {
+                id: 'd',
+                text: 'Sir George White'
             }
         ],
         correct: 'b'
     },
     {
-        id: 2,
-        text: 'How were propellers originally made?',
+        id: 3,
+        text: 'WW1 workers painted the plane\'s fabric with \'dope\', which made them ill. What did they drink to feel better?',
         choices:[
             {
                 id: 'a',
-                text: 'Designed with steel from factories'
+                text: 'Water'
             },
             {
                 id: 'b',
-                text: 'Manufacturing plastic'
+                text: 'Orange Juice'
             },
             {
                 id: 'c',
-                text: 'Attaching planks of wood'
+                text: 'Coffee'
             },
             {
                 id: 'd',
-                text: 'Hand carved from wood'
+                text: 'Milk'
             }
         ],
         correct: 'd'
     },
     {
-        id: 3,
-        text: 'How were workers symptoms, who were ‘doping’ planes fabric, treated?',
+        id: 4,
+        text: 'Look at the image below. What is the correct order to show how a wooden propeller is made?',
         choices:[
             {
                 id: 'a',
-                text: 'Drinking milk'
+                text: '1, 2, 5, 6, 3, 4'
             },
             {
                 id: 'b',
-                text: 'Medicine'
+                text: '1, 3, 6, 4, 2, 5'
             },
             {
                 id: 'c',
-                text: 'Natural remedies'
+                text: '5, 1, 3, 6, 2, 4'
             },
             {
                 id: 'd',
-                text: 'They were not treated'
+                text: '4, 2, 1, 3, 5, 6'
             }
         ],
-        correct: 'a'
+        correct: 'c'
     },
 ]
 

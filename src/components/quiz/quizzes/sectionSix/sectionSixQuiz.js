@@ -4,49 +4,95 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'Question for the user?',
+        text: 'Who were the forty-niners?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: 'Bristol\'s Baseball team'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: 'Everyone who graduated from Bristol training school in 1949'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: 'Bristol\'s first jet engine design team'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: 'Bristol\'s first guided weapons development team'
+            }
+        ],
+        correct: 'd'
+    },
+    {
+        id: 2,
+        text: 'What is the nickname of the Harrier Jet?',
+        choices:[
+            {
+                id: 'a',
+                text: 'Hop Jet'
+            },
+            {
+                id: 'b',
+                text: 'Jump Jet'
+            },
+            {
+                id: 'c',
+                text: 'Spring Jet'
+            },
+            {
+                id: 'd',
+                text: 'Bounce Jet'
+            }
+        ],
+        correct: 'b'
+    },
+    {
+        id: 3,
+        text: 'What is the name of the space rocket you can see in our exhibition?',
+        choices:[
+            {
+                id: 'a',
+                text: 'Skylark'
+            },
+            {
+                id: 'b',
+                text: 'Cuckoo'
+            },
+            {
+                id: 'c',
+                text: 'Black Arrow'
+            },
+            {
+                id: 'd',
+                text: 'Blue Jay'
             }
         ],
         correct: 'a'
     },
     {
-        id: 2,
-        text: 'Question for the user?',
+        id: 4,
+        text: 'What was the name of the first missile designed at Filton?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: 'Thunderbird'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: 'Fireflash'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: 'Poodle'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: 'Bloodhound'
             }
         ],
-        correct: 'a'
+        correct: 'd'
     },
 ]
 

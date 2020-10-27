@@ -4,65 +4,111 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'What day was WWII declared on?',
+        text: 'What were Bristol engines named after?',
         choices:[
             {
                 id: 'a',
-                text: '3 September 1939'
+                text: 'Stars'
             },
             {
                 id: 'b',
-                text: '3 August 1939'
+                text: 'Rivers'
             },
             {
                 id: 'c',
-                text: '15 September 1940'
+                text: 'Characters from myths and legends'
             },
             {
                 id: 'd',
-                text: '3 September 1940'
+                text: 'Famous people'
             }
         ],
-        correct: 'a'
+        correct: 'c'
     },
     {
         id: 2,
-        text: 'What were the secret factories created during WWII called?',
+        text: 'What was painted on the roof of the factory during WW2?',
         choices:[
             {
                 id: 'a',
-                text: 'Silhouette Stations'
+                text: 'Positive message for the workers'
             },
             {
                 id: 'b',
-                text: 'Shadow Factories'
+                text: 'Camouflage'
             },
             {
                 id: 'c',
-                text: 'Dark Labs'
+                text: 'Blackout'
             },
             {
                 id: 'd',
-                text: 'Bleak Stores'
+                text: 'Company logo'
             }
         ],
         correct: 'b'
     },
     {
         id: 3,
-        text: 'What was happening in Fry’s Chocolate Factory?',
+        text: 'What was the nickname given to the Bristol Beaufighter by the Japanese?',
         choices:[
             {
                 id: 'a',
-                text: 'Flight school for pilots'
+                text: 'Deadly wing'
             },
             {
                 id: 'b',
-                text: 'Plane carcass design'
+                text: 'Whispering death'
             },
             {
                 id: 'c',
-                text: 'Development of weapons'
+                text: 'Silent wing'
+            },
+            {
+                id: 'd',
+                text: 'Whispering one'
+            }
+        ],
+        correct: 'b'
+    },
+    {
+        id: 4,
+        text: 'What were the secret factories created during WW2 called?',
+        choices:[
+            {
+                id: 'a',
+                text: 'Shadow factories'
+            },
+            {
+                id: 'b',
+                text: 'Ghost factories'
+            },
+            {
+                id: 'c',
+                text: 'Underground factories'
+            },
+            {
+                id: 'd',
+                text: 'Mystery factories'
+            }
+        ],
+        correct: 'a'
+    },
+    {
+        id: 5,
+        text: 'What was happening in Fry\'s Chocolate Factory during WW2?',
+        choices:[
+            {
+                id: 'a',
+                text: 'Aircraft assembly'
+            },
+            {
+                id: 'b',
+                text: 'Engine assembly'
+            },
+            {
+                id: 'c',
+                text: 'Engine testing'
             },
             {
                 id: 'd',
@@ -72,50 +118,50 @@ const Questions = [
         correct: 'd'
     },
     {
-        id: 4,
+        id: 6,
         text: 'What was happening in Whitchurch Airport?',
         choices:[
             {
                 id: 'a',
-                text: 'Painting planes'
-            },
-            {
-                id: 'b',
-                text: 'Navigation control design'
-            },
-            {
-                id: 'c',
                 text: 'Aircraft assembly'
             },
             {
-                id: 'd',
-                text: 'Flying lessons'
-            }
-        ],
-        correct: 'c'
-    },
-    {
-        id: 5,
-        text: 'What did ‘Nil time’ 501 Squadron’s motto meant?',
-        choices:[
-            {
-                id: 'a',
-                text: '"0 Seconds Left"'
-            },
-            {
                 id: 'b',
-                text: '"Fear Nothing"'
+                text: 'Aircraft component making'
             },
             {
                 id: 'c',
-                text: '"No More Time"'
+                text: 'Engine assembly'
             },
             {
                 id: 'd',
-                text: '"Do Nothing"'
+                text: 'Gun turrets'
             }
         ],
-        correct: 'b'
+        correct: 'a'
+    },
+    {
+        id: 7,
+        text: 'What does 501 Squadron\'s motto "Nil Time" mean?',
+        choices:[
+            {
+                id: 'a',
+                text: 'Nothing changes'
+            },
+            {
+                id: 'b',
+                text: 'Hurry up'
+            },
+            {
+                id: 'c',
+                text: 'Fear nothing'
+            },
+            {
+                id: 'd',
+                text: 'No time'
+            }
+        ],
+        correct: 'c'
     },
 ]
 

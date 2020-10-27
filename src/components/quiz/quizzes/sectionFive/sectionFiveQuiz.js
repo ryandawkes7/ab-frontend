@@ -4,69 +4,46 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'When did the transition to gas turbine manufacturing happen?',
+        text: 'How many Brabazon\'s were made?',
         choices:[
             {
                 id: 'a',
-                text: 'Late 1950s'
+                text: '100'
             },
             {
                 id: 'b',
-                text: 'Late 1960s'
+                text: '1'
             },
             {
                 id: 'c',
-                text: 'Late 1930s'
+                text: '20'
             },
             {
                 id: 'd',
-                text: 'Late 1940s'
+                text: '5'
             }
         ],
-        correct: 'd'
+        correct: 'b'
     },
     {
         id: 2,
-        text: 'WWhich brand\'s technology Cars Division acquired rights to in 1946?',
+        text: 'Which Bristol enging powered Donald Campbell\'s Bluebird CN7 car when it broke the landspeed record in 1964?',
         choices:[
             {
                 id: 'a',
-                text: 'BMW'
+                text: 'Hercules'
             },
             {
                 id: 'b',
-                text: 'Mercedes'
+                text: 'Orpheus'
             },
             {
                 id: 'c',
-                text: 'Ford'
+                text: 'Proteus'
             },
             {
                 id: 'd',
-                text: 'Volkswagen'
-            }
-        ],
-        correct: 'a'
-    },
-    {
-        id: 3,
-        text: 'What was the top speed of the Bristol 403 Car?',
-        choices:[
-            {
-                id: 'a',
-                text: '84mph'
-            },
-            {
-                id: 'b',
-                text: '94mph'
-            },
-            {
-                id: 'c',
-                text: '104mph'
-            },
-            {
-                id: 'd',
-                text: '114mph'
+                text: 'Olympus'
             }
         ],
         correct: 'c'

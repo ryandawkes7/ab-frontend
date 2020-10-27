@@ -4,72 +4,72 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'How many seats are there on the Concorde?',
+        text: 'How many passengers can go on Concorde Alpha Foxtrot at once?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: '300'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: '50'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: '150'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: '100'
             }
         ],
-        correct: 'a'
+        correct: 'd'
     },
     {
         id: 2,
-        text: 'How many Concordes were in use (not manufactured)?',
+        text: 'How many Concordes were made?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: '100'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: '5'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: '20'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: '40'
             }
         ],
-        correct: 'a'
+        correct: 'c'
     },
     {
         id: 3,
-        text: 'What was the top speed of Concorde?',
+        text: 'Which two countries worked together to make the Concorde?',
         choices:[
             {
                 id: 'a',
-                text: 'Correct'
+                text: 'UK & Germany'
             },
             {
                 id: 'b',
-                text: 'Incorrect'
+                text: 'UK & USA'
             },
             {
                 id: 'c',
-                text: 'Incorrect'
+                text: 'UK & Russia'
             },
             {
                 id: 'd',
-                text: 'Incorrect'
+                text: 'UK & France'
             }
         ],
-        correct: 'a'
+        correct: 'd'
     },
 ]
 

@@ -4,30 +4,30 @@ import QuizFormat from "../../quizStructure/quizStructure";
 const Questions = [
     {
         id: 1,
-        text: 'What is stored below the floor in commercial airplanes?',
+        text: 'Where does the luggage go when you are on a plane?',
         choices:[
             {
                 id: 'a',
-                text: 'Engine Parts'
+                text: 'In the roof'
             },
             {
                 id: 'b',
-                text: 'Passenger\'s Luggage'
+                text: 'In the wings'
             },
             {
                 id: 'c',
-                text: 'Cabin Crew'
+                text: 'Underneath the floor'
             },
             {
                 id: 'd',
-                text: 'Passengers'
+                text: 'In the tail'
             }
         ],
-        correct: 'b'
+        correct: 'c'
     },
     {
         id: 2,
-        text: 'Which single-aisle aircraft family is the world’s best-selling one?',
+        text: 'Find the A320 cockpit. Spot the difference between the real cockpit and the picture below',
         choices:[
             {
                 id: 'a',
