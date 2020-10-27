@@ -36,8 +36,8 @@ import SectionOnePic from "./components/picture/pictures/sectionOnePic";
 class App extends Component {
     render() {
           return (
-              // <DeviceOrientation lockOrientation={'portrait'}>
-              //     <Orientation orientation='portrait' alwaysRender={false}>
+              <DeviceOrientation lockOrientation={'portrait'}>
+                   <Orientation orientation='portrait' alwaysRender={false}>
                       <BrowserRouter>
                           <div className="container">
                               <Switch>
@@ -138,13 +138,13 @@ class App extends Component {
                               </Switch>
                           </div>
                       </BrowserRouter>
-              //     </Orientation>
-              //     <Orientation orientation='landscape' alwaysRender={false} className="locked">
-              //         <div>
-              //             <p>Please rotate your device</p>
-              //         </div>
-              //     </Orientation>
-              // </DeviceOrientation>
+                   </Orientation>
+                   <Orientation orientation='landscape' alwaysRender={false} className="locked">
+                       <div>
+                           <p>Please rotate your device</p>
+                       </div>
+                   </Orientation>
+              </DeviceOrientation>
 
 
           );
