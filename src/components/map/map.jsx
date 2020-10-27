@@ -373,7 +373,7 @@ function UnwrappedMap() {
         // Creates map
         <GoogleMap
             defaultZoom={21}
-            defaultCenter={{lat: 51.523176, lng: -2.578209}}
+            defaultCenter={{lat: latitude, lng: longitude}}
             center={{ lat: latitude, lng: longitude }}
             options={{
                 fullscreenControl: false,
