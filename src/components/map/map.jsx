@@ -374,13 +374,13 @@ function UnwrappedMap() {
         <GoogleMap
             defaultZoom={21}
             defaultCenter={{lat: 51.523176, lng: -2.578209}}
-            // center={{ lat: latitude, lng: longitude }}
+            center={{ lat: latitude, lng: longitude }}
             options={{
                 fullscreenControl: false,
                 zoomControl: false,
                 streetViewControl: false,
                 mapTypeControl: false,
-                // draggable: false,
+                draggable: false,
                 clickableIcons: false,
             }}
         >
