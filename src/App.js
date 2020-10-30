@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Axios from "axios";
 
 import DeviceOrientation, { Orientation } from 'react-screen-orientation';
 
@@ -35,6 +36,14 @@ import SectionOnePic from "./components/picture/pictures/sectionOnePic";
 
 class App extends Component {
     render() {
+        Axios({
+            method: "GET",
+            url: "http://localhost:8000",
+            headers: { "Content-Type": "application/json" }
+        })
+            .then(res => {
+                console.log(res.data.message);
+            });
           return (
               // <DeviceOrientation lockOrientation={'portrait'}>
               //      <Orientation orientation='portrait' alwaysRender={false}>

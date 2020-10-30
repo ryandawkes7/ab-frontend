@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import Axios from "axios";
 import "./welcome.css";
 
 import PlaneVector from './assets/plane-vector.svg';
@@ -8,19 +9,46 @@ import CloseBtn from './assets/icon.svg';
 
 class Welcome extends Component {
     state = {
-        isActive: false
+        isActive: false,
+        emailAddress: "",
+        emailAddressList: []
     }
+
     toggleChange() {
         this.setState({
             isActive: !this.state.isActive
         })
     }
 
+    getUserEmail() {
+        Axios.get('http://localhost:3001/api/get')
+            .then((response) => {
+                this.setState({
+                    emailAddressList: response.data
+                })
+            })
+    }
+
     render () {
-        const { isActive } = this.state;
+        const { isActive, emailAddress, emailAddressList } = this.state;
+
+        const printData = this.getUserEmail();
+
+        const submitEmail = () => {
+            Axios.post('http://localhost:3001/api/insert',
+                { email_address: this.state.emailAddress })
+                .then(() => {
+                    alert("successful insert");
+                })
+        }
 
         return (
             <div className="container welcome-container">
+
+                {/* Map Email Address from SQL list */}
+                {/*{emailAddressList.map((val) => {*/}
+                {/*    return <p>Email Address: {val.email_address}</p>*/}
+                {/*})}*/}
 
                 {isActive &&
                     <div className="welcome-popup-container">
@@ -61,17 +89,27 @@ class Welcome extends Component {
                         </button>
                     </div>
                     <input
-                        type="text"
+                        type="email"
                         id="email-input"
                         placeholder="Type your email here"
+                        onChange={(e) => {
+                            this.setState({ emailAddress: e.target.value })
+                        }}
                     />
                     <p style={{fontSize: 16, textAlign: 'left'}}>or just dive right in!</p>
                 </div>
                 <div className="welcome-button-container">
                     <Link to="/info">
-                        <button className="submit-btn">Take Me On Board!</button>
+                        <button
+                            className="submit-btn"
+                            onClick={submitEmail}
+                        >
+                            Take Me On Board!
+                        </button>
                     </Link>
                 </div>
+
+
             </div>
         );
     }
