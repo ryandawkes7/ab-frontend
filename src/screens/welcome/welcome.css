@@ -1,46 +1,100 @@
+/* Welcome Screen */
 .welcome-container{
-    height: 100%;
+    display: flex; justify-content: center; align-items: center;
+    height: 100%; width: 100%;
     background: linear-gradient(180deg, #005CA9 0%, rgba(20, 136, 202, 0) 50%);
-
-    justify-content: center;
 }
 
-.welcome-container img{ margin: 0rem 0 2rem auto; }
+/** Welcome Image Section */
+.welcome-image-container {
+    display: flex; justify-content: flex-end; align-items: center;
+    height: 10%; width: 100%;
+}
+.welcome-image-container img { height: 75%; }
+/** End of Welcome Image Section */
 
+/** Information Section */
 .welcome-info-container{
-    height: fit-content; width: 90vw;
-    margin: 0 auto; justify-content: center;
-}
-.welcome-info-container h1, h3, input, p{
-    margin-bottom: 2rem; text-align: center;
-}
-.welcome-info-container p{ text-align: center; }
-.welcome-info-container input {
-    border: none; border-radius: 10px;
-    box-shadow: 0 0 2px 0 rgba(30,30,30,0.3), 0 0 4px 0 rgba(30,30,30,0.29); -webkit-box-shadow: 0 0 2px 0 rgba(30,30,30,0.3), 0 0 4px 0 rgba(30,30,30,0.29);
-    -webkit-appearance: none;
-
-}
-.welcome-label-container {
-    display: flex; gap: 1rem;
+    display: flex; flex-direction: column;
     justify-content: center; align-items: center;
-    width: fit-content; height: fit-content;
-    margin-bottom: 1rem;
-}
-.welcome-label{
-    display: inline-block; width: fit-content;
-    font-size: 20px;
-}
-.welcome-label-container button {
-    width: 3.5rem; height: 3.5rem; margin-left: 1rem;
-
-    background: linear-gradient(180deg, #005CA9 0%, #1C96DB 100%);
-    border-radius: 100px; color: white;
-}
-.welcome-label-container h3{
-    margin: auto;
+    height: 75%;
 }
 
+/*** Title Section */
+.w-i-title-container {
+    display: flex; text-align: center; align-items: center;
+    height: 30%; width: 95%;
+    font-size: 45px; font-weight: 900; text-transform: uppercase;
+}
+/*** End of Title Section */
+
+/*** Description Section */
+.w-i-description-container {
+    display: flex; text-align: center; align-items: center;
+    height: 25%; width: 95%;
+    font-size: 22px; font-weight: normal;
+}
+/*** End of Description Section */
+
+/*** Email Section */
+.welcome-email-container {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    height: 45%; width: 95%;
+}
+
+/**** Description Section */
+.w-e-description-container {
+    display: flex; align-items: center;
+    width: 95%; height: 30%;
+
+    font-size: 15px; font-weight: normal;
+}
+/**** End of Description Section */
+
+/**** Title Section */
+.w-e-label-container {
+    display: flex; align-items: center;
+    width: 95%; height: 20%;
+}
+.w-e-label-container label {
+    font-size: 22px; font-weight: normal;
+}
+/**** End of Title Section */
+
+/**** Input Section */
+.w-e-input-container {
+    position: relative;
+    display: flex; align-items: center;
+    width: 95%; height: 40%;
+}
+
+.w-e-input-container input {
+    width: 100%; height: 20%; max-height: 20px;
+}
+
+.w-e-i-button-container {
+    position: absolute; right: 5%;
+    display: flex; justify-content: center; align-items: center;
+    width: 4rem; height: 4rem; border-radius: 500px; overflow: hidden;
+    max-height: 90%; background: #1488CA;
+}
+.w-e-i-button-container h3{
+    font-size: 18px; font-weight: 900; color: white;
+}
+/**** End of Input Section */
+
+/**** Skip Section */
+.w-e-skip-container {
+    width: 95%; height: 10%;
+    display: flex; align-items: center;
+    font-size: 15px; font-weight: normal;
+}
+/**** End of Skip Section */
+
+/*** End of Email Section */
+
+/** End of Information Section */
 
 .submit-btn{
     background: linear-gradient(180deg, rgba(0, 92, 169, 0.94) 0%, #1488CA 100%);
@@ -57,23 +111,68 @@
     font-weight: 600;
 }
 
+/** Button Section */
 .welcome-button-container{
-    margin: 0 auto;
+    display: flex; justify-content: center; align-items: center;
+    height: 15%; width: 95%;
 }
+.welcome-button-container a {
+    display: flex; justify-content: center; align-items: center;
+    width: 80%; height: 55%;
+    font-size: 22px; font-weight: 700; text-decoration: none; color: white;
+    background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
+    border-radius: 30px;
+}
+/** End of Button Section */
 
+/** Popup Section */
 .welcome-popup-container {
-    position: absolute; left: 0; top: 0; bottom: 0; right: 0;
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; width: 100%; height: 100%;
     background: rgba(0,0,0,0.9);
 
-    display: flex; justify-content: center; align-items: center;
 }
-.welcome-popup-inner-container {
-    background: white; padding: 2rem; margin: 2rem; border-radius: 10px;
-    display: flex; flex-direction: column; gap: 2rem;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3), 0 6px 12px 0 rgba(0,0,0,0.29);
-    -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3), 0 6px 12px 0 rgba(0,0,0,0.29);
+.welcome-popup-inner-section {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    width: 90%; height: 55%;
+    background: white; border-radius: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3), 0 6px 12px 0 rgba(0,0,0,0.29); -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3), 0 6px 12px 0 rgba(0,0,0,0.29);
 }
-.welcome-popup-close-button {
-    width: fit-content; height: fit-content;
+.w-p-inner-container {
+    height: 90%; width: 90%;
+}
+
+/*** Close Button */
+.w-p-close-button {
+    display: flex; align-items: center;
+    height: 10%; width: 100%;
     border: none; background: none;
 }
+/*** End of Close Button */
+
+/*** Description Section */
+.w-p-info-container {
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; height: 60%; width: 100%;
+    font-size: 20px; font-weight: normal;
+}
+/*** End of Description Section */
+
+/*** Exit Button */
+.w-p-exit-button-container {
+    display: flex; align-items: center; justify-content: center;
+    height: 30%; width: 100%;
+}
+.w-p-exit-button-container button {
+    display: flex; justify-content: center; align-items: center;
+    padding: 1.5rem 5rem; border-radius: 32px;
+    background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
+    font-size: 22px; font-weight: bold; color: white;
+}
+/*** End of Exit Button */
+
+/** End of Popup Section */
+
+
+/* End of Welcome Screen */

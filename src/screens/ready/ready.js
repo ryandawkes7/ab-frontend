@@ -9,25 +9,38 @@ class Ready extends Component {
     render () {
         return (
         <div className="container ready-container">
-                <Back />
 
-                <div className="inner-container ready-inner-container">
+            {/* Back Button */}
+            <div className="back-button">
+                <Back className="back-button"/>
+            </div>
 
-                    <h2>Clear For Take-Off!</h2>
-                    <h3>Get ready to start your adventure and collect as many points as you can</h3>
+            <div className="ready-inner-container">
 
+                {/* Title Container */}
+                <div className="r-title-container">
+                    Clear For Take-Off!
+                </div>
 
+                {/* Description Container */}
+                <div className="r-description-container">
+                    Get ready to start your adventure and collect as many points as you can
+                </div>
+
+                {/* Image Container */}
+                <div className="r-image-container">
                     <img src={PlaneVector} alt=""/>
+                </div>
 
-                    <Link to="game-menu" className="basic-btn start-adventure">
+                {/* Continue button*/}
+                <div className="r-continue-container">
+                    <Link to="/game-menu" className="basic-btn r-continue">
                         <h3>Start your Adventure</h3>
                     </Link>
-
-                    {/*<Link to="/ts-and-cs" className="text-btn terms-btn">*/}
-                    {/*    <h4>Terms & Conditions</h4>*/}
-                    {/*</Link>*/}
                 </div>
+
             </div>
+        </div>
         );
     }
 }

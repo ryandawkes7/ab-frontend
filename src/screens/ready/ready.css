@@ -1,28 +1,43 @@
 .ready-container {
-    display: flex;
-}
-.ready-inner-container h2{
-    margin-bottom: 2rem;
-}
-.ready-inner-container h3 {
-    margin: 2rem;
-}
-.ready-inner-container img {
-    margin: 4rem auto 4rem 0;
+    display: flex; justify-content: center; align-items: center;
 }
 
-.start-adventure {
-    margin: 2rem; padding: 0 2rem;
-}
-
-.terms-btn {
-    margin-top: 2rem;
-}
-
-.locked {
+.ready-inner-container {
     display: flex; flex-direction: column;
-    width: 100%; height: 100vh;
-    border: 1px solid red;
-    justify-content: center;align-items: center;
-    margin: auto;
+    justify-content: space-between; align-items: center;
+    height: 80%; width: 95%; margin-bottom: 20%;
 }
+
+/* Title Container */
+.r-title-container {
+    display: flex; justify-content: center; align-items: center;
+    height: 15%; width: 95%; margin-top: 5%;
+    font-size: 24px; font-weight: 700; text-transform: uppercase;
+}
+/* End of Title Container */
+
+/* Description Container */
+.r-description-container {
+    display: flex; align-items: center; justify-content: center;
+    width: 95%; height: 20%; margin-bottom: 5%;
+    font-size: 22px; font-weight: 400; text-align: center;
+}
+/* End of Description Container */
+
+/* Image Section */
+.r-image-container {
+    display: flex; justify-content: flex-start; align-items: center;
+    width: 105%; height: 30%;
+}
+.r-image-container img{
+    width: 65%;
+}
+/* End of Image Section */
+
+/* Continue Button */
+.r-continue-container {
+    display: flex; justify-content: center; align-items: center;
+    height: 25%; width: 95%;
+}
+.r-continue { width: 70%; }
+/* End of Continue Button */

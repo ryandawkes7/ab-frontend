@@ -122,6 +122,7 @@
   margin: 0;
   padding: 0;
   font-family: "Verlag", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 html{
@@ -130,8 +131,7 @@ html{
 }
 
 body{
-  height: 100vh;
-  margin: 0; padding: 0;
+  height: 100vh; margin: 0; padding: 0;
 }
 
 h1, h2 {
@@ -139,38 +139,30 @@ h1, h2 {
 }
 
 h1{
-  font-size: 48px;
-  font-weight: 900;
-
-  line-height: 140%;
-
-  text-transform: uppercase;
+  font-size: 48px; font-weight: 900;
+  line-height: 140%; text-transform: uppercase;
 }
 
 h2{
-  font-size: 24px;
-  font-weight: bold;
-
-  line-height: 100%;
-
-  text-transform: uppercase;
+  font-size: 24px; font-weight: bold;
+  line-height: 100%; text-transform: uppercase;
 }
 
 h3{
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 22px; font-weight: 400;
 }
 
 h4{
-  font-size: 20px;
-  font-weight: 300;
-
+  font-size: 20px; font-weight: 300;
   text-transform: capitalize;
 }
 
 p {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 18px; font-weight: 400;
+}
+
+a{
+  text-decoration: none;
 }
 
 button {
@@ -178,16 +170,10 @@ button {
 }
 
 input{
-  width: 80vw;
-  height: fit-content;
-
   padding: 2rem 5vw;
-  margin: 0.5rem auto;
-
-  font-size: 16px;
-
-  border-radius: 0;
-  border: 1px solid black;
+  font-size: 16px; -webkit-appearance: none;
+  border-radius: 0; border: 0.5px solid #DEDEDE;
+  box-shadow: 0 0 8px rgba(140, 140, 140, 0.16); -webkit-box-shadow: 0px 0px 8px rgba(140, 140, 140, 0.16); -moz-box-shadow: 0px 0px 8px rgba(140, 140, 140, 0.16); -o-box-shadow: 0px 0px 8px rgba(140, 140, 140, 0.16);
 }
 
 .grid-container {
@@ -243,19 +229,12 @@ input{
 }
 
 .next-button-container {
-  margin-left: auto;
+  height: 10%; width: 100%;
 }
 
 .next-button {
-  padding: 0;
-
-  border: none; border-radius: 100px 0 0 0;
-  background: linear-gradient(180deg, #1488CA 0%, #005CA9 100%);
-  width: 130px; height: 10vh;
-
   display: flex;
-  align-items: center; justify-content: center;
-  text-decoration: none; color: white;
+  align-items: center; justify-content: flex-end;
 }
 .next-button h3 {
   margin: auto;
@@ -267,4 +246,8 @@ input{
   justify-content: center; align-items: center;
 
   margin: 2rem 0;
+}
+
+.back-button {
+  height: 10%; width: 100%;
 }

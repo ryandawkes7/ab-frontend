@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import Axios from "axios";
 import './playerInfo.css';
 
 import EasyInactive from './assets/lavel-inactive-easy.svg'; import MediumInactive from './assets/lavel-inactive-medium.svg'; import HardInactive from './assets/level-inactive-hard.svg';
 import EasyActive from './assets/level-active-easy.svg'; import MediumActive from './assets/level-active-medium.svg'; import HardActive from './assets/level-active-hard.svg';
 import Settings from '../../images/settings-icon.svg';
-import Back from "../../components/backButton/back";
+import Back from "../../components/backButton/back"; import NextButton from '../../images/next-button.svg';
 
 class PlayerInfo extends Component {
 
@@ -45,26 +46,48 @@ class PlayerInfo extends Component {
 
         return (
             <div className="container p-info-container"> {/* Page Container */}
-                <Back className="back-button"/>
+                {/* Back Button */}
+                <div className="back-button">
+                    <Back className="back-button"/>
+                </div>
 
-                <div className="inner-container player-inner-container">
-                    <h2>Player Settings</h2>
-                    <div className="name-input-container"> {/* Name Input Section */}
-                        <label for="name-input" className="name-label">
+                {/* Body Container */}
+                <div className="player-inner-container">
+
+                    {/* Title Section  */}
+                    <div className="p-i-title-container">
+                        Player Settings
+                    </div>
+
+                    {/* Username Section */}
+                    <div className="p-i-name-container">
+
+                        {/* Name Label */}
+                        <label htmlFor="name-input">
                             Name <span>*</span>
                         </label>
+
+                        {/* Name Input */}
                         <input
                             type="text"
                             id="name-input"
                             placeholder="Type your name here"
                             required
                         />
-                    </div> {/* End of Name Input Section */}
 
-                    <div className="difficulty-container"> {/* Difficulty Options Section */}
-                        <label>Select your difficulty level <span>*</span></label>
+                    </div>
+
+                    {/* Difficulty Section*/}
+                    <div className="p-i-difficulty-container">
+
+                        {/* Difficulty Label */}
+                        <label>
+                            Select your difficulty level <span>*</span>
+                        </label>
+
+                        {/* Difficulty Settings Selection */}
                         { !EasySelected && !MediumSelected && !HardSelected &&
-                            <div className="diff-btn-container"> {/* Difficulty Buttons */ }
+                            <div className="diff-btn-container">
                                 <button
                                     className="diff-btn easy"
                                     onClick={() => this.selectEasy()}
@@ -152,7 +175,30 @@ class PlayerInfo extends Component {
                         </div>
                         }
 
-                    </div> {/* End of Difficulty Options Section */}
+                    </div>
+
+                    {/* Accessibility Settings */}
+                    <div className="p-i-accessibility-container">
+
+                        {/* Description Section */}
+                        <div className="p-i-a-description">
+                            Adjust font size, sound and turn on voiceover support in accessibility settings.
+                        </div>
+
+                        {/* Accessibility Button */}
+                        <div className="p-i-a-button-container">
+                            <Link to="/accessibility" className="p-i-a-button">
+                                <div className="p-i-a-b-image">
+                                    <img src={Settings} alt="Accessibility Settings"/>
+                                </div>
+                                <div className="p-i-a-b-title">
+                                    Accessibility Settings
+                                </div>
+                            </Link>
+                        </div>
+
+                    </div>
+
 
                     {/*<p style={{fontSize: 14, width: '90%', textAlign: 'left'}}>Adjust font size, sound and turn on voiceover support in accessibility settings</p>*/}
                     {/*<div className="accessibility-container"> /!* Accessibility Button Section *!/*/}
@@ -167,9 +213,10 @@ class PlayerInfo extends Component {
 
                 </div>
 
+                {/* Next Button */}
                 <div className="next-button-container">
                     <Link to="/character" className="next-button">
-                        <h3>Next</h3>
+                        <img src={NextButton} alt=""/>
                     </Link>
                 </div>
             </div>

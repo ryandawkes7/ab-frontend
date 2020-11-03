@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import './character.css';
 
-import AlfieUnselected from './assets/alfie-unselected.svg'; import AlfieSelectedIcon from './assets/alfie-selected.svg';
-import AmeliaUnselected from './assets/amelia-unselected.svg'; import AmeliaSelectedIcon from './assets/amelia-selected.svg';
 import Back from "../../components/backButton/back";
+import NextButton from "../../images/next-button.svg";
+
+import AlfieUnselected from './assets/alfie-unselected.png'; import AlfieSelected from './assets/alfie-selected.svg';
+import AmeliaUnselected from './assets/amelia-unselected.png'; import AmeliaSelected from './assets/amelia-selected.svg';
 
 class Character extends Component {
     state = {
@@ -32,75 +34,90 @@ class Character extends Component {
 
         return (
             <div className="container char-page-container"> {/* Page Container */}
-                <Back /> {/* Back Button */}
 
-                {/* Inner Container */}
-                <div className="inner-container">
-                    <h2>Choose Character</h2> {/* Title */}
+                {/* Back Button */}
+                <div className="back-button">
+                    <Back className="back-button"/>
+                </div>
+
+                <div className="c-p-inner-container">
+
+                    {/* Title Section */}
+                    <div className="c-p-title-container">
+                        Choose Character
+                    </div>
+
+                    {/* Character Section */}
+                    <div className="c-p-character-container">
+
+                        {/* Alfie */}
+                        <div className="c-p-c-character">
+                            <img src={AlfieUnselected} />
+                        </div>
+
+                        {/* Amelia */}
+                        <div className="c-p-c-character">
+                            <img src={AmeliaUnselected} />
+                        </div>
+
+
+                    </div>
+
                     {/* Characters Container */}
+                    {/*{ !AlfieSelected && !AmeliaSelected &&*/}
+                    {/*    <div className="character-container">*/}
+                    {/*        <button*/}
+                    {/*            className="character-btn"*/}
+                    {/*            onClick={() => this.selectAlfie()}*/}
+                    {/*        >*/}
+                    {/*            <img src={ AlfieUnselected } alt=""/>*/}
+                    {/*        </button>*/}
+                    {/*        <button*/}
+                    {/*            className="character-btn"*/}
+                    {/*            onClick={() => this.selectAmelia()}*/}
+                    {/*        >*/}
+                    {/*            <img src={ AmeliaUnselected } alt=""/>*/}
+                    {/*        </button>*/}
+                    {/*    </div>*/}
+                    {/*}*/}
 
-                    { !AlfieSelected && !AmeliaSelected &&
-                        <div className="character-container">
-                            <button
-                                className="character-btn alfie"
-                                onClick={() => this.selectAlfie()}
-                            >
-                                <img src={ AlfieUnselected } alt=""/>
-                            </button>
-                            <button
-                                className="character-btn amelia"
-                                onClick={() => this.selectAmelia()}
-                            >
-                                <img src={ AmeliaUnselected } alt=""/>
-                            </button>
-                        </div>
-                    }
+                    {/*{ AlfieSelected && !AmeliaSelected &&*/}
+                    {/*    <div className="character-container">*/}
+                    {/*        <button className="character-btn">*/}
+                    {/*            <img src={ AlfieSelected } alt=""/>*/}
+                    {/*        </button>*/}
+                    {/*        <button*/}
+                    {/*            className="character-btn"*/}
+                    {/*            onClick={() => this.selectAmelia()}*/}
+                    {/*        >*/}
+                    {/*            <img src={ AmeliaUnselected } alt=""/>*/}
+                    {/*        </button>*/}
+                    {/*    </div>*/}
+                    {/*}*/}
 
-                    { AlfieSelected && !AmeliaSelected &&
-                        <div className="character-container">
-                            <button className="character-btn alfie">
-                                <img src={ AlfieSelectedIcon } alt=""/>
-                            </button>
-                            <button
-                                className="character-btn amelia"
-                                onClick={() => this.selectAmelia()}
-                            >
-                                <img src={ AmeliaUnselected } alt=""/>
-                            </button>
-                        </div>
-                    }
-
-                    { !AlfieSelected && AmeliaSelected &&
-                        <div className="character-container">
-                            <button
-                                className="character-btn alfie"
-                                onClick={() => this.selectAlfie()}
-                            >
-                                <img src={ AlfieUnselected } alt=""/>
-                            </button>
-                            <button className="character-btn amelia">
-                                <img src={ AmeliaSelectedIcon } alt=""/>
-                            </button>
-                        </div>
-                    }
-
-                    {/* End of Characters Section */ }
-
-
+                    {/*{ !AlfieSelected && AmeliaSelected &&*/}
+                    {/*    <div className="character-container">*/}
+                    {/*        <button*/}
+                    {/*            className="character-btn"*/}
+                    {/*            onClick={() => this.selectAlfie()}*/}
+                    {/*        >*/}
+                    {/*            <img src={ AlfieUnselected } alt=""/>*/}
+                    {/*        </button>*/}
+                    {/*        <button className="character-btn">*/}
+                    {/*            <img src={ AmeliaSelected } alt=""/>*/}
+                    {/*        </button>*/}
+                    {/*    </div>*/}
+                    {/*}*/}
 
                 </div>
                 {/* End of Inner Container */}
 
-                {/* Next Button Container */}
+                {/* Next Button */}
                 <div className="next-button-container">
-                    <Link
-                        to="/ready"
-                        className="next-button"
-                    >
-                        <h3>Next</h3>
+                    <Link to="/ready" className="next-button">
+                        <img src={NextButton} alt=""/>
                     </Link>
                 </div>
-                {/* Next Button Container */}
             </div>
         );
     }
