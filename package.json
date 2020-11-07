@@ -15,12 +15,16 @@
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
     "react-html5-camera-photo": "^1.5.4",
+    "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-screen-orientation": "0.0.4",
     "react-scripts": "3.4.3",
     "react-webcam": "^5.2.1",
     "recompose": "^0.30.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "use-position": "0.0.7"
   },
   "scripts": {

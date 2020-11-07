@@ -233,8 +233,11 @@ input{
 }
 
 .next-button {
-  display: flex;
+  display: flex; height: 100%;
   align-items: center; justify-content: flex-end;
+}
+.next-button img {
+  height: 100%;
 }
 .next-button h3 {
   margin: auto;

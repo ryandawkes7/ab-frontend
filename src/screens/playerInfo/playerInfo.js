@@ -1,48 +1,39 @@
 import React, {Component} from 'react';
+import { Provider } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Axios from "axios";
 import './playerInfo.css';
 
-import EasyInactive from './assets/lavel-inactive-easy.svg'; import MediumInactive from './assets/lavel-inactive-medium.svg'; import HardInactive from './assets/level-inactive-hard.svg';
-import EasyActive from './assets/level-active-easy.svg'; import MediumActive from './assets/level-active-medium.svg'; import HardActive from './assets/level-active-hard.svg';
 import Settings from '../../images/settings-icon.svg';
 import Back from "../../components/backButton/back"; import NextButton from '../../images/next-button.svg';
 
 class PlayerInfo extends Component {
 
     state = {
-        EasySelected: false,
-        MediumSelected: false,
-        HardSelected: false,
+        userName: '',
+        userEmail: ''
     }
 
-    selectEasy() {
+    // Handles changes in input boxes
+    handleChange = event => {
+        event.preventDefault();
+
+        const { name, value } = event.target;
         this.setState({
-            EasySelected: true,
-            MediumSelected: false,
-            HardSelected: false
+            [name]: value
         })
     }
-    selectMedium() {
-        this.setState({
-            EasySelected: false,
-            MediumSelected: true,
-            HardSelected: false
-        })
-    }
-    selectHard() {
-        this.setState({
-            EasySelected: false,
-            MediumSelected: false,
-            HardSelected: true
-        })
+
+    handleSubmit = (event) => {
+        const { userName, userEmail } = this.state;
+
+        console.log("Username: " + userName);
+        console.log("Email: " + userEmail);
     }
 
     render () {
 
-        const { EasySelected } = this.state
-        const { MediumSelected } = this.state
-        const { HardSelected } = this.state
+        const { userName, userEmail } = this.state;
 
         return (
             <div className="container p-info-container"> {/* Page Container */}
@@ -70,111 +61,52 @@ class PlayerInfo extends Component {
                         {/* Name Input */}
                         <input
                             type="text"
-                            id="name-input"
+                            name="userName"
+                            value={ userName }
+                            onChange={this.handleChange}
                             placeholder="Type your name here"
                             required
                         />
 
                     </div>
 
-                    {/* Difficulty Section*/}
-                    <div className="p-i-difficulty-container">
+                    {/* Email Section */}
+                    <div className="p-i-email-container">
 
-                        {/* Difficulty Label */}
-                        <label>
-                            Select your difficulty level <span>*</span>
-                        </label>
+                        {/* Email Description */}
+                        <div className="p-i-description-container">
+                            Enter your email address to stay in the loop with Aerospace Bristol, receive your final score certificate, and be in with a chance to win prizes
+                        </div>
 
-                        {/* Difficulty Settings Selection */}
-                        { !EasySelected && !MediumSelected && !HardSelected &&
-                            <div className="diff-btn-container">
-                                <button
-                                    className="diff-btn easy"
-                                    onClick={() => this.selectEasy()}
-                                >
-                                    <img src={ EasyInactive }/>
-                                </button>
-                                <button
-                                    className="diff-btn medium"
-                                    onClick={() => this.selectMedium()}
-                                >
-                                    <img src={ MediumInactive }/>
-                                </button>
-                                <button
-                                    className="diff-btn hard"
-                                    onClick={() => this.selectHard()}
-                                >
-                                    <img src={ HardInactive }/>
+                        {/* Welcome Label */}
+                        <div className="p-i-label-container">
+                            <label htmlFor="email-input">
+                                E-mail
+                            </label>
+                        </div>
+
+                        {/* Email Input Container */}
+                        <div className="p-i-input-container">
+                            <input
+                                type="email"
+                                name="userEmail"
+                                value={ userEmail }
+                                onChange={this.handleChange}
+                                placeholder="Type your email here"
+                            />
+
+                            {/* Info Button */}
+                            <div className="p-i-button-container">
+                                <button onClick={() => this.toggleChange()}>
+                                    <h3>i</h3>
                                 </button>
                             </div>
-                        }
-                        { EasySelected && !MediumSelected && !HardSelected &&
-                            <div className="diff-btn-container"> {/* Difficulty Buttons */ }
-                                <button
-                                    className="diff-btn easy"
-                                    onClick={() => this.selectEasy()}
-                                >
-                                    <img src={ EasyActive }/>
-                                </button>
-                                <button
-                                    className="diff-btn medium"
-                                    onClick={() => this.selectMedium()}
-                                >
-                                    <img src={ MediumInactive }/>
-                                </button>
-                                <button
-                                    className="diff-btn hard"
-                                    onClick={() => this.selectHard()}
-                                >
-                                    <img src={ HardInactive }/>
-                                </button>
-                            </div>
-                        }
-                        { !EasySelected && MediumSelected && !HardSelected &&
-                        <div className="diff-btn-container"> {/* Difficulty Buttons */ }
-                            <button
-                                className="diff-btn easy"
-                                onClick={() => this.selectEasy()}
-                            >
-                                <img src={ EasyInactive }/>
-                            </button>
-                            <button
-                                className="diff-btn medium"
-                                onClick={() => this.selectMedium()}
-                            >
-                                <img src={ MediumActive }/>
-                            </button>
-                            <button
-                                className="diff-btn hard"
-                                onClick={() => this.selectHard()}
-                            >
-                                <img src={ HardInactive }/>
-                            </button>
                         </div>
-                        }
-                        { !EasySelected && !MediumSelected && HardSelected &&
-                        <div className="diff-btn-container"> {/* Difficulty Buttons */ }
-                            <button
-                                className="diff-btn easy"
-                                onClick={() => this.selectEasy()}
-                            >
-                                <img src={ EasyInactive }/>
-                            </button>
-                            <button
-                                className="diff-btn medium"
-                                onClick={() => this.selectMedium()}
-                            >
-                                <img src={ MediumInactive }/>
-                            </button>
-                            <button
-                                className="diff-btn hard"
-                                onClick={() => this.selectHard()}
-                            >
-                                <img src={ HardActive }/>
-                            </button>
-                        </div>
-                        }
 
+                        {/* Skip Info Section */}
+                        <div className="p-i-skip-container">
+                            or just dive right in!
+                        </div>
                     </div>
 
                     {/* Accessibility Settings */}
@@ -199,23 +131,11 @@ class PlayerInfo extends Component {
 
                     </div>
 
-
-                    {/*<p style={{fontSize: 14, width: '90%', textAlign: 'left'}}>Adjust font size, sound and turn on voiceover support in accessibility settings</p>*/}
-                    {/*<div className="accessibility-container"> /!* Accessibility Button Section *!/*/}
-                    {/*    <Link*/}
-                    {/*        to="/accessibility"*/}
-                    {/*        className="accessibility-btn"*/}
-                    {/*    >*/}
-                    {/*        <img src={Settings} alt="" />*/}
-                    {/*        <h3>Accessibility Settings</h3>*/}
-                    {/*    </Link>*/}
-                    {/*</div> /!* End of Accessibility Button Section *!/*/}
-
                 </div>
 
                 {/* Next Button */}
                 <div className="next-button-container">
-                    <Link to="/character" className="next-button">
+                    <Link to="/character" className="next-button" onClick={() => this.handleSubmit()}>
                         <img src={NextButton} alt=""/>
                     </Link>
                 </div>

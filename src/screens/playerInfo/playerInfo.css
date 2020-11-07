@@ -1,18 +1,19 @@
 .p-info-container {
+    position: absolute; bottom: 0; height: 100%;
     display: flex; justify-content: center; align-items: center;
 }
 
 .player-inner-container {
     display: inline-flex; flex-direction: column;
     justify-content: space-between; align-items: center;
-    height: 80%; width: 95%;
+    height: 80%; width: 92.5%;
 }
 .player-inner-container span { color: red; margin-left: 0.5rem; }
 
 /* Title Container */
 .p-i-title-container {
     display: flex; justify-content: center; align-items: center;
-    width: 100%; height: 15%;
+    width: 100%; height: 10%;
     font-weight: 700; text-transform: uppercase; font-size: 24px;
 }
 /* End of Title Container */
@@ -25,67 +26,92 @@
 }
 .p-i-name-container label {
     display: flex; align-items: center;
-    width: 95%; height: 40%;
+    width: 100%; height: 40%;
     font-size: 22px; font-weight: 400;
 }
 .p-i-name-container input {
     display: flex; justify-content: center; align-items: center;
-    width: 85%; height: 20%; max-height: 20px;
+    width: 90%; height: 20px;
 }
 /* End of Username Section */
 
-/* Difficulty Settings */
-.p-i-difficulty-container {
+/* Email Section */
+.p-i-email-container {
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
-    width: 100%; height: 30%; margin-top: 5%;
-}
-.p-i-difficulty-container label {
-    display: flex; align-items: center;
-    width: 95%; height: 25%;
-    font-size: 22px; font-weight: 400;
+    height: 45%; width: 100%;
 }
 
-/** Difficulty Buttons */
-.diff-btn-container{
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; height: 75%;
+/**** Description Section */
+.p-i-description-container {
+    display: flex; align-items: center;
+    width: 100%; height: 25%; margin-top: 5%; margin-bottom: 2.5%;
+    line-height: 18px; font-size: 15px; font-weight: 400;
 }
-.diff-btn{
+/**** End of Description Section */
+
+/**** Title Section */
+.p-i-label-container {
+    display: flex; align-items: center;
+    width: 100%; height: 15%; margin-bottom: 2.5%;
+}
+.p-i-label-container label { font-size: 22px; font-weight: normal; }
+/**** End of Title Section */
+
+/**** Input Section */
+.p-i-input-container {
+    position: relative;
+    display: flex; align-items: center;
+    width: 100%; height: 25%;
+}
+
+.p-i-input-container input { width: 100%; height: 20px; }
+
+.p-i-button-container {
+    position: absolute; right: 5%;
     display: flex; justify-content: center; align-items: center;
-    height: 80%; width: 30%;
+    width: 4rem; height: 4rem; border-radius: 500px; overflow: hidden;
+    max-height: 90%; background: #1488CA;
 }
-.diff-btn img {
-    width: 90%; height: 90%;
+.p-i-button-container h3{
+    font-size: 18px; font-weight: 900; color: white;
 }
-/** End of Difficulty Buttons */
-/* End of Difficulty Settings */
+/**** End of Input Section */
+
+/**** Skip Section */
+.p-i-skip-container {
+    width: 100%; height: 10%; margin-top: 5%; margin-bottom: 5%;
+    display: flex; align-items: center;
+    font-size: 15px; font-weight: normal;
+}
+/**** End of Skip Section */
+
+/* End of Email Section */
 
 /* Accessibility Button */
 .p-i-accessibility-container {
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
-    height: 30%; width: 100%;
+    height: 25%; width: 100%;
 }
 
 .p-i-a-description {
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
-    font-size: 18px; font-weight: 400;
-    height: 50%; width: 95%;
+    font-size: 18px; font-weight: 400; line-height: 21.6px;
+    height: 35%; width: 100%;
 }
 .p-i-a-description div {
-    width: 376px; height: 44px;
-    background: red;
+    width: 376px; height: 44px; background: red;
 }
 
 .p-i-a-button-container {
     display: flex; justify-content: center; align-items: center;
-    height: 50%; width: 70%;
+    height: 65%; width: 100%;
 }
 .p-i-a-button{
     display: flex; justify-content: center; align-items: center;
-    width: 100%; height: 65%; border-radius: 27px;
+    width: 70%; height: 60%; border-radius: 27px;
     background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
 }
 .p-i-a-b-image {
