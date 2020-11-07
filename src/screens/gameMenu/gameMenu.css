@@ -26,7 +26,7 @@
     width: 100%; margin: 0 15%;
 }
 
-.s-h-i-image { margin: auto; height: 70%; }
+.s-h-i-image { margin: auto; height: 70%;}
 .s-h-i-image img { height: 90%; }
 .s-h-i-settings { margin: auto; height: 70%; }
 .s-h-i-settings img { height: 50%; }
@@ -58,7 +58,6 @@
 }
 
 .fact-btn{
-    background: linear-gradient(180deg, rgba(169, 0, 92, 0.94) 0%, rgba(215, 0, 104, 0.94) 100%);
 }
 
 .map-section {

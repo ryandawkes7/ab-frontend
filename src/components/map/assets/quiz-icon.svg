@@ -1,12 +1,12 @@
-<svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M35.75 3.60844C37.7611 2.44733 40.2389 2.44733 42.25 3.60844L68.025 18.4896C70.0361 19.6508 71.275 21.7966 71.275 24.1188V53.8812C71.275 56.2034 70.0361 58.3493 68.025 59.5104L42.25 74.3916C40.2389 75.5527 37.7611 75.5527 35.75 74.3916L9.97501 59.5104C7.9639 58.3492 6.72501 56.2034 6.72501 53.8812V24.1188C6.72501 21.7966 7.9639 19.6508 9.97501 18.4896L35.75 3.60844Z" fill="url(#paint0_linear)" stroke="black" stroke-width="3"/>
-<rect x="54" y="51" width="21" height="21" rx="10.5" fill="white" stroke="black" stroke-width="2"/>
-<rect x="19" y="19" width="40" height="40" fill="url(#pattern0)"/>
+<svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M30.8256 29.0743L59.0909 19.7537C61.2963 19.0265 63.7222 19.5311 65.4547 21.0774L87.6592 40.8957C89.3917 42.442 90.1676 44.7951 89.6947 47.0687L83.6339 76.2074C83.161 78.481 81.5111 80.3296 79.3056 81.0568L51.0403 90.3773C48.8349 91.1046 46.409 90.6 44.6765 89.0536L22.4721 69.2354C20.7396 67.6891 19.9636 65.3359 20.4365 63.0624L26.4974 33.9236C26.9703 31.6501 28.6202 29.8015 30.8256 29.0743Z" fill="url(#paint0_linear)" stroke="black" stroke-width="3"/>
+<rect x="74.0064" y="51.8651" width="21" height="21" rx="10.5" transform="rotate(-48.25 74.0064 51.8651)" fill="white" stroke="black" stroke-width="2"/>
+<rect x="26.8269" y="56.6689" width="40" height="40" transform="rotate(-48.25 26.8269 56.6689)" fill="url(#pattern0)"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0" transform="scale(0.00195312)"/>
 </pattern>
-<linearGradient id="paint0_linear" x1="39" y1="0" x2="39" y2="78" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear" x1="25.9694" y1="29.0961" x2="84.1619" y2="81.0349" gradientUnits="userSpaceOnUse">
 <stop stop-color="#B71918"/>
 <stop offset="1" stop-color="#FF8584" stop-opacity="0.74"/>
 </linearGradient>

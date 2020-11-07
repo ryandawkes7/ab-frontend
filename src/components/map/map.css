@@ -40,9 +40,13 @@
 
 .map-info-window {
     display: flex;
+    transform: rotate(-48.25deg);
 }
 .map-button {
+    border: 2px solid red;
+    transform: rotate(-48.25deg);
 }
+
 .map-basic-btn {
 
     width: fit-content; height: fit-content;
@@ -59,4 +63,19 @@
     margin: 2rem;
 }
 
+.wrapped-map-container {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 100%; z-index: -3;
+    border: 2px solid red;
+}
 
+.wrapped-map-inner-container {
+    width: 100%; height: 100%;
+    z-index: -2;
+}
+
+.map-element-container {
+    position: relative;
+    height: 250%; width: 250%;
+    left: -75%; top: -75%; transform: rotate(48.25deg);
+}

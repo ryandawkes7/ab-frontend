@@ -9,6 +9,7 @@ import SettingsIcon from './assets/settings-icon.svg';
 import GuideBtn from './assets/guide-button.svg';
 import CalibrateBtn from './assets/cabibrate-icon.svg'
 import CloseIcon from './assets/16/close-icon.svg';
+import {GoogleMap} from "react-google-maps";
 
 class Popup extends Component {
     handleClick = () => {
@@ -89,6 +90,7 @@ class GameMenu extends Component {
 
                 <MapSection
                     className="map-section"
+                    style={{transform: 'rotate(30deg)'}}
                 />
 
                 <div className="map-btn-container">

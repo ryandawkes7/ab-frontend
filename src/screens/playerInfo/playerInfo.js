@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { Provider } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Axios from "axios";
+import axios from "axios";
 import './playerInfo.css';
 
 import Settings from '../../images/settings-icon.svg';
@@ -11,28 +10,56 @@ class PlayerInfo extends Component {
 
     state = {
         userName: '',
-        userEmail: ''
+        userEmail: '',
+        accounts: []
     }
 
-    // Handles changes in input boxes
-    handleChange = event => {
-        event.preventDefault();
-
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        })
+    componentDidMount () {
+        this.getUserAccount();
     }
 
+    getUserAccount = () => {
+        axios.get('/api')
+            .then((response) => {
+                const data = response.data;
+                this.setState({ accounts: data })
+                console.log('Data has been received')
+            })
+            .catch(() => {
+                alert('Error retrieving data from server')
+            })
+    }
+
+    // Handles changes in input boxes & passes to state
+    handleChange = ({ target }) => {
+        const { name, value } = target;
+        this.setState({ [name]: value })
+    }
+
+    // Submit Form
     handleSubmit = (event) => {
-        const { userName, userEmail } = this.state;
 
-        console.log("Username: " + userName);
-        console.log("Email: " + userEmail);
+        const payload = {
+            userName: this.state.userName,
+            userEmail: this.state.userEmail
+        }
+
+        axios({
+            url: '/api/save',
+            method: 'POST',
+            data: payload
+        })
+            .then(() => {
+                console.log('Data sent to server')
+            })
+            .catch(() => {
+                console.log('ISE: Error sending data to server')
+            })
     }
 
     render () {
 
+        console.log('State: ', this.state)
         const { userName, userEmail } = this.state;
 
         return (
@@ -50,64 +77,71 @@ class PlayerInfo extends Component {
                         Player Settings
                     </div>
 
-                    {/* Username Section */}
-                    <div className="p-i-name-container">
+                    <form
+                        className="p-i-form"
+                        onSubmit={ this.handleSubmit }
+                    >
 
-                        {/* Name Label */}
-                        <label htmlFor="name-input">
-                            Name <span>*</span>
-                        </label>
+                        {/* Username Section */}
+                        <div className="p-i-name-container">
 
-                        {/* Name Input */}
-                        <input
-                            type="text"
-                            name="userName"
-                            value={ userName }
-                            onChange={this.handleChange}
-                            placeholder="Type your name here"
-                            required
-                        />
-
-                    </div>
-
-                    {/* Email Section */}
-                    <div className="p-i-email-container">
-
-                        {/* Email Description */}
-                        <div className="p-i-description-container">
-                            Enter your email address to stay in the loop with Aerospace Bristol, receive your final score certificate, and be in with a chance to win prizes
-                        </div>
-
-                        {/* Welcome Label */}
-                        <div className="p-i-label-container">
-                            <label htmlFor="email-input">
-                                E-mail
+                            {/* Name Label */}
+                            <label htmlFor="name-input">
+                                Name <span>*</span>
                             </label>
-                        </div>
 
-                        {/* Email Input Container */}
-                        <div className="p-i-input-container">
+                            {/* Name Input */}
                             <input
-                                type="email"
-                                name="userEmail"
-                                value={ userEmail }
+                                type="text"
+                                name="userName"
+                                value={ this.state.userName }
                                 onChange={this.handleChange}
-                                placeholder="Type your email here"
+                                placeholder="Type your name here"
+                                required
                             />
 
-                            {/* Info Button */}
-                            <div className="p-i-button-container">
-                                <button onClick={() => this.toggleChange()}>
-                                    <h3>i</h3>
-                                </button>
+                        </div>
+
+                        {/* Email Section */}
+                        <div className="p-i-email-container">
+
+                            {/* Email Description */}
+                            <div className="p-i-description-container">
+                                Enter your email address to stay in the loop with Aerospace Bristol, receive your final score certificate, and be in with a chance to win prizes
+                            </div>
+
+                            {/* Welcome Label */}
+                            <div className="p-i-label-container">
+                                <label htmlFor="email-input">
+                                    E-mail
+                                </label>
+                            </div>
+
+                            {/* Email Input Container */}
+                            <div className="p-i-input-container">
+                                <input
+                                    type="email"
+                                    name="userEmail"
+                                    value={ this.state.userEmail }
+                                    onChange={this.handleChange}
+                                    placeholder="Type your email here"
+                                />
+
+                                {/* Info Button */}
+                                <div className="p-i-button-container">
+                                    <button onClick={() => this.toggleChange()}>
+                                        <h3>i</h3>
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Skip Info Section */}
+                            <div className="p-i-skip-container">
+                                or just dive right in!
                             </div>
                         </div>
 
-                        {/* Skip Info Section */}
-                        <div className="p-i-skip-container">
-                            or just dive right in!
-                        </div>
-                    </div>
+                    </form>
 
                     {/* Accessibility Settings */}
                     <div className="p-i-accessibility-container">
