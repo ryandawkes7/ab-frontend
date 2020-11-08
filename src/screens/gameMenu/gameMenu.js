@@ -47,8 +47,11 @@ class Popup extends Component {
 
 class GameMenu extends Component {
 
-    state = {
-        popupOpen: false
+    constructor (props) {
+        super(props);
+        this.state = {
+            popupOpen: false
+        }
     }
 
     togglePopup = () => {
@@ -62,50 +65,46 @@ class GameMenu extends Component {
         return (
             <div className="container game-menu-container">
                 {/* Player Statistics Header Section */}
-                <div className="stat-header-container">
-                    {/* Background */}
-                    <div className="stat-header-background-container"/>
-                    {/* Header Inner Container */}
-                    <div className="stat-header-inner-container">
-                        <div className="s-h-i-component s-h-i-image">
-                            <img src={ProfilePic} alt="" /> {/* Profile Picture */}
-                        </div>
+                {/*<div className="stat-header-container">*/}
+                {/*    /!* Background *!/*/}
+                {/*    <div className="stat-header-background-container"/>*/}
+                {/*    /!* Header Inner Container *!/*/}
+                {/*    <div className="stat-header-inner-container">*/}
+                {/*        <div className="s-h-i-component s-h-i-image">*/}
+                {/*            <img src={ProfilePic} alt="" /> /!* Profile Picture *!/*/}
+                {/*        </div>*/}
 
-                        {/* XP & Score Section */}
-                        <div className="s-h-i-component-xp user-stats-container">
-                            <h2>0</h2>
-                            <div className="xp-bar" />
-                        </div>
-                        {/* End of XP & Score Section */}
+                {/*        /!* XP & Score Section *!/*/}
+                {/*        <div className="s-h-i-component-xp user-stats-container">*/}
+                {/*            <h2>0</h2>*/}
+                {/*            <div className="xp-bar" />*/}
+                {/*        </div>*/}
+                {/*        /!* End of XP & Score Section *!/*/}
 
-                        <div className="s-h-i-component s-h-i-settings">
-                            <img src={SettingsIcon} alt="" /> {/* Settings Icon */}
-                        </div>
-
-                    </div>
-                    {/* End of Header Inner Container */}
-
-                </div>
+                {/*        <div className="s-h-i-component s-h-i-settings">*/}
+                {/*            <img src={SettingsIcon} alt="" /> /!* Settings Icon *!/*/}
+                {/*        </div>*/}
+                {/*        */}
+                {/*    </div>*/}
+                {/*</div>*/}
                 {/* End of Player Statistics Header Section */}
 
-                <MapSection
-                    className="map-section"
-                    style={{transform: 'rotate(30deg)'}}
-                />
+                    <MapSection className="map-section"/>
 
-                <div className="map-btn-container">
-                    <div className="map-btn-inner-container">
-                        <button onClick={this.togglePopup}>
-                            <img src={GuideBtn} alt=""/>
-                        </button>
-                        <Link className="basic-btn">
-                            <h3>Finished?</h3>
-                        </Link>
-                        <button>
-                            <img src={CalibrateBtn} alt=""/>
-                        </button>
-                    </div>
-                </div>
+                {/*<div className="map-btn-container">*/}
+                {/*    <div className="map-btn-inner-container">*/}
+                {/*        <button onClick={this.togglePopup}>*/}
+                {/*            <img src={GuideBtn} alt=""/>*/}
+                {/*        </button>*/}
+                {/*        <Link className="basic-btn">*/}
+                {/*            <h3>Finished?</h3>*/}
+                {/*        </Link>*/}
+                {/*        <button>*/}
+                {/*            <img src={CalibrateBtn} alt=""/>*/}
+                {/*        </button>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+
                 {this.state.popupOpen ?
                     <Popup toggle={this.togglePopup} />
                     : null

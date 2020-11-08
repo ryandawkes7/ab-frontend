@@ -1,4 +1,8 @@
 /* User Statistics Header Styling */
+.game-menu-container {
+    position: absolute; bottom: 0; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+}
 
 .stat-header-container {
     position: absolute; top: 0; left: 0; right: 0;
@@ -28,6 +32,9 @@
 
 .s-h-i-image { margin: auto; height: 70%;}
 .s-h-i-image img { height: 90%; }
+.s-h-i-image:hover {
+    background: red;
+}
 .s-h-i-settings { margin: auto; height: 70%; }
 .s-h-i-settings img { height: 50%; }
 
@@ -57,12 +64,11 @@
     background: linear-gradient(180deg, rgba(92, 169, 0, 0.94) 0%, rgba(106, 194, 0, 0.94) 100%);
 }
 
-.fact-btn{
+.map-section {
+    width: 100vw; height: 100vh;
+    z-index: 999;
 }
 
-.map-section {
-    width: 100vw; height: 100%;
-}
 
 
 

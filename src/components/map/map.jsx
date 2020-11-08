@@ -14,12 +14,14 @@ import {
     GroundOverlay
 } from 'react-google-maps';
 
-import GameIcon from './assets/game-icon.svg';
-import QuizIncomplete from './assets/quiz-icon.svg'; import QuizComplete from './assets/quiz-complete.svg';
+import GameIcon from './assets/game-icon.svg'; import CharIcon from './assets/header-char-icon.svg'; import SettingsIcon from './assets/settings-icon.svg';
+import QuizIncomplete from './assets/quiz-icon.svg'; import QuizComplete from './assets/quiz-complete.svg'; import QuizLocked from './assets/quiz-locked.svg';
 import FactIncomplete from './assets/fact-icon.svg'; import FactComplete from './assets/fact-complete.svg';
 import PicIncomplete from './assets/picture-incomplete.svg'; import PicComplete from './assets/picture-complete.svg';
 
-import MapOverlay from './assets/main-building.svg';
+import HeaderBackdrop from './assets/header-background.svg'; import BubbleImage from './assets/bubble.svg';
+import AlfieImg from './assets/alfie-image.png';
+import MapOverlay from './assets/main-building.svg'; import CloseButton from './assets/16/icon.svg';
 
 // Impromptu JSON data for locations
 export const Interaction = {
@@ -28,55 +30,64 @@ export const Interaction = {
             {
                 id: 1,
                 coordinates: [51.523176, -2.578209],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 2,
                 coordinates: [51.523315, -2.578260],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 3,
                 coordinates: [51.523365, -2.578005],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 4,
                 coordinates: [51.523565, -2.578309],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 5,
                 coordinates: [51.523395, -2.578309],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 6,
                 coordinates: [51.523265, -2.578649],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 7,
                 coordinates: [51.523176, -2.578409],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 8,
                 coordinates: [51.523076, -2.578259],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
             {
                 id: 9,
                 coordinates: [51.522776, -2.579259],
-                description: "Test Me!",
+                title: 'QUIZ TIME!',
+                description: "Do you want to play with me and earn some points?",
                 complete: false,
             },
         ],
@@ -85,55 +96,64 @@ export const Interaction = {
             {
                 id: 1,
                 coordinates: [51.523226, -2.578289],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 2,
                 coordinates: [51.523265, -2.577975],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 3,
                 coordinates: [51.523405, -2.578095],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 4,
                 coordinates: [51.523485, -2.578159],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 5,
                 coordinates: [51.523425, -2.578509],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 6,
                 coordinates: [51.523315, -2.578549],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 7,
                 coordinates: [51.523116, -2.578329],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 8,
                 coordinates: [51.523066, -2.578419],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
             {
                 id: 9,
                 coordinates: [51.522756, -2.579059],
-                description: "Learn!",
+                title: "FACT TIME!",
+                description: "Do you want to learn with me and earn some points?",
                 complete: false
             },
         ],
@@ -154,6 +174,17 @@ export const Interaction = {
                 description: "Snap a Photo!",
                 complete: false
             }
+        ],
+
+        Sections: [
+            {
+                era: 1,
+                complete: false
+            },
+            {
+                era: 2,
+                complete: false
+            }
         ]
     },
 }
@@ -162,9 +193,34 @@ function UnwrappedMap() {
 
     const [selectedInteraction, setSelectedInteraction] = useState(null);
 
+    const isEraOneComplete = () => {
+        const era = Interaction.locations.Sections[0];
+        const quiz = Interaction.locations.Quiz[0];
+        const fact = Interaction.locations.Fact[0];
+
+        if (fact.complete && quiz.complete) {
+            era.complete = true;
+            console.log("Era is complete");
+        } else {
+            era.complete = false;
+            console.log("Era not complete yet!!")
+        }
+    }
+    isEraOneComplete();
+
+    const isEraTwoComplete = () => {
+        const eraOne = Interaction.locations.Sections[0];
+        const eraTwo = Interaction.locations.Sections[1];
+        const quiz = Interaction.locations.Quiz[1];
+        const fact = Interaction.locations.Fact[1];
+
+    }
+
     const watch = true;
     const { latitude, longitude } =
         usePosition(watch, {enableHighAccuracy: true});
+
+    const eraOne = Interaction.locations.Sections[0]
 
     return (
         // Creates map
@@ -205,6 +261,12 @@ function UnwrappedMap() {
                                     console.log("N/A")
                             }}
                             icon={
+                                !interaction.complete &&
+                                interaction.id === 2 &&
+                                !eraOne.complete &&
+                                (
+                                    QuizLocked
+                                ) ||
                                 !interaction.complete && (
                                     QuizIncomplete
                                 ) ||
@@ -288,438 +350,1181 @@ function UnwrappedMap() {
             {
                 // Function for if the button pressed is a QUIZ button
                 selectedInteraction === Interaction.locations.Quiz[0] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-one-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-one-quiz"
+                                    onClick={() => { selectedInteraction.complete = true }}
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
+                    // <InfoWindow
+                    //     position={ {
+                    //         lat: selectedInteraction.coordinates[0] + 0.000033,
+                    //         lng: selectedInteraction.coordinates[1]
+                    //     } }
+                    //     onCloseClick={ () => {
+                    //         setSelectedInteraction(null);
+                    //     } }
+                    // >
+                    //     <div className="map-button">
+                    //         <h2>{ selectedInteraction.type }</h2>
+                    //         <Link
+                    //             to="/section-one-quiz"
+                    //             className="map-quiz-button"
+                    //             onClick={() => {selectedInteraction.complete = true }}
+                    //         >
+                    //             <h3>{ selectedInteraction.description }</h3>
+                    //         </Link>
+                    //     </div>
+                    // </InfoWindow>
                 ) ||
                 selectedInteraction === Interaction.locations.Quiz[1] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-two-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-two-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[2] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-three-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[3] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-four-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-four-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[4] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-five-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-five-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[5] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-six-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-six-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[6] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-seven-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-seven-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[7] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-eight-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-eight-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Quiz[8] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={ {
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            } }
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-nine-quiz"
-                                    className="basic-btn quiz-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-nine-quiz"
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 )
             }
 
             {
-                selectedInteraction == Interaction.locations.Fact[0] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-one-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                selectedInteraction === Interaction.locations.Fact[0] && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-one-fact"
+                                    onClick={() => { selectedInteraction.complete = true }
+                                    }
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[1] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={ () => {
-                                setSelectedInteraction(null);
-                            } }
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-two-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-two-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[2] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-three-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[3] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-four-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-four-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[4] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-five-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-five-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[5] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-six-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-six-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[6] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-seven-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-seven-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[7] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-eight-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-eight-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 ) ||
                 selectedInteraction == Interaction.locations.Fact[8] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-nine-fact"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </InfoWindow>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-nine-fact"
+                                >
+                                    Learn
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Alfie"/>
+                            </div>
+
+                        </div>
+
                     </div>
                 )
             }
@@ -759,8 +1564,50 @@ const WrappedMap = withScriptjs(withGoogleMap(UnwrappedMap));
 
 export default function Map() {
     return (
-        <div className="wrapped-map-container">
-            <div  className="wrapped-map-inner-container">
+        <div className="map-section-container">
+
+            {/* Header Section */}
+            <div className="w-m-header-container">
+
+                {/* Background Image */}
+                <div className="w-m-h-image">
+                    <img src={HeaderBackdrop} alt="Header Section"/>
+                </div>
+
+                {/* Inner Container */}
+                <div className="w-m-h-inner-container">
+
+                    {/* Character Icon */}
+                    <div className="w-m-h-character">
+                        <img src={CharIcon} alt="User" />
+                    </div>
+
+                    {/* Experience Bar */}
+                    <div className="w-m-h-score-container">
+
+                        {/* Text */}
+                        <div className="wmhs-title">
+                            0 points
+                        </div>
+
+                        {/* Completion Bar */}
+                        <div className="wmhs-bar">
+
+                        </div>
+
+                    </div>
+
+                    {/* Settings Icon */}
+                    <div className="w-m-h-settings">
+                        <img src={SettingsIcon} alt="Settings"/>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* Map Container */}
+            <div className="wrapped-map-inner-container">
                 <WrappedMap
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
                     loadingElement={ <div style={{height: '100%'}} /> }
@@ -769,6 +1616,8 @@ export default function Map() {
 
                 />
             </div>
+
+            {/* Footer Section */}
         </div>
     )
 }
