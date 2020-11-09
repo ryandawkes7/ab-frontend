@@ -1810,7 +1810,7 @@
 // }
 
 /* global google */
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './map.css';
 import { Link } from 'react-router-dom';
 
@@ -1860,6 +1860,7 @@ export const Interaction = {
                 era: 1,
                 complete: false,
                 unlocked: true,
+                centerCoords: [51.523196, -2.578249],
                 quiz: {
                     coordinates: [51.523176, -2.578209],
                     title: 'QUIZ TIME!',
@@ -1877,6 +1878,7 @@ export const Interaction = {
                 era: 2,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523315, -2.578260],
                 quiz: {
                     coordinates: [51.523315, -2.578260],
                     title: 'QUIZ TIME!',
@@ -1894,6 +1896,7 @@ export const Interaction = {
                 era: 3,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523365, -2.578005],
                 quiz: {
                     coordinates: [51.523365, -2.578005],
                     title: 'QUIZ TIME!',
@@ -1911,6 +1914,7 @@ export const Interaction = {
                 era: 4,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523565, -2.578309],
                 quiz: {
                     coordinates: [51.523565, -2.578309],
                     title: 'QUIZ TIME!',
@@ -1928,6 +1932,7 @@ export const Interaction = {
                 era: 5,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523395, -2.578309],
                 quiz: {
                     coordinates: [51.523395, -2.578309],
                     title: 'QUIZ TIME!',
@@ -1945,6 +1950,7 @@ export const Interaction = {
                 era: 6,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523265, -2.578649],
                 quiz: {
                     coordinates: [51.523265, -2.578649],
                     title: 'QUIZ TIME!',
@@ -1962,6 +1968,7 @@ export const Interaction = {
                 era: 7,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523176, -2.578409],
                 quiz: {
                     coordinates: [51.523176, -2.578409],
                     title: 'QUIZ TIME!',
@@ -1979,6 +1986,7 @@ export const Interaction = {
                 era: 8,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.523076, -2.578259],
                 quiz: {
                     coordinates: [51.523076, -2.578259],
                     title: 'QUIZ TIME!',
@@ -1996,6 +2004,7 @@ export const Interaction = {
                 era: 9,
                 complete: false,
                 unlocked: false,
+                centerCoords: [51.522776, -2.579259],
                 quiz: {
                     coordinates: [51.522776, -2.579259],
                     title: 'QUIZ TIME!',
@@ -2016,6 +2025,8 @@ export const Interaction = {
 function UnwrappedMap() {
 
     const [selectedInteraction, setSelectedInteraction] = useState(null);
+    const [latitude, setLatitude] = useState(51.523196);
+    const [longitude, setLongitude] = useState(-2.578249);
 
     const eras = Interaction.locations.Sections
     const quizEraOne = eras[0].quiz; const factEraOne = eras[0].fact;
@@ -2056,15 +2067,95 @@ function UnwrappedMap() {
         }
     }
     isEraTwoComplete();
+    const isEraThreeComplete = () => {
+        const era = eras[2];
+        const quiz = eras[2].quiz;
+        const fact = eras[2].fact;
+
+        if (fact.complete && quiz.complete) {
+            era.complete = true;
+            console.log("Era one is complete");
+        } else {
+            era.complete = false;
+            console.log("Era one not complete yet!!")
+        }
+    }
+    isEraThreeComplete();
+    const isEraFourComplete = () => {
+        const era = eras[3];
+        const quiz = eras[3].quiz;
+        const fact = eras[3].fact;
+
+        if (fact.complete && quiz.complete) {
+            era.complete = true;
+            console.log("Era one is complete");
+        } else {
+            era.complete = false;
+            console.log("Era one not complete yet!!")
+        }
+    }
+    isEraFourComplete();
+    const isEraFiveComplete = () => {
+        const era = eras[4];
+        const quiz = eras[4].quiz;
+        const fact = eras[4].fact;
+
+        if (fact.complete && quiz.complete) {
+            era.complete = true;
+            console.log("Era one is complete");
+        } else {
+            era.complete = false;
+            console.log("Era one not complete yet!!")
+        }
+    }
+    isEraFiveComplete();
+    const isEraSixComplete = () => {
+        const era = eras[5];
+        const quiz = eras[5].quiz;
+        const fact = eras[5].fact;
+
+        if (fact.complete && quiz.complete) {
+            era.complete = true;
+            console.log("Era one is complete");
+        } else {
+            era.complete = false;
+            console.log("Era one not complete yet!!")
+        }
+    }
+    isEraSixComplete();
 
     if(eras[0].complete) { eras[1].unlocked = true }
     if(eras[1].complete) { eras[2].unlocked = true }
+    if(eras[2].complete) { eras[3].unlocked = true }
+    if(eras[3].complete) { eras[4].unlocked = true }
+    if(eras[4].complete) { eras[5].unlocked = true }
+    if(eras[5].complete) { eras[6].unlocked = true }
+    if(eras[6].complete) { eras[7].unlocked = true }
+    if(eras[7].complete) { eras[8].unlocked = true }
+
+    // Sets Location when an era is completed
+    useEffect(() => {
+        if(!eras[0].complete) {
+            setLatitude(eras[0].centerCoords[0])
+            setLongitude(eras[0].centerCoords[1])
+        }
+
+        if(eras[0].complete && !eras[1].complete) {
+            setLatitude(eras[1].centerCoords[0])
+            setLongitude(eras[1].centerCoords[1])
+        }
+    })
+
+    console.log("Set Lat: " + setLatitude + ", Set Lon: " + setLongitude)
+    console.log("Lat: " + latitude + ", Lon: " + longitude)
+
 
     return (
         // Creates map
         <GoogleMap
-            defaultZoom={20}
+            defaultZoom={21}
             defaultCenter={{lat: 51.523176, lng: -2.578209}}
+            center={{lat: latitude, lng: longitude}}
             options={{
                 fullscreenControl: false,
                 zoomControl: false,
