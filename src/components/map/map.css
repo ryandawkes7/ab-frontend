@@ -229,3 +229,11 @@
     height: 250%; width: 250%;
     left: -75%; top: -75%; transform: rotate(48.25deg);
 }
+
+/* Locked Popup Container */
+.locked-popup-container {
+    position: absolute; bottom: 0; top: 0; left: 0; right: 0;
+    width: 100vw; height: 100vh; z-index: 9999;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid red;
+}
