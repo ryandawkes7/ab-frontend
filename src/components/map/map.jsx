@@ -3366,7 +3366,6 @@ export default function Map() {
     const [endPopup, setEndPopup] = useState(false)
 
     const togglePopup = () => {
-        setEndPopup(prevState => )
         console.log("Changed")
     }
 
