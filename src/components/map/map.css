@@ -155,7 +155,7 @@
 .w-m-header-container {
     display: flex; justify-content: center; align-items: center;
     height: 25%; width: 100%; position: relative;
-    z-index: 99; margin-bottom: auto;
+    z-index: 99999; margin-bottom: auto;
 }
 
 /** Image Section */
@@ -179,7 +179,7 @@
 
 .w-m-h-character {
     display: flex; justify-content: center; align-items: center;
-    height: 90%; width: 30%;
+    height: 90%; width: 30%; z-index: 9999;
 }
 .w-m-h-character img {
     width: 95%; max-height: 100%;

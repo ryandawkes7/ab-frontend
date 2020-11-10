@@ -1860,7 +1860,8 @@ export const Interaction = {
                 era: 1,
                 complete: false,
                 unlocked: true,
-                centerCoords: [51.523196, -2.578249],
+                centerCoords: [51.523238, -2.57822],
+                zoom: 21.25,
                 quiz: {
                     coordinates: [51.523176, -2.578209],
                     title: 'QUIZ TIME!',
@@ -1878,7 +1879,8 @@ export const Interaction = {
                 era: 2,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523315, -2.578260],
+                centerCoords: [51.523325, -2.578160],
+                zoom: 20.9,
                 quiz: {
                     coordinates: [51.523315, -2.578260],
                     title: 'QUIZ TIME!',
@@ -1896,7 +1898,8 @@ export const Interaction = {
                 era: 3,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523365, -2.578005],
+                centerCoords: [51.523405, -2.578045],
+                zoom: 20.9,
                 quiz: {
                     coordinates: [51.523365, -2.578005],
                     title: 'QUIZ TIME!',
@@ -1914,7 +1917,8 @@ export const Interaction = {
                 era: 4,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523565, -2.578309],
+                centerCoords: [51.523555, -2.578329],
+                zoom: 20.9,
                 quiz: {
                     coordinates: [51.523565, -2.578309],
                     title: 'QUIZ TIME!',
@@ -1932,7 +1936,8 @@ export const Interaction = {
                 era: 5,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523395, -2.578309],
+                centerCoords: [51.523455, -2.578469],
+                zoom: 20.8,
                 quiz: {
                     coordinates: [51.523395, -2.578309],
                     title: 'QUIZ TIME!',
@@ -1950,7 +1955,8 @@ export const Interaction = {
                 era: 6,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523265, -2.578649],
+                centerCoords: [51.523311, -2.578685],
+                zoom: 20.75,
                 quiz: {
                     coordinates: [51.523265, -2.578649],
                     title: 'QUIZ TIME!',
@@ -1968,7 +1974,8 @@ export const Interaction = {
                 era: 7,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523176, -2.578409],
+                centerCoords: [51.523186, -2.578438],
+                zoom: 21.15,
                 quiz: {
                     coordinates: [51.523176, -2.578409],
                     title: 'QUIZ TIME!',
@@ -1977,24 +1984,6 @@ export const Interaction = {
                 },
                 fact: {
                     coordinates: [51.523116, -2.578329],
-                    title: "FACT TIME!",
-                    description: "Do you want to learn with me and earn some points?",
-                    complete: false
-                }
-            },
-            {
-                era: 8,
-                complete: false,
-                unlocked: false,
-                centerCoords: [51.523076, -2.578259],
-                quiz: {
-                    coordinates: [51.523076, -2.578259],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
-                fact: {
-                    coordinates: [51.523066, -2.578419],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
@@ -2027,6 +2016,7 @@ function UnwrappedMap() {
     const [selectedInteraction, setSelectedInteraction] = useState(null);
     const [latitude, setLatitude] = useState(51.523196);
     const [longitude, setLongitude] = useState(-2.578249);
+    const [zoom, setZoom] = useState(21.25);
 
     const eras = Interaction.locations.Sections
     const quizEraOne = eras[0].quiz; const factEraOne = eras[0].fact;
@@ -2037,7 +2027,6 @@ function UnwrappedMap() {
     const quizEraSix = eras[5].quiz; const factEraSix = eras[5].fact;
     const quizEraSeven = eras[6].quiz; const factEraSeven = eras[6].fact;
     const quizEraEight = eras[7].quiz; const factEraEight = eras[7].fact;
-    const quizEraNine = eras[8].quiz; const factEraNine = eras[8].fact;
 
     const isEraOneComplete = () => {
         const era = eras[0];
@@ -2131,29 +2120,58 @@ function UnwrappedMap() {
     if(eras[4].complete) { eras[5].unlocked = true }
     if(eras[5].complete) { eras[6].unlocked = true }
     if(eras[6].complete) { eras[7].unlocked = true }
-    if(eras[7].complete) { eras[8].unlocked = true }
 
     // Sets Location when an era is completed
     useEffect(() => {
         if(!eras[0].complete) {
             setLatitude(eras[0].centerCoords[0])
             setLongitude(eras[0].centerCoords[1])
+            setZoom(eras[0].zoom)
         }
-
         if(eras[0].complete && !eras[1].complete) {
             setLatitude(eras[1].centerCoords[0])
             setLongitude(eras[1].centerCoords[1])
+            setZoom(eras[1].zoom)
+        }
+        if(eras[1].complete && !eras[2].complete) {
+            setLatitude(eras[2].centerCoords[0])
+            setLongitude(eras[2].centerCoords[1])
+            setZoom(eras[2].zoom)
+        }
+        if(eras[2].complete && !eras[3].complete) {
+            setLatitude(eras[3].centerCoords[0])
+            setLongitude(eras[3].centerCoords[1])
+            setZoom(eras[3].zoom)
+        }
+        if(eras[3].complete && !eras[4].complete) {
+            setLatitude(eras[4].centerCoords[0])
+            setLongitude(eras[4].centerCoords[1])
+            setZoom(eras[4].zoom)
+        }
+        if(eras[4].complete && !eras[5].complete) {
+            setLatitude(eras[5].centerCoords[0])
+            setLongitude(eras[5].centerCoords[1])
+            setZoom(eras[5].zoom)
+        }
+        if(eras[5].complete && !eras[6].complete) {
+            setLatitude(eras[6].centerCoords[0])
+            setLongitude(eras[6].centerCoords[1])
+            setZoom(eras[6].zoom)
+        }
+        if(eras[6].complete && !eras[7].complete) {
+            setLatitude(eras[7].centerCoords[0])
+            setLongitude(eras[7].centerCoords[1])
+            setZoom(eras[7].zoom)
         }
     })
 
-    console.log("Set Lat: " + setLatitude + ", Set Lon: " + setLongitude)
-    console.log("Lat: " + latitude + ", Lon: " + longitude)
-
+    console.log("Set Lat: " + setLatitude + ", Set Lon: " + setLongitude); console.log("Lat: " + latitude + ", Lon: " + longitude); console.log("Zoom Level: ", zoom);
 
     return (
         // Creates map
         <GoogleMap
-            defaultZoom={21}
+            defaultZoom={21.15}
+            zoom={zoom}
             defaultCenter={{lat: 51.523176, lng: -2.578209}}
             center={{lat: latitude, lng: longitude}}
             options={{
@@ -2161,7 +2179,7 @@ function UnwrappedMap() {
                 zoomControl: false,
                 streetViewControl: false,
                 mapTypeControl: false,
-                // draggable: false,
+                draggable: false,
                 clickableIcons: false,
             }}
         >
@@ -2776,71 +2794,6 @@ function UnwrappedMap() {
                         </div>
 
                     </div>
-                ) ||
-                selectedInteraction === quizEraNine && (
-                    <div className="map-button-popup">
-
-                        {/* Container */}
-                        <div className="m-b-p-main-container">
-
-                            {/* Close Button */}
-                            <button
-                                className="mbp-close-container"
-                                onClick={() => { setSelectedInteraction(null) }}
-                            >
-                                <img src={CloseButton} alt="Close Menu"/>
-                            </button>
-
-                            {/* Quote Bubble */}
-                            <div className="mbp-bubble-container">
-
-                                {/* Image */}
-                                <img src={BubbleImage} alt="Quote Bubble"/>
-
-                                {/* Text */}
-                                <div className="mbpb-title-container">
-
-                                    {/* Title */}
-                                    <div className="mbpb-title">
-                                        { selectedInteraction.title }
-                                    </div>
-
-                                    {/* Description */}
-                                    <div className="mbpb-description">
-                                        { selectedInteraction.description }
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            {/* Button Container */}
-                            <div className="mbp-button-container">
-
-                                {/* Play Button */}
-                                <Link
-                                    className="mbp-button mbp-play-button"
-                                    to="/section-nine-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
-                                >
-                                    Play
-                                </Link>
-
-                                {/* Not Now Button */}
-                                <button className="mbp-button mbp-cancel-button">
-                                    Not Now
-                                </button>
-
-                            </div>
-
-                            {/* Character Container */}
-                            <div className="mbp-character-container">
-                                <img src={AlfieImg} alt="Character"/>
-                            </div>
-
-                        </div>
-
-                    </div>
                 )
             }
 
@@ -3372,72 +3325,6 @@ function UnwrappedMap() {
                         </div>
 
                     </div>
-                ) ||
-                selectedInteraction === factEraNine && (
-                    <div className="map-button-popup">
-
-                        {/* Container */}
-                        <div className="m-b-p-main-container">
-
-                            {/* Close Button */}
-                            <button
-                                className="mbp-close-container"
-                                onClick={() => { setSelectedInteraction(null) }}
-                            >
-                                <img src={CloseButton} alt="Close Menu"/>
-                            </button>
-
-                            {/* Quote Bubble */}
-                            <div className="mbp-bubble-container">
-
-                                {/* Image */}
-                                <img src={BubbleImage} alt="Quote Bubble"/>
-
-                                {/* Text */}
-                                <div className="mbpb-title-container">
-
-                                    {/* Title */}
-                                    <div className="mbpb-title">
-                                        { selectedInteraction.title }
-                                    </div>
-
-                                    {/* Description */}
-                                    <div className="mbpb-description">
-                                        { selectedInteraction.description }
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            {/* Button Container */}
-                            <div className="mbp-button-container">
-
-                                {/* Play Button */}
-                                <Link
-                                    className="mbp-button mbp-play-button"
-                                    to="/section-nine-fact"
-                                    onClick={() => { selectedInteraction.complete = true }
-                                    }
-                                >
-                                    Learn
-                                </Link>
-
-                                {/* Not Now Button */}
-                                <button className="mbp-button mbp-cancel-button">
-                                    Not Now
-                                </button>
-
-                            </div>
-
-                            {/* Character Container */}
-                            <div className="mbp-character-container">
-                                <img src={AlfieImg} alt="Alfie"/>
-                            </div>
-
-                        </div>
-
-                    </div>
                 )
             }
 
@@ -3475,6 +3362,41 @@ function UnwrappedMap() {
 const WrappedMap = withScriptjs(withGoogleMap(UnwrappedMap));
 
 export default function Map() {
+
+    const [endPopup, setEndPopup] = useState(false)
+
+    const togglePopup = () => {
+        setEndPopup(prevState => )
+        console.log("Changed")
+    }
+
+    const endAdventurePopup = () => {
+        return(
+            endPopup && (
+            <div className="end-adventure-container">
+                <div className="e-a-box-container">
+                    <div className="e-a-b-inner-container">
+
+                        {/* Close Button */}
+                        <div className="e-a-b-close">
+                            <img src={CloseButton} alt="Close Menu"/>
+                        </div>
+
+                        {/* Title */}
+
+
+                        {/* Subtitle */}
+
+
+                        {/* Buttons */}
+
+                    </div>
+                </div>
+            </div>
+            )
+        )
+    }
+
     return (
         <div className="map-section-container">
 
@@ -3490,9 +3412,12 @@ export default function Map() {
                 <div className="w-m-h-inner-container">
 
                     {/* Character Icon */}
-                    <div className="w-m-h-character">
+                    <button
+                        className="w-m-h-character"
+                        onClick={() => console.log(endPopup)}
+                    >
                         <img src={CharIcon} alt="User" />
-                    </div>
+                    </button>
 
                     {/* Experience Bar */}
                     <div className="w-m-h-score-container">
