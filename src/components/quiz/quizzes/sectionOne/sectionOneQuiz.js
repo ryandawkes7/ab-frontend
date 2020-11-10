@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
 
+import BulbImg from '../../assets/lightbulb.svg'; import KiteImg from './assets/kites.svg'; import PyramidImg from './assets/pyramid.svg';
+
 const Questions = [
     {
         id: 1,
         text: 'Who made the first flight in an aeroplane?',
+        hint: {
+            text: 'They are not wrong!',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -28,6 +34,10 @@ const Questions = [
     {
         id: 2,
         text: 'What was the name of the man who started the Bristol Aeroplane Company?',
+        hint: {
+            text: 'Look for his picture opposite the tram!',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -51,6 +61,10 @@ const Questions = [
     {
         id: 3,
         text: 'What was the first plane designed and built in Bristol?',
+        hint: {
+            text: null,
+            image: KiteImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -74,6 +88,10 @@ const Questions = [
     {
         id: 4,
         text: 'What were the first planes made out of?',
+        hint: {
+            text: 'Look up at the model Boxkite',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -97,6 +115,10 @@ const Questions = [
     {
         id: 5,
         text: 'What was the fabric covering known as?',
+        hint: {
+            text: null,
+            image: PyramidImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -116,29 +138,6 @@ const Questions = [
             }
         ],
         correct: 'c'
-    },
-    {
-        id: 6,
-        text: 'How fast could the Boxkite aeroplane go?',
-        choices:[
-            {
-                id: 'a',
-                text: 'up to 150 mph'
-            },
-            {
-                id: 'b',
-                text: 'up to 50 mph'
-            },
-            {
-                id: 'c',
-                text: 'up to 20 mph'
-            },
-            {
-                id: 'd',
-                text: 'up to 85 mph'
-            }
-        ],
-        correct: 'b'
     },
 ]
 

@@ -20,8 +20,13 @@
 
 
 .hint-btn{
+    display: flex; justify-content: center; align-items: center;
     position: absolute; transform: translate(-50%, -50%);
-    left: 50%; top: 50%;
+    left: 50%; top: 50%; width: 30%;
+    border: none; background: none;
+}
+.hint-btn img {
+    width: 100%;
 }
 /* End of Question Component */
 
@@ -94,3 +99,97 @@
 
     margin: auto;
 }
+
+/* Hint Popup Section */
+.hint-popup-container {
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.6); z-index: 99;
+}
+.h-p-box-container {
+    display: flex; justify-content: center; align-items: center;
+    width: 95%; height: 90%;
+    background: white; border-radius: 12px;
+}
+.hpb-inner-container {
+    width: 90%; height: 100%;
+}
+
+/** Close Button */
+.hpb-close-button {
+    display: flex; align-items: center;
+    height: 10%; width: 100%;
+}
+.hpb-close-button button{
+    height: 40%;
+}
+.hpb-close-button img{
+    height: 100%;
+}
+/** End of Close Button */
+
+/** Body Section */
+.hpb-body-container {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    height: 80%; width: 100%; margin-bottom: 10%;
+}
+
+.hpdb-inner-container{
+    display: flex; justify-content: center; align-items: center;
+    width: 100%;
+}
+
+/*** Title Section */
+.hpdb-title-container {
+    height: 7.5%; margin-bottom: 2.5%;
+    font-size: 24px; font-weight: 700; line-height: 32px;
+}
+/*** End of Title Section */
+
+/*** Image Section */
+.hpdb-image-container {
+    position: relative; display: flex;
+    justify-content: center; align-items: center;
+    height: 50%; width: 100%;
+    margin-top: 2.5%; margin-bottom: 2.5%;
+}
+.hpdbi-bubble {
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+}
+.hpdbi-bubble img {
+    width: 100%; max-width: 250px; max-height: 100%;
+}
+
+.hpdbi-image {
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+}
+.hpdbi-image img { max-width: 100%; max-height: 100%; }
+/*** End of Image Section */
+
+/*** Description Section */
+.hpdb-description-container {
+    text-align: center;
+    height: 20%; margin-top: 2.5%; margin-bottom: 2.5%;
+    font-size: 22px; font-weight: 400; line-height: 29px;
+}
+/*** End of Description Section */
+
+/*** Button Section */
+.hpdb-button-container { height: 12.5%; margin-top: 2.5%; }
+.hpdb-button {
+    display: flex; justify-content: center; align-items: center;
+    height: 90%; width: 50%;
+    max-height: 60px; max-width: 132px;
+    border-radius: 32px; border: none; color: white;
+    font-size: 22px; line-height: 26px; font-weight: 700;
+    background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
+}
+/*** End of Button Section */
+
+/** End of Body Section */
+
+/* End of Hint Popup Section */

@@ -1,10 +1,17 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
 
+import CameraImg from './assets/camera.svg'; import CowImg from './assets/cow.svg';
+import KiteImg from "../sectionOne/assets/kites.svg";
+
 const Questions = [
     {
         id: 1,
-        text: 'What were planes first used for in World War 1?',
+        text: 'What were planes first used for in WWI?',
+        hint: {
+            text: null,
+            image: CameraImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -28,6 +35,7 @@ const Questions = [
     {
         id: 2,
         text: 'Who designed the Bristol Fighter?',
+        hint: null,
         choices:[
             {
                 id: 'a',
@@ -51,6 +59,10 @@ const Questions = [
     {
         id: 3,
         text: 'WW1 workers painted the plane\'s fabric with \'dope\', which made them ill. What did they drink to feel better?',
+        hint: {
+            text: null,
+            image: CowImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -70,29 +82,6 @@ const Questions = [
             }
         ],
         correct: 'd'
-    },
-    {
-        id: 4,
-        text: 'Look at the image below. What is the correct order to show how a wooden propeller is made?',
-        choices:[
-            {
-                id: 'a',
-                text: '1, 2, 5, 6, 3, 4'
-            },
-            {
-                id: 'b',
-                text: '1, 3, 6, 4, 2, 5'
-            },
-            {
-                id: 'c',
-                text: '5, 1, 3, 6, 2, 4'
-            },
-            {
-                id: 'd',
-                text: '4, 2, 1, 3, 5, 6'
-            }
-        ],
-        correct: 'c'
     },
 ]
 

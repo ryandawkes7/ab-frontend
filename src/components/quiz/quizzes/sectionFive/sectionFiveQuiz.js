@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
+import BulbImg from '../../assets/lightbulb.svg';
 
 const Questions = [
     {
         id: 1,
         text: 'How many Brabazon\'s were made?',
+        hint: {
+            text: 'How many can you see hanging from the ceiling?',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -27,7 +32,8 @@ const Questions = [
     },
     {
         id: 2,
-        text: 'Which Bristol enging powered Donald Campbell\'s Bluebird CN7 car when it broke the landspeed record in 1964?',
+        text: 'Which Bristol engine powered Donald Campbell\'s Bluebird CN7 car when it broke the land speed record in 1964?',
+        hint: null,
         choices:[
             {
                 id: 'a',

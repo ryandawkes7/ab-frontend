@@ -2,14 +2,16 @@ import React, {Component, useState} from 'react';
 import './quizStructure.css';
 import { Link } from 'react-router-dom';
 
-import Back from "../../backButton/back";
-import HintButton from '../assets/hint-button.svg';
-import UserIcon from '../assets/user-icon.svg';
+import Back from "../../backButton/back"; import HintButton from '../assets/hint-button.png'; import UserIcon from '../assets/user-icon.svg';
+import CloseButton from '../assets/16/icon.png'; import BackdropBubble from '../assets/backdrop-bubble.png';
 
 // Question Text/Answer Button Component
 class Question extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            hintPopup: false,
+        }
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -18,20 +20,82 @@ class Question extends Component {
         this.props.onChoiceChange(e.target.value);
     }
 
-    guidePopup() {
-        return(
-            <div className="guide-popup-container">
-
-
-            </div>
-        )
+    toggleHintPopup() {
+        this.setState({
+            hintPopup: !this.state.hintPopup
+        })
+        console.log(this.state.hintPopup)
     }
 
     render(){
         const question = this.props.question; // Variable set to equal question from props
+        const isHintShown = this.state.hintPopup;
+
+        const HintPopup = () => {
+            return(
+                <div className="hint-popup-container">
+                    <div className="h-p-box-container">
+                        <div className="hpb-inner-container">
+
+                            {/* Close Button */}
+                            <div className="hpb-close-button">
+                                <button onClick={() => this.toggleHintPopup()}>
+                                    <img src={CloseButton} alt="Close Menu"/>
+                                </button>
+                            </div>
+
+                            {/* Body Section */}
+                            <div className="hpb-body-container">
+
+                                {/* Title */}
+                                <div className="hpdb-inner-container hpdb-title-container">
+                                    HINT TIME!
+                                </div>
+
+                                {/* Image */}
+                                <div className="hpdb-inner-container hpdb-image-container">
+
+                                    <div className="hpdbi-bubble">
+                                        <img src={BackdropBubble} />
+                                    </div>
+
+                                    <div className="hpdbi-image">
+                                        <img src={question.hint.image} />
+                                    </div>
+
+                                </div>
+
+                                {/* Description */}
+                                {
+                                    question.hint.text !== null &&
+                                    <div className="hpdb-inner-container hpdb-description-container">
+                                        { question.hint.text }
+                                    </div>
+                                }
+
+
+                                {/* Button */}
+                                <div className="hpdb-inner-container hpdb-button-container">
+                                    <button className="hpdb-button" onClick={() => this.toggleHintPopup()}>
+                                        OK
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            )
+        }
 
         return(
             <div>
+                {
+                    isHintShown === true &&
+                    <HintPopup/>
+                }
+
                 <div className="question-component">
                     {question.text}
                 </div>
@@ -49,11 +113,12 @@ class Question extends Component {
                                 </button>
                         )
                     })}
-                    <img
-                        src={HintButton}
-                        alt=""
-                        className="hint-btn"
-                    />
+                    {
+                        question.hint !== null &&
+                    <button className="hint-btn" onClick={() => this.toggleHintPopup()}>
+                        <img src={HintButton} alt="Hint Button"/>
+                    </button>
+                    }
                 </div>
             </div>
         )
@@ -83,15 +148,15 @@ class Results extends Component {
 
     overallScore = () => {
         this.setState((prevState, props) => ({
-            overallScore: (prevState.overallScore + props.score) * 50
+            overallScore: (prevState.overallScore + props.score)
         }))
     }
 
+    componentDidMount () {
+        this.overallScore()
+    }
+
     render(){
-        var message = 'You passed the quiz!';
-        var link = <Link to="/game-menu">Back to Menu</Link>
-
-
         return(
             <div className="results-absolute">
                 <div className="results-container">
@@ -100,7 +165,7 @@ class Results extends Component {
                     </div>
 
                     <div className="results-cont results-text">
-                        <h3>+{this.props.score} points!</h3>
+                        <h3>+{this.state.overallScore} points!</h3>
                         <h4>Congratulations!</h4>
                     </div>
 
@@ -127,7 +192,6 @@ export default class QuizFormat extends Component {
         this.state = {
             score: 0,
             current: 1,
-            overallScore: 0
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -137,7 +201,6 @@ export default class QuizFormat extends Component {
             current: prevState.current + 1,
             score: choice === props.questions[prevState.current - 1].correct ? prevState.score + 50 : prevState.score,
         }));
-        console.log(this.state.overallScore)
     }
 
     render () {
@@ -149,7 +212,8 @@ export default class QuizFormat extends Component {
                 {this.state.current > questions.length &&
                     <Results
                         total={questions.length}
-                        score={this.state.overallScore + this.state.score}
+                        score={this.state.score}
+                        overallScore={this.state.overallScore}
                     />
                 }
 
@@ -172,4 +236,6 @@ export default class QuizFormat extends Component {
         );
     }
 }
+
+
 // End of Final Quiz Format Section

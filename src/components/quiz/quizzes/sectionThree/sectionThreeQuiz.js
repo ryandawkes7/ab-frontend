@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
 
+import BulbImg from '../../assets/lightbulb.svg'; import TeamImg from './assets/Nakajima-team.png'; import ChileImg from './assets/chile-image.png'; import AltitudeImg from './assets/altitude-image.png';
+
 const Questions = [
     {
         id: 1,
         text: 'What does the rudder on an aeroplane do?',
+        hint: {
+            text: 'Have a go on the plane steering simulator to find the answer!',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -28,6 +34,10 @@ const Questions = [
     {
         id: 2,
         text: 'Bristol Aeroplane Company bought Filton Airfield from the Air Ministry at the end of WW1. How much did it cost?',
+        hint: {
+            text: 'The answer is near the lorry!',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -51,6 +61,10 @@ const Questions = [
     {
         id: 3,
         text: 'The Nakajima Company built Jupiter Engines with a licence and plans they bought from Bristol. What country were they from?',
+        hint: {
+            text: 'Find the photo of the Nakajima team',
+            image: TeamImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -74,6 +88,10 @@ const Questions = [
     {
         id: 4,
         text: 'Which model is of a plane that was sold to Chile and Hungary?',
+        hint: {
+            text: 'Look for an answer at the models in the big wall display',
+            image: ChileImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -97,6 +115,10 @@ const Questions = [
     {
         id: 5,
         text: 'Which model is of a plane that set an altitude record in 1936?',
+        hint: {
+            text: 'Look for an answer at the models in the big wall display',
+            image: AltitudeImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -116,29 +138,6 @@ const Questions = [
             }
         ],
         correct: 'a'
-    },
-    {
-        id: 6,
-        text: 'How many air forces used Bristol Bulldogs?',
-        choices:[
-            {
-                id: 'a',
-                text: '2'
-            },
-            {
-                id: 'b',
-                text: '4'
-            },
-            {
-                id: 'c',
-                text: '6'
-            },
-            {
-                id: 'd',
-                text: '8'
-            }
-        ],
-        correct: 'd'
     },
 ]
 

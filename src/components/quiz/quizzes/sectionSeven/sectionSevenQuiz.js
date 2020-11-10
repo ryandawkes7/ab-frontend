@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
+import BulbImg from "../../assets/lightbulb.svg";
 
 const Questions = [
     {
         id: 1,
         text: 'Where does the luggage go when you are on a plane?',
+        hint: {
+            text: 'We have cut open an aeroplane so you can see. Can you find it?',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',

@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
 
+import RocketImg from './assets/rocket-image.svg'; import BulbImg from '../../assets/lightbulb.svg';
+
 const Questions = [
     {
         id: 1,
         text: 'Who were the forty-niners?',
+        hint: {
+            text: null,
+            image: RocketImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -28,6 +34,7 @@ const Questions = [
     {
         id: 2,
         text: 'What is the nickname of the Harrier Jet?',
+        hint: null,
         choices:[
             {
                 id: 'a',
@@ -51,6 +58,7 @@ const Questions = [
     {
         id: 3,
         text: 'What is the name of the space rocket you can see in our exhibition?',
+        hint: null,
         choices:[
             {
                 id: 'a',
@@ -74,6 +82,10 @@ const Questions = [
     {
         id: 4,
         text: 'What was the name of the first missile designed at Filton?',
+        hint: {
+            text: 'The new supersonic car is named after it',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',

@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
+import BulbImg from  "../../assets/lightbulb.svg"; import FactoryImg from './assets/factory-image.svg'; import AirportImg from './assets/airport-image.svg'; import BadgeImg from './assets/badge-image.svg';
 
 const Questions = [
     {
         id: 1,
         text: 'What were Bristol engines named after?',
+        hint: {
+            text: 'Engine names include Hercules, Pegassus, Thor and Odin',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -28,6 +33,7 @@ const Questions = [
     {
         id: 2,
         text: 'What was painted on the roof of the factory during WW2?',
+        hint: null,
         choices:[
             {
                 id: 'a',
@@ -51,6 +57,10 @@ const Questions = [
     {
         id: 3,
         text: 'What was the nickname given to the Bristol Beaufighter by the Japanese?',
+        hint: {
+            text: 'The Beaufighter was a very quiet bomber',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -74,6 +84,7 @@ const Questions = [
     {
         id: 4,
         text: 'What were the secret factories created during WW2 called?',
+        hint: null,
         choices:[
             {
                 id: 'a',
@@ -97,6 +108,10 @@ const Questions = [
     {
         id: 5,
         text: 'What was happening in Fry\'s Chocolate Factory during WW2?',
+        hint: {
+            text: 'Find the dispersal sites section and reveal the answer',
+            image: FactoryImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -120,6 +135,10 @@ const Questions = [
     {
         id: 6,
         text: 'What was happening in Whitchurch Airport?',
+        hint: {
+            text: 'Find the dispersal sites sectio nand reveal the answer',
+            image: AirportImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -143,6 +162,10 @@ const Questions = [
     {
         id: 7,
         text: 'What does 501 Squadron\'s motto "Nil Time" mean?',
+        hint: {
+            text: 'Find 501 Squadron\'s badge, the answer is nearby!',
+            image: BadgeImg,
+        },
         choices:[
             {
                 id: 'a',

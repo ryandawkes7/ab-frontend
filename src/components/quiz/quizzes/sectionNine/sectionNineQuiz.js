@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import QuizFormat from "../../quizStructure/quizStructure";
+import BulbImg from '../../assets/lightbulb.svg'; import FlagImg from './assets/flags-image.svg';
 
 const Questions = [
     {
         id: 1,
         text: 'How many passengers can go on Concorde Alpha Foxtrot at once?',
+        hint: {
+            text: 'Stay downstairs and watch the projection show to find out',
+            image: BulbImg,
+        },
         choices:[
             {
                 id: 'a',
@@ -28,6 +33,7 @@ const Questions = [
     {
         id: 2,
         text: 'How many Concordes were made?',
+        hint: null,
         choices:[
             {
                 id: 'a',
@@ -51,6 +57,10 @@ const Questions = [
     {
         id: 3,
         text: 'Which two countries worked together to make the Concorde?',
+        hint : {
+            text: 'The test pilots were Brian Trubshaw and Andre Turcat (one from either country)',
+            image: FlagImg,
+        },
         choices:[
             {
                 id: 'a',
