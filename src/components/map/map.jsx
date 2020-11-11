@@ -1,3 +1,5 @@
+/* global google */
+
 import React, {useEffect, useState} from 'react';
 import './map.css';
 import { Link } from 'react-router-dom';
