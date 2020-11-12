@@ -1,11 +1,106 @@
 import React, {Component} from 'react'; import './leaderboard.css';
-import AlfieImg from './assets/alfie-finish.png';
+import AlfieImg from './assets/alfie-finish.png'; import CloseButton from './assets/16/icon.png'; import QuizButton from './assets/quiz-image.png';
 import GoldTrophy from './assets/gold-trophy.png'; import SilverTrophy from './assets/silver-trophy.png'; import BronzeTrophy from './assets/bronze-trophy.png'; import StarImage from './assets/star-image.png';
 
 class Leaderboard extends Component {
+
+    constructor (props) {
+        super(props);
+        this.state = {
+            isPopupActive: false,
+            isRecapPopupActive: false,
+            isCertificatePopupActive: false
+        }
+    }
+
+    toggleRecapPopup = () => {
+        this.setState({
+            isPopupActive: !this.state.isPopupActive,
+            isRecapPopupActive: !this.state.isRecapPopupActive
+        })
+    }
+
+    toggleCertificatePopup = () => {
+        this.setState({
+            isPopupActive: !this.state.isPopupActive,
+            isCertificatePopupActive: !this.state.isCertificatePopupActive
+        })
+    }
+
+    handleCloseClick = () => {
+        this.setState({
+            isPopupActive: false,
+            isRecapPopupActive: false,
+            isCertificatePopupActive: false
+        })
+    }
+
     render () {
+
+        const isPopupActive = this.state.isPopupActive;
+        const isRecapPopupActive = this.state.isRecapPopupActive;
+        const isCertificatePopupActive = this.state.isCertificatePopupActive;
+
+        const RecapPopup = () => {
+            return (
+                isPopupActive === true && (
+                    <div className="recap-popup-container">
+                        <div className="rp-box-container">
+
+                            {/* Close Button */}
+                            <button className="rpb-button" onClick={this.handleCloseClick}>
+                                <img src={CloseButton} alt="Close Popup"/>
+                            </button>
+
+                            { isRecapPopupActive === true && (
+                                <div className="rpb-inner-container">
+
+                                {/* Title */}
+                                <div className="rpb-section rpb-title">
+                                    POINTS BOOST
+                                </div>
+
+                                {/* Description */}
+                                <div className="rpb-section rpb-description">
+                                    Answer some quick fire questions from across your adventure for one last chance to boost your score.
+                                </div>
+
+                                {/* Subtitle */}
+                                <div className="rpb-section rpb-subtitle">
+                                    ONLY ONE CHANCE AND NO HINTS!
+                                </div>
+
+                                {/* Image */}
+                                <div className="rpb-section rpb-image">
+                                    <img src={QuizButton} alt="Quiz Button"/>
+                                </div>
+
+                                {/* Button Container */}
+                                <div className="rpb-section rpb-button-container">
+                                    <button className="rpb-ok-button">
+                                        OK
+                                    </button>
+                                </div>
+
+
+                            </div>
+                            )}
+
+                            { isCertificatePopupActive === true && (
+                                <div>
+                                    Hello
+                                </div>
+                            )}
+
+                        </div>
+                    </div>
+                )
+            )
+        }
+
         return (
             <div className="container leaderboard-container">
+                <RecapPopup/>
                 <div className="leaderboard-inner-container">
 
                     {/* Character Image */}
@@ -83,12 +178,12 @@ class Leaderboard extends Component {
                     <div className="l-button-container">
 
                         {/* Recap Button */}
-                        <div className="lb-button lb-recap-button">
+                        <div className="lb-button lb-recap-button" onClick={this.toggleRecapPopup}>
                             RECAP - get more points
                         </div>
 
                         {/* Finish Button */}
-                        <div className="lb-button lb-finish-button">
+                        <div className="lb-button lb-finish-button" onClick={this.toggleCertificatePopup}>
                             FINISH
                         </div>
 

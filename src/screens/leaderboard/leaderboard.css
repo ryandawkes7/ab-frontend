@@ -3,6 +3,7 @@
     display: flex; justify-content: center; align-items: center;
 }
 .leaderboard-inner-container {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
     width: 85%; height: 95%;
 }
 
@@ -28,7 +29,7 @@
 /* Leaderboard Table Section */
 .l-table-container {
     display: flex; justify-content: center; align-items: center;
-    height: 50%; width: 100%;
+    height: 50%; width: 115%; max-width: 100vw;
 }
 .lt-inner-container {
     display: flex; justify-content: center; align-items: center;
@@ -91,3 +92,85 @@
     background: linear-gradient(180deg, #B71918 0%, #E42313 100%);
 }
 /* End of Button Container */
+
+/* Recap Popup */
+.recap-popup-container {
+    position: absolute; display: flex; justify-content: center; align-items: center;
+    left: 0; right: 0; top: 0; bottom: 0; z-index: 999;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.rp-box-container {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    width: 90%; height: 90%; border-radius: 12px;
+    max-width: 344px; max-height: 697px;
+    background: white;
+}
+.rpb-inner-container {
+    position: relative; top: 2.5%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    width: 90%; height: 85%;
+}
+
+.rpb-section {
+    display: flex; justify-content: center; align-items: center; width: 100%;
+}
+
+/** Close Button */
+.rpb-button {
+    position: absolute; top: 3%; left: 5%;
+    display: flex; justify-content: center; align-items: center;
+    height: 5%;
+}
+.rpb-button img {
+    height: 100%; width: 100%;
+    max-height: 22px; max-width: 22px;
+    min-height: 22px; min-width: 22px;
+}
+/** End of Close Button */
+
+/** Title Section */
+.rpb-title {
+    height: 10%; margin-bottom: 5%;
+    font-size: 24px; font-weight: 700; line-height: 32px;
+}
+/** End of Title Section */
+
+/** Description Section */
+.rpb-description {
+    height: 20%; text-align: center; margin-bottom: 5%;
+    font-size: 22px; font-weight: 400; line-height: 30px;
+}
+/** End of Description Section */
+
+/** Subtitle Section */
+.rpb-subtitle {
+    height: 10%; text-align: center; margin-bottom: 5%;
+    font-size: 22px; font-weight: 400; line-height: 30px;
+}
+/** End of Subtitle Section */
+
+/** Image Section */
+.rpb-image {
+    height: 30%; margin-bottom: 10%;
+}
+.rpb-image img {
+    height: 100%; max-height: 158px;
+}
+/** End of Image Section */
+
+/** Button Section */
+.rpb-button-container {
+    height: 15%;
+}
+.rpb-ok-button {
+    width: 50%; height: 100%;
+    max-width: 130px; max-height: 60px; border-radius: 30px;
+    font-weight: 700; font-size: 22px; line-height: 26px; color: white;
+    background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
+}
+/** End of Button Section */
+
+/* End of Recap Popup */
