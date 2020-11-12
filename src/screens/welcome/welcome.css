@@ -28,7 +28,7 @@
 
 /*** Title Section */
 .w-i-title-container {
-    display: flex; text-align: center; align-items: center;
+    display: flex; text-align: center; justify-content: center; align-items: center;
     height: 40%; width: 100%; margin: 2.5% 0;
     font-size: 45px; font-weight: 900; text-transform: uppercase;
 }
@@ -54,7 +54,8 @@
 }
 .welcome-button-container a {
     display: flex; justify-content: center; align-items: center;
-    width: 80%; height: 70%; min-height: 6rem;
+    width: 90%; height: 80%; min-height: 6rem;
+    max-height: 60px; max-width: 300px;
     font-size: 22px; font-weight: 700; text-decoration: none; color: white;
     background: linear-gradient(180deg, rgba(0, 87, 159, 0.94) 0%, #1488CA 100%);
     border-radius: 30px;

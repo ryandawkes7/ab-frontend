@@ -1,4 +1,5 @@
 import React, {Component, useState} from 'react';
+import axios from 'axios';
 import './quizStructure.css';
 import { Link } from 'react-router-dom';
 
@@ -142,7 +143,8 @@ class Results extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            overallScore: 0
+            overallScore: 0,
+            usersDetails: ''
         }
     }
 
@@ -152,8 +154,35 @@ class Results extends Component {
         }))
     }
 
+    handleSubmit = (event) => {
+
+        const payload = {
+            score: this.props.score
+        }
+
+        axios({
+            url: 'api/save',
+            method: 'POST',
+            data: payload
+        })
+            .then(() => {
+                console.log('Data sent to server')
+            })
+            .catch(() => {
+                console.log('ISE: Error sending data to server')
+            })
+    }
+
     componentDidMount () {
         this.overallScore()
+
+        axios.get('api/')
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(error => {
+                console.log(error, 'Internal Server Error')
+            })
     }
 
     render(){
@@ -173,7 +202,7 @@ class Results extends Component {
                         <Link
                             to="/game-menu"
                             className="quiz-return-btn"
-                            onClick={this.overallScore}
+                            onClick={this.handleSubmit}
                         >
                             <h4>OK</h4>
                         </Link>
