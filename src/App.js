@@ -33,6 +33,7 @@ import SectionNineFact from "./components/fact/facts/sectionNine/sectionNineFact
 import SectionEightFact from "./components/fact/facts/sectionEight/sectionEightFact";
 import GameGuide from "./screens/gameGuide/gameGuide";
 import SectionOnePic from "./components/picture/pictures/sectionOnePic";
+import Leaderboard from "./screens/leaderboard/leaderboard";
 
 class App extends Component {
     render() {
@@ -142,6 +143,9 @@ class App extends Component {
                                       </div>
                                       <div>
                                           <Route path="/user-guide" component={GameGuide} />
+                                      </div>
+                                      <div>
+                                          <Route path="/leaderboard" component={Leaderboard}/>
                                       </div>
                                   </div>
                               </Switch>

@@ -1556,28 +1556,43 @@ export default function Map() {
     const [endPopup, setEndPopup] = useState(false)
 
     const togglePopup = () => {
-        console.log("Changed")
+        setEndPopup(!endPopup);
+        console.log(endPopup)
     }
 
-    const endAdventurePopup = () => {
+    const EndAdventurePopup = () => {
         return(
-            endPopup && (
+            endPopup === true && (
             <div className="end-adventure-container">
                 <div className="e-a-box-container">
                     <div className="e-a-b-inner-container">
 
                         {/* Close Button */}
-                        <div className="e-a-b-close">
+                        <div className="e-a-b-close" onClick={togglePopup}>
                             <img src={CloseButton} alt="Close Menu"/>
                         </div>
 
                         {/* Title */}
-
+                        <div className="e-a-b-title">
+                            DO YOU WANT TO QUIT?
+                        </div>
 
                         {/* Subtitle */}
-
+                        <div className="e-a-b-subtitle">
+                            Your points won't be added!
+                        </div>
 
                         {/* Buttons */}
+                        <div className="e-a-b-button-container">
+                            <Link to="/leaderboard" className="eab-button eab-yes-button">
+                                YES
+                            </Link>
+
+                            <button className="eab-button eab-no-button">
+                                NO
+                            </button>
+
+                        </div>
 
                     </div>
                 </div>
@@ -1588,6 +1603,7 @@ export default function Map() {
 
     return (
         <div className="map-section-container">
+            <EndAdventurePopup />
 
             {/* Header Section */}
             <div className="w-m-header-container">
@@ -1603,7 +1619,7 @@ export default function Map() {
                     {/* Character Icon */}
                     <button
                         className="w-m-h-character"
-                        onClick={() => console.log(endPopup)}
+                        onClick={togglePopup}
                     >
                         <img src={CharIcon} alt="User" />
                     </button>
