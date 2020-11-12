@@ -1,4 +1,4 @@
-import React, {Component} from 'react'; import './leaderboard.css';
+import React, {Component} from 'react'; import './leaderboard.css'; import { Link } from "react-router-dom";
 import AlfieImg from './assets/alfie-finish.png'; import CloseButton from './assets/16/icon.png'; import QuizButton from './assets/quiz-image.png';
 import GoldTrophy from './assets/gold-trophy.png'; import SilverTrophy from './assets/silver-trophy.png'; import BronzeTrophy from './assets/bronze-trophy.png'; import StarImage from './assets/star-image.png';
 
@@ -9,7 +9,8 @@ class Leaderboard extends Component {
         this.state = {
             isPopupActive: false,
             isRecapPopupActive: false,
-            isCertificatePopupActive: false
+            isCertificatePopupActive: false,
+            isEmailConfirmationActive: false,
         }
     }
 
@@ -27,11 +28,19 @@ class Leaderboard extends Component {
         })
     }
 
+    sendEmail = () => {
+        this.setState({
+            isCertificatePopupActive: !this.state.isCertificatePopupActive,
+            isEmailConfirmationActive: !this.state.isEmailConfirmationActive
+        })
+    }
+
     handleCloseClick = () => {
         this.setState({
             isPopupActive: false,
             isRecapPopupActive: false,
-            isCertificatePopupActive: false
+            isCertificatePopupActive: false,
+            isEmailConfirmationActive: false
         })
     }
 
@@ -40,11 +49,13 @@ class Leaderboard extends Component {
         const isPopupActive = this.state.isPopupActive;
         const isRecapPopupActive = this.state.isRecapPopupActive;
         const isCertificatePopupActive = this.state.isCertificatePopupActive;
+        const isConfirmationActive = this.state.isEmailConfirmationActive;
 
         const RecapPopup = () => {
             return (
                 isPopupActive === true && (
                     <div className="recap-popup-container">
+
                         <div className="rp-box-container">
 
                             {/* Close Button */}
@@ -87,11 +98,71 @@ class Leaderboard extends Component {
                             )}
 
                             { isCertificatePopupActive === true && (
-                                <div>
-                                    Hello
+                                <div className="rpb-inner-container">
+
+                                    {/* Title */}
+                                    <div className="rpb-section rpb-title">
+                                        SCORE CERTIFICATE
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="rpb-section rpb-description">
+                                        If you would like to receive a personalised score certificate, please enter your email address below.
+                                    </div>
+
+                                    {/* Input Container */}
+                                    <div className="rpb-section rpb-email-container">
+                                        <label>Email</label>
+                                        <div className="rpbe-input">
+                                            <input
+                                                type="text"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Input Description */}
+                                    <div className="rpb-section rpb-email-description">
+                                        Enter your email address to stay in the loop with Aerospace Bristol, receive your final score certificate, and be in with a chance to win prizes
+                                    </div>
+
+                                    {/* Button Container */}
+                                    <div className="rpb-section rpb-buttons-container">
+
+                                        <button className="rpbb-button rpb-send-button" onClick={this.sendEmail}>
+                                            SEND
+                                        </button>
+
+                                        <button className="rpbb-button rpb-no-button">
+                                            No thanks
+                                        </button>
+
+                                    </div>
+
                                 </div>
                             )}
 
+                            { isConfirmationActive === true && (
+                                <div className="rpbc-inner-container">
+
+                                    {/* Title */}
+                                    <div className="rpb-section rpbc-title">
+                                        SCORE CERTIFICATE
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="rpb-section rpbc-description">
+                                        Keep an eye on your emails! We'll be sending your score certificate shortly.
+                                    </div>
+
+                                    {/* Finish */}
+                                    <div className="rpb-section rpbc-button">
+                                        <Link to="/outro">
+                                            FINISH
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            )}
                         </div>
                     </div>
                 )

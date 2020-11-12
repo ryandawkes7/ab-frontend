@@ -1,0 +1,43 @@
+.ending-screen-container {
+    position: absolute; bottom: 0; height: 100%; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.es-aerospace-container {
+    position: relative; bottom: 17%;
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 50%; margin-bottom: 5%;
+}
+.es-aerospace-container img {
+    width: 70%;
+    max-width: 232px; max-height: 268px;
+}
+
+.es-uwe-container {
+    position: relative; bottom: 21%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    height: 20%; width: 100%;
+}
+
+.esu-title {
+    height: 10%;
+    font-size: 15px; font-weight: 400; line-height: 18px;
+}
+.esu-image {
+    display: flex; justify-content: center; align-items: center;
+    height: 90%; width: 100%;
+}
+.esu-image img {
+    height: 100%; max-height: 85px; max-width: 85px;
+}
+
+.es-character-container {
+    position: absolute; bottom: -4%;
+    display: flex; justify-content: center; align-items: center;
+    height: 50%; width: 100%;
+}
+.es-character-container img {
+    height: 100%;
+    max-height: 269px;
+}

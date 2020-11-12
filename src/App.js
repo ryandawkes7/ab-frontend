@@ -34,6 +34,7 @@ import SectionEightFact from "./components/fact/facts/sectionEight/sectionEightF
 import GameGuide from "./screens/gameGuide/gameGuide";
 import SectionOnePic from "./components/picture/pictures/sectionOnePic";
 import Leaderboard from "./screens/leaderboard/leaderboard";
+import EndingScreen from "./screens/endingScreen/endingScreen";
 
 class App extends Component {
     render() {
@@ -146,6 +147,9 @@ class App extends Component {
                                       </div>
                                       <div>
                                           <Route path="/leaderboard" component={Leaderboard}/>
+                                      </div>
+                                      <div>
+                                          <Route path="/outro" component={EndingScreen} />
                                       </div>
                                   </div>
                               </Switch>
