@@ -132,9 +132,9 @@ class Leaderboard extends Component {
                                             SEND
                                         </button>
 
-                                        <button className="rpbb-button rpb-no-button">
+                                        <Link to="/outro" className="rpbb-button rpb-no-button">
                                             No thanks
-                                        </button>
+                                        </Link>
 
                                     </div>
 

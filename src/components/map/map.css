@@ -180,6 +180,7 @@
 .w-m-h-character {
     display: flex; justify-content: center; align-items: center;
     height: 90%; width: 30%;
+    background: none;
 }
 .w-m-h-character img {
     width: 95%; max-height: 100%;

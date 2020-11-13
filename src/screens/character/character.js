@@ -5,8 +5,8 @@ import './character.css';
 import Back from "../../components/backButton/back";
 import NextButton from "../../images/next-button.svg";
 
-import AlfieUnselected from './assets/alfie-unselected.png'; import AlfieSelected from './assets/alfie-selected.svg';
-import AmeliaUnselected from './assets/amelia-unselected.png'; import AmeliaSelected from './assets/amelia-selected.svg';
+import AlfieUnselected from './assets/alfie-unselected.png'; import SelectedAlfie from './assets/alfie-selected.png'
+import AmeliaUnselected from './assets/amelia-unselected.png'; import SelectedAmelia from './assets/amelia-selected.png';
 
 class Character extends Component {
     state = {
@@ -14,13 +14,14 @@ class Character extends Component {
         AmeliaSelected: false
     }
 
-    selectAlfie() {
+    selectAlfie = () => {
         this.setState({
             AlfieSelected: true,
             AmeliaSelected: false
         })
     }
-    selectAmelia() {
+
+    selectAmelia = () => {
         this.setState({
             AlfieSelected: false,
             AmeliaSelected: true
@@ -51,13 +52,28 @@ class Character extends Component {
                     <div className="c-p-character-container">
 
                         {/* Alfie */}
-                        <div className="c-p-c-character">
-                            <img src={AlfieUnselected} />
+                        <div className="c-p-c-character" onClick={this.selectAlfie}>
+                            { AlfieSelected === true &&
+                                <div className="cpcc-character-image">
+                                    <img src={ SelectedAlfie } alt="Alfie is Selected!" className="cpcc-selected" style={{opacity: '100%'}}/>
+                                    <img src={ AlfieUnselected } className="cpcc-unselected" style={{opacity: '0%'}}/>
+                                </div>
+                            }
+                            { AlfieSelected === false &&
+                                <div className="cpcc-character-image">
+                                    <img src={ AlfieUnselected } alt='Select Alfie!' className="cpcc-unselected"/>
+                                </div>
+                            }
                         </div>
 
                         {/* Amelia */}
-                        <div className="c-p-c-character">
-                            <img src={AmeliaUnselected} />
+                        <div className="c-p-c-character" onClick={this.selectAmelia}>
+                            { AmeliaSelected === true &&
+                                <img src={ SelectedAmelia } alt="Amelia is Selected!"/>
+                            }
+                            { AmeliaSelected === false &&
+                                <img src={AmeliaUnselected} alt="Select Amelia!" />
+                            }
                         </div>
 
 
