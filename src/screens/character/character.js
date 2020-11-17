@@ -56,12 +56,13 @@ class Character extends Component {
                             { AlfieSelected === true &&
                                 <div className="cpcc-character-image">
                                     <img src={ SelectedAlfie } alt="Alfie is Selected!" className="cpcc-selected" style={{opacity: '100%'}}/>
-                                    <img src={ AlfieUnselected } className="cpcc-unselected" style={{opacity: '0%'}}/>
+                                    <img src={ AlfieUnselected } alt="Select Alfie!" className="cpcc-unselected" style={{opacity: '0%'}}/>
                                 </div>
                             }
                             { AlfieSelected === false &&
                                 <div className="cpcc-character-image">
-                                    <img src={ AlfieUnselected } alt='Select Alfie!' className="cpcc-unselected"/>
+                                    <img src={ SelectedAlfie } alt="Alfie is Selected!" className="cpcc-selected" style={{opacity: '0%'}}/>
+                                    <img src={ AlfieUnselected } alt='Select Alfie!' className="cpcc-unselected" style={{opacity: '100%'}} />
                                 </div>
                             }
                         </div>
@@ -69,10 +70,16 @@ class Character extends Component {
                         {/* Amelia */}
                         <div className="c-p-c-character" onClick={this.selectAmelia}>
                             { AmeliaSelected === true &&
-                                <img src={ SelectedAmelia } alt="Amelia is Selected!"/>
+                            <div className="cpcc-character-image">
+                                <img src={ SelectedAmelia } alt="Amelia is Selected!" className="cpcc-selected" style={{opacity: '100%'}}/>
+                                <img src={ AmeliaUnselected } alt="Select Amelia!" className="cpcc-unselected" style={{opacity: '0%'}}/>
+                            </div>
                             }
                             { AmeliaSelected === false &&
-                                <img src={AmeliaUnselected} alt="Select Amelia!" />
+                            <div className="cpcc-character-image">
+                                <img src={ SelectedAmelia } alt="Amelia is Selected!" className="cpcc-selected" style={{opacity: '0%'}}/>
+                                <img src={ AmeliaUnselected } alt='Select Amelia!' className="cpcc-unselected" style={{opacity: '100%'}} />
+                            </div>
                             }
                         </div>
 

@@ -92,11 +92,14 @@ class Question extends Component {
 
         return(
             <div>
+
+                {/* Hint Popup*/}
                 {
                     isHintShown === true &&
                     <HintPopup/>
                 }
 
+                {/* Question Layout */}
                 <div className="question-component">
                     {question.text}
                 </div>
@@ -125,19 +128,7 @@ class Question extends Component {
         )
     }
 }
-// End of Question Text/Answer Button Component
 
-
-// Results Component
-class Scorebox extends Component {
-    render(){
-        return(
-            <div className="question-count-container">
-                Question {this.props.current} out of {this.props.total}
-            </div>
-        )
-    }
-}
 
 class Results extends Component {
     constructor (props) {
@@ -234,11 +225,12 @@ export default class QuizFormat extends Component {
 
     render () {
         const questions = this.props.questions;
+        const randomQuestion = questions[Math.floor(Math.random() * questions.length )]
 
         return (
             <div className="quiz-container">
                 <Back id="backButton"/>
-                {this.state.current > questions.length &&
+                {this.state.current >= 2 &&
                     <Results
                         total={questions.length}
                         score={this.state.score}
@@ -246,17 +238,10 @@ export default class QuizFormat extends Component {
                     />
                 }
 
-                {this.state.current <= questions.length &&
-                    <Scorebox
-                        total={questions.length}
-                        current={this.state.current}
-                        score={this.state.score}
-                    />
-                }
 
-                {this.state.current <= questions.length &&
+                {this.state.current <= 1 &&
                     <Question
-                        question={questions[this.state.current - 1]}
+                        question={randomQuestion}
                         onChoiceChange={this.handleChange}
                     />
                 }

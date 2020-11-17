@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './factFormat.css';
 import { Link } from 'react-router-dom';
+import UserIcon from "../quiz/assets/user-icon.svg";
 
 class FactComponent extends Component{
     constructor (props) {
@@ -21,7 +22,6 @@ class FactComponent extends Component{
                 { fact.options.map(next => {
                     return(
                         <div className="inner-container fact-inner-container">
-                            <h1>{next.number}</h1>
                             <h2>Did You Know?</h2>
 
                             { next.image !== '' &&
@@ -51,6 +51,55 @@ class FactComponent extends Component{
     }
 }
 
+class Results extends Component {
+
+    constructor (props) {
+        super(props);
+        this.state = {
+            overallScore: 0
+        }
+    }
+
+    overallScore = () => {
+        this.setState((prevState, props) => ({
+            overallScore: (prevState.overallScore + props.score)
+        }))
+    }
+
+    handleSubmit = (e) => {
+        const payload = {
+            score: this.props.score
+        }
+    }
+
+    render() {
+        return (
+            <div className="results-absolute">
+                <div className="results-container">
+                    <div className="results-cont results-img">
+                        <img src={UserIcon} alt=""/>
+                    </div>
+
+                    <div className="results-cont results-text">
+                        <h3>+{this.state.score} points!</h3>
+                        <h4>Congratulations!</h4>
+                    </div>
+
+                    <div className="results-cont results-link">
+                        <Link
+                            to="/game-menu"
+                            className="quiz-return-btn"
+                        >
+                            <h4>OK</h4>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+}
+
 export default class FactFormat extends Component {
     constructor (props) {
         super(props);
@@ -62,30 +111,29 @@ export default class FactFormat extends Component {
 
     handleChange() {
         this.setState((prevState) => ({
-            current: prevState.current + 1
+            current: prevState.current + 1,
+            score: prevState.score + 50
         }))
     }
 
     render () {
         const facts = this.props.facts;
+        const randomFact = facts[Math.floor(Math.random() * facts.length )]
 
-        console.log(facts)
         return (
             <div className="container fact-container">
 
                 {this.state.current <= facts.length &&
                     <FactComponent
-                        fact={facts[this.state.current - 1]}
+                        fact={randomFact}
                         onNextButton={this.handleChange}
                     />
                 }
 
-                {this.state.current > facts.length &&
-                    <div className="inner-container">
-                    <Link to="/game-menu" className="basic-btn return-menu">
-                        <h3>Return to Menu</h3>
-                    </Link>
-                    </div>
+                {this.state.current >= 2 &&
+                    <Results
+                        score={this.state.score}
+                    />
                 }
             </div>
         );

@@ -4,8 +4,6 @@ import React, {useEffect, useState} from 'react';
 import './map.css';
 import { Link } from 'react-router-dom';
 
-import { usePosition } from 'use-position';
-
 import {
     GoogleMap,
     withScriptjs,
