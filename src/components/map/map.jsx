@@ -44,132 +44,238 @@ export const Interaction = {
         ],
 
         Sections: [
+
+            // Era One
             {
                 era: 1,
                 complete: false,
                 unlocked: true,
                 centerCoords: [51.523238, -2.57822],
                 zoom: 21.25,
-                quiz: {
-                    coordinates: [51.523176, -2.578209],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                quiz: [
+                    {
+                        id: 1,
+                        coordinates: [51.523186, -2.578229],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        id: 2,
+                        coordinates: [51.523170, -2.578064],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
-                    coordinates: [51.523226, -2.578289],
+                    coordinates: [51.523146, -2.578169],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
                 }
             },
+
+            // Era Two
             {
                 era: 2,
                 complete: false,
                 unlocked: false,
                 centerCoords: [51.523325, -2.578160],
-                zoom: 20.9,
-                quiz: {
-                    coordinates: [51.523315, -2.578260],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                zoom: 21.25,
+                quiz: [
+                    {
+                        coordinates: [51.523305, -2.578240],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523225, -2.578000],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
-                    coordinates: [51.523265, -2.577975],
+                    coordinates: [51.523235, -2.578110],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
                 }
             },
+
+            // Era Three
             {
                 era: 3,
                 complete: false,
                 unlocked: false,
                 centerCoords: [51.523405, -2.578045],
                 zoom: 20.9,
-                quiz: {
-                    coordinates: [51.523365, -2.578005],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                quiz: [
+                    {
+                        id: 1,
+                        coordinates: [51.523325, -2.577955],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        id: 2,
+                        coordinates: [51.523365, -2.577960],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        id: 3,
+                        coordinates: [51.523395, -2.578015],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        id: 4,
+                        coordinates: [51.523375, -2.578100],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
-                    coordinates: [51.523405, -2.578095],
+                    coordinates: [51.523285, -2.577965],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
                 }
             },
+
+            // Era Four
             {
                 era: 4,
                 complete: false,
                 unlocked: false,
                 centerCoords: [51.523555, -2.578329],
                 zoom: 20.9,
-                quiz: {
-                    coordinates: [51.523565, -2.578309],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                quiz: [
+                    {
+                        coordinates: [51.523448, -2.578157],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523522, -2.578243],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523512, -2.578333],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
-                    coordinates: [51.523485, -2.578159],
+                    coordinates: [51.523455, -2.578221],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
                 }
             },
+
+            // Era Five
             {
                 era: 5,
                 complete: false,
                 unlocked: false,
                 centerCoords: [51.523455, -2.578469],
-                zoom: 20.8,
-                quiz: {
-                    coordinates: [51.523395, -2.578309],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                zoom: 20.9,
+                quiz: [
+                    {
+                        coordinates: [51.523505, -2.578459],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523445, -2.578489],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523385, -2.578409],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
-                    coordinates: [51.523425, -2.578509],
+                    coordinates: [51.523435, -2.578409],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
                 }
             },
+
+            // Era Six
             {
                 era: 6,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523311, -2.578685],
-                zoom: 20.75,
-                quiz: {
-                    coordinates: [51.523265, -2.578649],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                centerCoords: [51.523455, -2.578469],
+                zoom: 20.8,
+                quiz: [
+                    {
+                        coordinates: [51.523295, -2.578549],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523315, -2.578619],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523235, -2.578619],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
-                    coordinates: [51.523315, -2.578549],
+                    coordinates: [51.523245, -2.578719],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
                 }
             },
+
+            // Era Seven
             {
                 era: 7,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.523186, -2.578438],
-                zoom: 21.15,
-                quiz: {
-                    coordinates: [51.523176, -2.578409],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                centerCoords: [51.523311, -2.578685],
+                zoom: 20.75,
+                quiz: [
+                    {
+                        coordinates: [51.523187, -2.578401],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                    {
+                        coordinates: [51.523134, -2.578456],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
                     coordinates: [51.523116, -2.578329],
                     title: "FACT TIME!",
@@ -177,17 +283,21 @@ export const Interaction = {
                     complete: false
                 }
             },
+
+            // Era Nine
             {
                 era: 9,
                 complete: false,
                 unlocked: false,
                 centerCoords: [51.522776, -2.579259],
-                quiz: {
-                    coordinates: [51.522776, -2.579259],
-                    title: 'QUIZ TIME!',
-                    description: "Do you want to play with me and earn some points?",
-                    complete: false,
-                },
+                quiz: [
+                    {
+                        coordinates: [51.522776, -2.579259],
+                        title: 'QUIZ TIME!',
+                        description: "Do you want to play with me and earn some points?",
+                        complete: false,
+                    },
+                ],
                 fact: {
                     coordinates: [51.522756, -2.579059],
                     title: "FACT TIME!",
@@ -207,71 +317,70 @@ function UnwrappedMap() {
     const [zoom, setZoom] = useState(21.25);
 
     const eras = Interaction.locations.Sections
-    const quizEraOne = eras[0].quiz; const factEraOne = eras[0].fact;
-    const quizEraTwo = eras[1].quiz; const factEraTwo = eras[1].fact;
-    const quizEraThree = eras[2].quiz; const factEraThree = eras[2].fact;
-    const quizEraFour = eras[3].quiz; const factEraFour = eras[3].fact;
-    const quizEraFive = eras[4].quiz; const factEraFive = eras[4].fact;
-    const quizEraSix = eras[5].quiz; const factEraSix = eras[5].fact;
-    const quizEraSeven = eras[6].quiz; const factEraSeven = eras[6].fact;
-    const quizEraEight = eras[7].quiz; const factEraEight = eras[7].fact;
+    const eraOneQuizOne = eras[0].quiz[0]; const eraOneQuizTwo = eras[0].quiz[1]; const factEraOne = eras[0].fact;
+    const eraTwoQuizOne = eras[1].quiz[0]; const eraTwoQuizTwo = eras[1].quiz[2]; const factEraTwo = eras[1].fact;
+    const eraThreeQuizOne = eras[2].quiz[0]; const eraThreeQuizTwo = eras[2].quiz[1]; const eraThreeQuizThree = eras[2].quiz[2]; const eraThreeQuizFour = eras[2].quiz[3]; const factEraThree = eras[2].fact;
+    const eraFourQuizOne = eras[3].quiz[0]; const eraFourQuizTwo = eras[3].quiz[1]; const eraFourQuizThree = eras[3].quiz[2]; const factEraFour = eras[3].fact;
+    const eraFiveQuizOne = eras[4].quiz[0]; const eraFiveQuizTwo = eras[4].quiz[1]; const eraFiveQuizThree = eras[4].quiz[2]; const factEraFive = eras[4].fact;
+    const eraSixQuizOne = eras[5].quiz[0]; const eraSixQuizTwo = eras[5].quiz[1]; const eraSixQuizThree = eras[5].quiz[2]; const factEraSix = eras[5].fact;
+    const eraSevenQuizOne = eras[6].quiz[0]; const eraSevenQuizTwo = eras[6].quiz[1]; const factEraSeven = eras[6].fact;
 
     const isEraOneComplete = () => {
         const era = eras[0];
         const quiz = eras[0].quiz;
         const fact = eras[0].fact;
 
-        if (fact.complete && quiz.complete) {
+        if (fact.complete && quiz[0].complete) {
             era.complete = true;
-            console.log("Era one is complete");
         } else {
             era.complete = false;
-            console.log("Era one not complete yet!!")
         }
     }
     isEraOneComplete();
+
     const isEraTwoComplete = () => {
         const era = eras[1];
         const quiz = eras[1].quiz;
         const fact = eras[1].fact;
 
-        if (fact.complete && quiz.complete) {
+        if (fact.complete && quiz[0].complete) {
             era.complete = true;
-            console.log("Era one is complete");
         } else {
             era.complete = false;
-            console.log("Era one not complete yet!!")
         }
     }
     isEraTwoComplete();
+
     const isEraThreeComplete = () => {
         const era = eras[2];
         const quiz = eras[2].quiz;
         const fact = eras[2].fact;
 
-        if (fact.complete && quiz.complete) {
-            era.complete = true;
-            console.log("Era one is complete");
-        } else {
-            era.complete = false;
-            console.log("Era one not complete yet!!")
+        {
+            quiz.map((quizzes) => {
+                if (fact.complete && quiz[0].complete && quiz[1].complete && quiz[2].complete && quiz[3].complete) {
+                    era.complete = true;
+                } else {
+                    era.complete = false;
+                }
+            })
         }
     }
     isEraThreeComplete();
+
     const isEraFourComplete = () => {
         const era = eras[3];
         const quiz = eras[3].quiz;
         const fact = eras[3].fact;
 
-        if (fact.complete && quiz.complete) {
+        if (fact.complete && quiz[0].complete && quiz[1].complete && quiz[2].complete ) {
             era.complete = true;
-            console.log("Era one is complete");
         } else {
             era.complete = false;
-            console.log("Era one not complete yet!!")
         }
     }
     isEraFourComplete();
+
     const isEraFiveComplete = () => {
         const era = eras[4];
         const quiz = eras[4].quiz;
@@ -279,13 +388,12 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz.complete) {
             era.complete = true;
-            console.log("Era one is complete");
         } else {
             era.complete = false;
-            console.log("Era one not complete yet!!")
         }
     }
     isEraFiveComplete();
+
     const isEraSixComplete = () => {
         const era = eras[5];
         const quiz = eras[5].quiz;
@@ -293,10 +401,8 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz.complete) {
             era.complete = true;
-            console.log("Era one is complete");
         } else {
             era.complete = false;
-            console.log("Era one not complete yet!!")
         }
     }
     isEraSixComplete();
@@ -308,6 +414,8 @@ function UnwrappedMap() {
     if(eras[4].complete) { eras[5].unlocked = true }
     if(eras[5].complete) { eras[6].unlocked = true }
     if(eras[6].complete) { eras[7].unlocked = true }
+
+    console.log("Selected Interaction: ", selectedInteraction)
 
     // Sets Location when an era is completed
     useEffect(() => {
@@ -353,21 +461,19 @@ function UnwrappedMap() {
         }
     })
 
-    console.log("Set Lat: " + setLatitude + ", Set Lon: " + setLongitude); console.log("Lat: " + latitude + ", Lon: " + longitude); console.log("Zoom Level: ", zoom);
-
     return (
         // Creates map
         <GoogleMap
             defaultZoom={21.15}
             zoom={zoom}
-            defaultCenter={{lat: 51.523176, lng: -2.578209}}
+            defaultCenter={{lat: latitude, lng: longitude}}
             center={{lat: latitude, lng: longitude}}
             options={{
                 fullscreenControl: false,
                 zoomControl: false,
                 streetViewControl: false,
                 mapTypeControl: false,
-                draggable: false,
+                // draggable: false,
                 clickableIcons: false,
             }}
         >
@@ -381,24 +487,26 @@ function UnwrappedMap() {
             />
 
             {
-                Interaction.locations.Sections.map((interaction) => (
+                Interaction.locations.Sections.map((interaction) => interaction.quiz.map((quizInteraction) => (
                     <div>
                         <Marker
-                            key={interaction.quiz.id}
+                            key={quizInteraction.id}
                             position={{
-                                lat: interaction.quiz.coordinates[0],
-                                lng: interaction.quiz.coordinates[1]
+                                lat: quizInteraction.coordinates[0],
+                                lng: quizInteraction.coordinates[1]
                             }}
                             onClick={() => {
-                                interaction.unlocked === true && interaction.quiz.complete === false ? setSelectedInteraction(interaction.quiz) :
-                                console.log("N/A")
+                                interaction.unlocked === true && quizInteraction.complete === false ? setSelectedInteraction(quizInteraction) :
+                                // interaction.unlocked === false ? TODO: Interaction is currently locked popup : null
+                                console.log("Unselected")
                             }}
                             icon={
-                                interaction.unlocked === true && interaction.quiz.complete === true ? QuizComplete :
-                                interaction.unlocked === true && interaction.quiz.complete === false ? QuizIncomplete :
-                                interaction.unlocked === false ? QuizLocked : null
+                                interaction.unlocked === true && quizInteraction.complete === true ? QuizComplete :
+                                interaction.unlocked === true && quizInteraction.complete === false ? QuizIncomplete :
+                                interaction.unlocked !== true ? QuizLocked : null
                             }
                         />
+
                         <Marker
                             key={interaction.fact.id}
                             position={{
@@ -416,54 +524,56 @@ function UnwrappedMap() {
                             }
                         />
                     </div>
-                ))
+                )))
             }
 
-            {
-                Interaction.locations.Game.map((interaction) => (
-                    <div>
-                        <Marker
-                            key={interaction.id}
-                            position={{
-                                lat: interaction.coordinates[0],
-                                lng: interaction.coordinates[1]
-                            }}
-                            onClick={() => {
-                                setSelectedInteraction(interaction)
-                                console.log(selectedInteraction)
-                            }}
-                            icon={GameIcon}
-                        />
-                    </div>
-                ))
-            }
-            {
-                Interaction.locations.Picture.map((interaction) => (
-                    <div>
-                        <Marker
-                            key={interaction.id}
-                            position={{
-                                lat: interaction.coordinates[0],
-                                lng: interaction.coordinates[1]
-                            }}
-                            onClick={() => {
-                                setSelectedInteraction(interaction)
-                                console.log(selectedInteraction)
-                            }}
-                            icon={
-                                !interaction.complete && (PicIncomplete) ||
-                                interaction.complete && (PicComplete)
-                            }
-                        />
-                    </div>
-                ))
-            }
+            {/*{*/}
+            {/*    Interaction.locations.Game.map((interaction) => (*/}
+            {/*        <div>*/}
+            {/*            <Marker*/}
+            {/*                key={interaction.id}*/}
+            {/*                position={{*/}
+            {/*                    lat: interaction.coordinates[0],*/}
+            {/*                    lng: interaction.coordinates[1]*/}
+            {/*                }}*/}
+            {/*                onClick={() => {*/}
+            {/*                    setSelectedInteraction(interaction)*/}
+            {/*                    console.log(selectedInteraction)*/}
+            {/*                }}*/}
+            {/*                icon={GameIcon}*/}
+            {/*            />*/}
+            {/*        </div>*/}
+            {/*    ))*/}
+            {/*}*/}
+            {/*{*/}
+            {/*    Interaction.locations.Picture.map((interaction) => (*/}
+            {/*        <div>*/}
+            {/*            <Marker*/}
+            {/*                key={interaction.id}*/}
+            {/*                position={{*/}
+            {/*                    lat: interaction.coordinates[0],*/}
+            {/*                    lng: interaction.coordinates[1]*/}
+            {/*                }}*/}
+            {/*                onClick={() => {*/}
+            {/*                    setSelectedInteraction(interaction)*/}
+            {/*                    console.log(selectedInteraction)*/}
+            {/*                }}*/}
+            {/*                icon={*/}
+            {/*                    !interaction.complete && (PicIncomplete) ||*/}
+            {/*                    interaction.complete && (PicComplete)*/}
+            {/*                }*/}
+            {/*            />*/}
+            {/*        </div>*/}
+            {/*    ))*/}
+            {/*}*/}
             {/* End of Interaction Markers */}
 
             {/* Selecting Interaction Section */}
             {
                 // Function for if the button pressed is a QUIZ button
-                selectedInteraction === quizEraOne && (
+
+                // Era One
+                selectedInteraction === eraOneQuizOne && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -525,10 +635,79 @@ function UnwrappedMap() {
                             </div>
 
                         </div>
+                ) ||
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraTwo && (
+                selectedInteraction === eraOneQuizTwo && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-one-quiz"
+                                    onClick={() => { selectedInteraction.complete = true }}
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+                        ) ||
+
+                    </div>
+                ) ||
+
+                // Era Two
+                selectedInteraction === eraTwoQuizOne && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -593,7 +772,74 @@ function UnwrappedMap() {
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraThree && (
+                selectedInteraction === eraTwoQuizTwo && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-two-quiz"
+                                    onClick={() => { selectedInteraction.complete = true }}
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+
+                // Era Three
+                selectedInteraction === eraThreeQuizOne && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -637,7 +883,7 @@ function UnwrappedMap() {
                                 <Link
                                     className="mbp-button mbp-play-button"
                                     to="/section-three-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
+                                    onClick={ () => selectedInteraction.complete = true }
                                 >
                                     Play
                                 </Link>
@@ -658,7 +904,7 @@ function UnwrappedMap() {
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraFour && (
+                selectedInteraction === eraThreeQuizTwo && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -701,8 +947,8 @@ function UnwrappedMap() {
                                 {/* Play Button */}
                                 <Link
                                     className="mbp-button mbp-play-button"
-                                    to="/section-four-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
                                 >
                                     Play
                                 </Link>
@@ -723,7 +969,7 @@ function UnwrappedMap() {
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraFive && (
+                selectedInteraction === eraThreeQuizThree && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -766,8 +1012,8 @@ function UnwrappedMap() {
                                 {/* Play Button */}
                                 <Link
                                     className="mbp-button mbp-play-button"
-                                    to="/section-five-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
                                 >
                                     Play
                                 </Link>
@@ -788,7 +1034,7 @@ function UnwrappedMap() {
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraSix && (
+                selectedInteraction === eraThreeQuizFour && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -831,8 +1077,8 @@ function UnwrappedMap() {
                                 {/* Play Button */}
                                 <Link
                                     className="mbp-button mbp-play-button"
-                                    to="/section-six-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
                                 >
                                     Play
                                 </Link>
@@ -853,7 +1099,9 @@ function UnwrappedMap() {
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraSeven && (
+
+                // Era Four
+                selectedInteraction === eraFourQuizOne && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -896,8 +1144,8 @@ function UnwrappedMap() {
                                 {/* Play Button */}
                                 <Link
                                     className="mbp-button mbp-play-button"
-                                    to="/section-seven-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
                                 >
                                     Play
                                 </Link>
@@ -918,7 +1166,7 @@ function UnwrappedMap() {
 
                     </div>
                 ) ||
-                selectedInteraction === quizEraEight && (
+                selectedInteraction === eraFourQuizTwo && (
                     <div className="map-button-popup">
 
                         {/* Container */}
@@ -961,8 +1209,599 @@ function UnwrappedMap() {
                                 {/* Play Button */}
                                 <Link
                                     className="mbp-button mbp-play-button"
-                                    to="/section-eight-quiz"
-                                    onClick={() => { selectedInteraction.complete = true }}
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+                selectedInteraction === eraFourQuizThree && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+
+                // Era Five
+                selectedInteraction === eraFiveQuizOne && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+                selectedInteraction === eraFiveQuizTwo && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+                selectedInteraction === eraFiveQuizThree && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+
+                // Era Six
+                selectedInteraction === eraSixQuizOne && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+                selectedInteraction === eraSixQuizTwo && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+                selectedInteraction === eraSixQuizThree && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+
+                // Era Seven
+                selectedInteraction === eraSevenQuizOne && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+                selectedInteraction === eraSevenQuizTwo && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
                                 >
                                     Play
                                 </Link>
@@ -1447,101 +2286,35 @@ function UnwrappedMap() {
                         </div>
 
                     </div>
-                ) ||
-                selectedInteraction === factEraEight && (
-                    <div className="map-button-popup">
-
-                        {/* Container */}
-                        <div className="m-b-p-main-container">
-
-                            {/* Close Button */}
-                            <button
-                                className="mbp-close-container"
-                                onClick={() => { setSelectedInteraction(null) }}
-                            >
-                                <img src={CloseButton} alt="Close Menu"/>
-                            </button>
-
-                            {/* Quote Bubble */}
-                            <div className="mbp-bubble-container">
-
-                                {/* Image */}
-                                <img src={BubbleImage} alt="Quote Bubble"/>
-
-                                {/* Text */}
-                                <div className="mbpb-title-container">
-
-                                    {/* Title */}
-                                    <div className="mbpb-title">
-                                        { selectedInteraction.title }
-                                    </div>
-
-                                    {/* Description */}
-                                    <div className="mbpb-description">
-                                        { selectedInteraction.description }
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            {/* Button Container */}
-                            <div className="mbp-button-container">
-
-                                {/* Play Button */}
-                                <Link
-                                    className="mbp-button mbp-play-button"
-                                    to="/section-eight-fact"
-                                    onClick={() => { selectedInteraction.complete = true }
-                                    }
-                                >
-                                    Learn
-                                </Link>
-
-                                {/* Not Now Button */}
-                                <button className="mbp-button mbp-cancel-button">
-                                    Not Now
-                                </button>
-
-                            </div>
-
-                            {/* Character Container */}
-                            <div className="mbp-character-container">
-                                <img src={AlfieImg} alt="Alfie"/>
-                            </div>
-
-                        </div>
-
-                    </div>
                 )
             }
 
-            {
-                selectedInteraction === Interaction.locations.Picture[0] && (
-                    <div className="map-info-window">
-                        <InfoWindow
-                            position={{
-                                lat: selectedInteraction.coordinates[0] + 0.000033,
-                                lng: selectedInteraction.coordinates[1]
-                            }}
-                            onCloseClick={() => {
-                                setSelectedInteraction(null);
-                            }}
-                        >
-                            <div className="map-button">
-                                <h2>{ selectedInteraction.type }</h2>
-                                <Link
-                                    to="/section-one-pic"
-                                    className="basic-btn fact-btn"
-                                    onClick={() => {selectedInteraction.complete = true }}
-                                >
-                                    <h3>{ selectedInteraction.description }</h3>
-                                </Link>
-                            </div>
-                        </InfoWindow>
-                    </div>
-                )
-            }
+            {/*{*/}
+            {/*    selectedInteraction === Interaction.locations.Picture[0] && (*/}
+            {/*        <div className="map-info-window">*/}
+            {/*            <InfoWindow*/}
+            {/*                position={{*/}
+            {/*                    lat: selectedInteraction.coordinates[0] + 0.000033,*/}
+            {/*                    lng: selectedInteraction.coordinates[1]*/}
+            {/*                }}*/}
+            {/*                onCloseClick={() => {*/}
+            {/*                    setSelectedInteraction(null);*/}
+            {/*                }}*/}
+            {/*            >*/}
+            {/*                <div className="map-button">*/}
+            {/*                    <h2>{ selectedInteraction.type }</h2>*/}
+            {/*                    <Link*/}
+            {/*                        to="/section-one-pic"*/}
+            {/*                        className="basic-btn fact-btn"*/}
+            {/*                        onClick={() => {selectedInteraction.complete = true }}*/}
+            {/*                    >*/}
+            {/*                        <h3>{ selectedInteraction.description }</h3>*/}
+            {/*                    </Link>*/}
+            {/*                </div>*/}
+            {/*            </InfoWindow>*/}
+            {/*        </div>*/}
+            {/*    )*/}
+            {/*}*/}
 
         </GoogleMap>
     )
