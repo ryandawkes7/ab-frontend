@@ -20,7 +20,8 @@ import PicIncomplete from './assets/picture-incomplete.svg'; import PicComplete 
 
 import HeaderBackdrop from './assets/header-background.svg'; import BubbleImage from './assets/bubble.svg';
 import AlfieImg from './assets/alfie-image.png';
-import MapOverlay from './assets/main-building.svg'; import CloseButton from './assets/16/icon.svg';
+import MapOverlay from './assets/main-building.svg'; import ConcordeOverlay from './assets/concorde-map.png'
+import CloseButton from './assets/16/icon.svg';
 
 // Impromptu JSON data for locations
 export const Interaction = {
@@ -289,17 +290,18 @@ export const Interaction = {
                 era: 9,
                 complete: false,
                 unlocked: false,
-                centerCoords: [51.522776, -2.579259],
+                centerCoords: [51.523900, -2.577390],
+                zoom: 19.6,
                 quiz: [
                     {
-                        coordinates: [51.522776, -2.579259],
+                        coordinates: [51.523630, -2.577300],
                         title: 'QUIZ TIME!',
                         description: "Do you want to play with me and earn some points?",
                         complete: false,
                     },
                 ],
                 fact: {
-                    coordinates: [51.522756, -2.579059],
+                    coordinates: [51.523880, -2.577180],
                     title: "FACT TIME!",
                     description: "Do you want to learn with me and earn some points?",
                     complete: false
@@ -324,13 +326,14 @@ function UnwrappedMap() {
     const eraFiveQuizOne = eras[4].quiz[0]; const eraFiveQuizTwo = eras[4].quiz[1]; const eraFiveQuizThree = eras[4].quiz[2]; const factEraFive = eras[4].fact;
     const eraSixQuizOne = eras[5].quiz[0]; const eraSixQuizTwo = eras[5].quiz[1]; const eraSixQuizThree = eras[5].quiz[2]; const factEraSix = eras[5].fact;
     const eraSevenQuizOne = eras[6].quiz[0]; const eraSevenQuizTwo = eras[6].quiz[1]; const factEraSeven = eras[6].fact;
+    const eraNineQuizOne = eras[7].quiz[0]; const eraNineQuizTwo = eras[7].quiz[1]; const factEraNine = eras[7].fact;
 
     const isEraOneComplete = () => {
         const era = eras[0];
         const quiz = eras[0].quiz;
         const fact = eras[0].fact;
 
-        if (fact.complete && quiz[0].complete) {
+        if (fact.complete && quiz[0].complete && quiz[1].complete) {
             era.complete = true;
         } else {
             era.complete = false;
@@ -386,7 +389,7 @@ function UnwrappedMap() {
         const quiz = eras[4].quiz;
         const fact = eras[4].fact;
 
-        if (fact.complete && quiz.complete) {
+        if (fact.complete && quiz[0].complete && quiz[1].complete) {
             era.complete = true;
         } else {
             era.complete = false;
@@ -399,13 +402,39 @@ function UnwrappedMap() {
         const quiz = eras[5].quiz;
         const fact = eras[5].fact;
 
-        if (fact.complete && quiz.complete) {
+        if (fact.complete && quiz[0].complete && quiz[1].complete && quiz[2].complete) {
             era.complete = true;
         } else {
             era.complete = false;
         }
     }
     isEraSixComplete();
+
+    const isEraSevenComplete = () => {
+        const era = eras[6];
+        const quiz = eras[6].quiz;
+        const fact = eras[6].fact;
+
+        if (fact.complete && quiz[0].complete && quiz[1].complete) {
+            era.complete = true;
+        } else {
+            era.complete = false;
+        }
+    }
+    isEraSevenComplete();
+
+    const isEraNineComplete = () => {
+        const era = eras[7];
+        const quiz = eras[7].quiz;
+        const fact = eras[7].fact;
+
+        if (fact.complete && quiz[0].complete && quiz[1].complete) {
+            era.complete = true;
+        } else {
+            era.complete = false;
+        }
+    }
+    isEraNineComplete();
 
     if(eras[0].complete) { eras[1].unlocked = true }
     if(eras[1].complete) { eras[2].unlocked = true }
@@ -464,7 +493,6 @@ function UnwrappedMap() {
     return (
         // Creates map
         <GoogleMap
-            defaultZoom={21.15}
             zoom={zoom}
             defaultCenter={{lat: latitude, lng: longitude}}
             center={{lat: latitude, lng: longitude}}
@@ -483,6 +511,14 @@ function UnwrappedMap() {
                     new google.maps.LatLng(51.523655, -2.577485)
                 )}
                 url={MapOverlay}
+                opacity={1}
+            />
+            <GroundOverlay
+                bounds={new google.maps.LatLngBounds(
+                    new google.maps.LatLng(51.523300, -2.578030),
+                    new google.maps.LatLng(51.524255, -2.576465),
+                )}
+                url={ConcordeOverlay}
                 opacity={1}
             />
 
@@ -1758,6 +1794,73 @@ function UnwrappedMap() {
                     </div>
                 ) ||
                 selectedInteraction === eraSevenQuizTwo && (
+                    <div className="map-button-popup">
+
+                        {/* Container */}
+                        <div className="m-b-p-main-container">
+
+                            {/* Close Button */}
+                            <button
+                                className="mbp-close-container"
+                                onClick={() => { setSelectedInteraction(null) }}
+                            >
+                                <img src={CloseButton} alt="Close Menu"/>
+                            </button>
+
+                            {/* Quote Bubble */}
+                            <div className="mbp-bubble-container">
+
+                                {/* Image */}
+                                <img src={BubbleImage} alt="Quote Bubble"/>
+
+                                {/* Text */}
+                                <div className="mbpb-title-container">
+
+                                    {/* Title */}
+                                    <div className="mbpb-title">
+                                        { selectedInteraction.title }
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="mbpb-description">
+                                        { selectedInteraction.description }
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Button Container */}
+                            <div className="mbp-button-container">
+
+                                {/* Play Button */}
+                                <Link
+                                    className="mbp-button mbp-play-button"
+                                    to="/section-three-quiz"
+                                    onClick={ () => selectedInteraction.complete = true }
+                                >
+                                    Play
+                                </Link>
+
+                                {/* Not Now Button */}
+                                <button className="mbp-button mbp-cancel-button">
+                                    Not Now
+                                </button>
+
+                            </div>
+
+                            {/* Character Container */}
+                            <div className="mbp-character-container">
+                                <img src={AlfieImg} alt="Character"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                ) ||
+
+                // Era Nine
+                selectedInteraction === eraNineQuizOne && (
                     <div className="map-button-popup">
 
                         {/* Container */}

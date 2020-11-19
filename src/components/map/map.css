@@ -228,7 +228,8 @@
 .map-element-container {
     position: relative;
     height: 250%; width: 250%;
-    left: -75%; top: -75%; transform: rotate(48.25deg);
+    left: -75%; top: -75%;
+    transform: rotate(48.25deg);
 }
 
 /* Locked Popup Container */
