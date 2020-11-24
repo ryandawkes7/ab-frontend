@@ -2586,7 +2586,7 @@ import {
     GroundOverlay
 } from 'react-google-maps';
 
-import GameIcon from './assets/game-icon.svg'; import CharIcon from './assets/header-char-icon.svg'; import SettingsIcon from './assets/settings-icon.svg';
+import CharIcon from './assets/header-char-icon.png'; import SettingsIcon from './assets/settings-icon.png';
 import QuizIncomplete from './assets/quiz-incomplete.png'; import QuizComplete from './assets/quiz-complete.png'; import QuizLocked from './assets/quiz-locked.png';
 import FactIncomplete from './assets/fact-incomplete.png'; import FactComplete from './assets/fact-complete.png'; import FactLocked from './assets/fact-locked.png';
 import PicIncomplete from './assets/picture-incomplete.svg'; import PicComplete from './assets/picture-complete.svg';
@@ -2600,15 +2600,6 @@ import BackdropBubble from "../quiz/assets/backdrop-bubble.png"; import LockedIm
 // Impromptu JSON data for locations
 export const Interaction = {
     locations: {
-        Game: [
-            {
-                id: 1,
-                coordinates: [51.523213, -2.578062],
-                description: "Let's Play!",
-                complete: false
-            }
-        ],
-
         Picture: [
             {
                 id: 1,
@@ -2981,6 +2972,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete && quiz[1].complete) {
             era.complete = true;
+            console.log("Era One: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -2994,6 +2986,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete) {
             era.complete = true;
+            console.log("Era Two: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -3009,6 +3002,7 @@ function UnwrappedMap() {
             quiz.map((quizzes) => {
                 if (fact.complete && quiz[0].complete && quiz[1].complete && quiz[2].complete && quiz[3].complete) {
                     era.complete = true;
+                    console.log("Era Three: ", era.complete)
                 } else {
                     era.complete = false;
                 }
@@ -3024,6 +3018,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete && quiz[1].complete && quiz[2].complete ) {
             era.complete = true;
+            console.log("Era Four: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -3037,6 +3032,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete && quiz[1].complete) {
             era.complete = true;
+            console.log("Era Five: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -3050,6 +3046,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete && quiz[1].complete && quiz[2].complete) {
             era.complete = true;
+            console.log("Era Six: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -3063,6 +3060,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete && quiz[1].complete) {
             era.complete = true;
+            console.log("Era Seven: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -3076,6 +3074,7 @@ function UnwrappedMap() {
 
         if (fact.complete && quiz[0].complete && quiz[1].complete) {
             era.complete = true;
+            console.log("Era Nine: ", era.complete)
         } else {
             era.complete = false;
         }
@@ -3089,8 +3088,6 @@ function UnwrappedMap() {
     if(eras[4].complete) { eras[5].unlocked = true }
     if(eras[5].complete) { eras[6].unlocked = true }
     if(eras[6].complete) { eras[7].unlocked = true }
-
-    console.log("Selected Interaction: ", selectedInteraction)
 
     // Sets Location when an era is completed
     useEffect(() => {

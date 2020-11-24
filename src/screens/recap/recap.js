@@ -1,24 +1,9 @@
 import React, {Component} from 'react'; import './recap.css';
-import CloseButton from "../../components/quiz/assets/16/icon.png";
-import BackdropBubble from "../../components/quiz/assets/backdrop-bubble.png";
-import HintButton from "../../components/quiz/assets/hint-button.png";
 import axios from "axios";
 import UserIcon from "../../components/quiz/assets/user-icon.svg";
 import {Link} from "react-router-dom";
 import Back from "../../components/backButton/back";
-import CameraImg from "../../components/quiz/quizzes/sectionTwo/assets/camera.svg";
 import CowImg from "../../components/quiz/quizzes/sectionTwo/assets/cow.svg";
-import BulbImg from "../../components/quiz/assets/lightbulb.svg";
-import KiteImg from "../../components/quiz/quizzes/sectionOne/assets/kites.svg";
-import PyramidImg from "../../components/quiz/quizzes/sectionOne/assets/pyramid.svg";
-import TeamImg from "../../components/quiz/quizzes/sectionThree/assets/Nakajima-team.png";
-import ChileImg from "../../components/quiz/quizzes/sectionThree/assets/chile-image.png";
-import AltitudeImg from "../../components/quiz/quizzes/sectionThree/assets/altitude-image.png";
-import FactoryImg from "../../components/quiz/quizzes/sectionFour/assets/factory-image.svg";
-import AirportImg from "../../components/quiz/quizzes/sectionFour/assets/airport-image.svg";
-import BadgeImg from "../../components/quiz/quizzes/sectionFour/assets/badge-image.svg";
-import RocketImg from "../../components/quiz/quizzes/sectionSix/assets/rocket-image.svg";
-import FlagImg from "../../components/quiz/quizzes/sectionNine/assets/flags-image.svg";
 
 // Question Screen
 class RecapQuestion extends Component {
@@ -127,7 +112,7 @@ class RecapResults extends Component {
 
                     <div className="results-cont results-link">
                         <Link
-                            to="/game-menu"
+                            to="/leaderboard"
                             className="quiz-return-btn"
                             onClick={this.handleSubmit}
                         >
