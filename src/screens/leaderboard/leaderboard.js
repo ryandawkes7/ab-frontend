@@ -88,9 +88,9 @@ class Leaderboard extends Component {
 
                                 {/* Button Container */}
                                 <div className="rpb-section rpb-button-container">
-                                    <button className="rpb-ok-button">
+                                    <Link to="/recap" className="rpb-ok-button">
                                         OK
-                                    </button>
+                                    </Link>
                                 </div>
 
 

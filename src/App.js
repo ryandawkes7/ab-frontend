@@ -36,6 +36,8 @@ import GameGuide from "./screens/gameGuide/gameGuide";
 import SectionOnePic from "./components/picture/pictures/sectionOnePic";
 import Leaderboard from "./screens/leaderboard/leaderboard";
 import EndingScreen from "./screens/endingScreen/endingScreen";
+import Recap from "./screens/recap/recap";
+import RecapQuiz from "./screens/recap/recap";
 
 
 export default function App2() {
@@ -171,6 +173,9 @@ export default function App2() {
                             </div>
                             <div>
                                 <Route path="/leaderboard" component={Leaderboard}/>
+                            </div>
+                            <div>
+                                <Route path="/recap" component={RecapQuiz}/>
                             </div>
                             <div>
                                 <Route path="/outro" component={EndingScreen} />

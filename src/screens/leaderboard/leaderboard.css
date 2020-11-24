@@ -1,3 +1,7 @@
+.centering {
+    display: flex; justify-content: center; align-items: center;
+}
+
 .leaderboard-container {
     position: absolute; bottom: 0; height: 100%; width: 100%;
     display: flex; justify-content: center; align-items: center;
@@ -166,6 +170,7 @@
     height: 15%;
 }
 .rpb-ok-button {
+    display: flex; justify-content: center; align-items: center;
     width: 50%; height: 100%;
     max-width: 130px; max-height: 60px; border-radius: 30px;
     font-weight: 700; font-size: 22px; line-height: 26px; color: white;

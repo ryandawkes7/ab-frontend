@@ -33,6 +33,7 @@ const Questions = [
     {
         id: 2,
         text: 'Find the A320 cockpit. Spot the difference between the real cockpit and the picture below',
+        hint: null,
         choices:[
             {
                 id: 'a',

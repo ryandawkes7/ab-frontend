@@ -55,6 +55,7 @@
 /** Close Button */
 .mbp-close-container {
     position: absolute; left: 5%; top: 3%; z-index: 999;
+    background: none;
 }
 
 /* End of Info Window */
@@ -234,11 +235,23 @@
 
 /* Locked Popup Container */
 .locked-popup-container {
+    display: flex; justify-content: center; align-items: center;
     position: absolute; bottom: 0; top: 0; left: 0; right: 0;
     width: 100vw; height: 100vh; z-index: 9999;
     background: rgba(0,0,0,0.6);
-    border: 2px solid red;
 }
+.lp-box {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    width: 90%; height: 80%;
+    background: white; border-radius: 12px;
+}
+.lp-image {
+    display: flex; justify-content: center; align-items: center;
+    z-index: 99; height: 50%; width: 50%;
+}
+.lp-image img { height: 100%; }
+/* End of Locked Popup Container */
 
 
 /* End Game Popup */
